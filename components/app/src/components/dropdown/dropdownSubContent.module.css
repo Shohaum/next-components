@@ -1,0 +1,50 @@
+.dropdownSubContent {
+    min-width: 8rem;
+    width: min(11rem, 50vw);
+
+    max-height: 17.93rem;
+
+    background: var(--gray-100);
+
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: var(--gray-500) transparent;
+
+    padding-block: 0.25rem;
+    padding-inline: 0.25rem;
+    margin: 0.5rem;
+
+    border: 1px solid var(--gray-300);
+    border-radius: 0.35rem;
+
+    transition: all 300ms ease-in-out;
+
+    position-anchor: --anchor-dropdownSub;
+    inset: auto;
+    position-area: end;
+    position-try-fallbacks: flip-block flip-inline;
+    position-try-order: most-height;
+    position-visibility: anchors-visible;
+}
+
+.dropdownSubContent {
+
+    & {
+        opacity: 0;
+        z-index: 999999;
+
+        transition:
+            display 1s allow-discrete,
+            opacity 200ms allow-discrete;
+    }
+
+    &:popover-open {
+        opacity: 1;
+    }
+
+    @starting-style {
+        &:popover-open {
+            opacity: 0;
+        }
+    }
+}

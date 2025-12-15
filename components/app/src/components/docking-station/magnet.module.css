@@ -1,0 +1,9 @@
+.magnet{
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: var(--gray-400);
+    z-index: -9999;
+    border-radius: 0.25rem;
+    transition: all 100ms ease-in-out;
+}

@@ -1,0 +1,6 @@
+.dropdownLabel{
+    display: block;
+    font-size: var(--size-xsm);
+    padding-block: 0.375rem;
+    padding-inline: 0.5rem;
+}

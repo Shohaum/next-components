@@ -1,0 +1,9 @@
+.table{
+    font-size: var(--size-xsm);
+    border-collapse: collapse;
+}
+
+.table:focus-within tbody tr:not(:focus-within){
+    filter: blur(2px) saturate(0.8);
+    opacity: 0.8;
+}
