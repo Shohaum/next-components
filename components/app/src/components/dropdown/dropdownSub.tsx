@@ -1,9 +1,8 @@
 "use client";
 // Contexts
 import { DropdownSubProvider } from "@/contexts/dropdown";
-type DropdownSubProps = {
-    children: React.ReactNode;
-}
+// types
+import { DropdownSubProps } from "@/types/dropdown/dropdown";
 
 const DropdownSub = ({ children }: DropdownSubProps) => {
 

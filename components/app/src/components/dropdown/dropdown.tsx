@@ -3,10 +3,8 @@
 import styles from "./dropdown.module.css";
 // contexts
 import { DropdownProvider } from "@/contexts/dropdown";
-
-type DropdownProps = {
-    children: React.ReactNode;
-}
+// types
+import { DropdownProps } from "@/types/dropdown/dropdown";
 
 const Dropdown = ({ children }: DropdownProps) => {
 

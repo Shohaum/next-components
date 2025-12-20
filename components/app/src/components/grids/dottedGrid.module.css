@@ -18,5 +18,5 @@
     background-repeat: round;
     -webkit-mask: linear-gradient(-20deg, transparent 50%, var(--gray-1000));
     mask: linear-gradient(-20deg, transparent 50%, var(--gray-1000));
-    /* mask: radial-gradient(circle at center, var(--gray-1000), transparent 50%); */
+    /* mask: radial-gradient(circle at center, var(--gray-1000), transparent 60%); */
 }

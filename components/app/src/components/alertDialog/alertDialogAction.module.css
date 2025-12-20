@@ -1,0 +1,20 @@
+.alertDialogAction {
+    background: var(--themed-unmatched-color);
+    color: var(--themed-matched-color);
+
+    padding-block: 0.6rem;
+    padding-inline: 1.3rem;
+
+    outline: 1px solid var(--gray-400);
+    border-radius: 0.4rem;
+
+    box-shadow: 0px 0px 1px 1px var(--gray-100);
+
+    cursor: pointer;
+
+    transition: outline-width 100ms ease-in-out;
+}
+
+.alertDialogAction:focus-visible{
+    outline-width: 3px;
+}

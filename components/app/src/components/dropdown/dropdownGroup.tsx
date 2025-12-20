@@ -1,7 +1,5 @@
-type DropdownGroupProps = {
-    children: React.ReactNode;
-}
-
+// types
+import { DropdownGroupProps } from "@/types/dropdown/dropdown";
 const DropdownGroup = ({ children }: DropdownGroupProps) => {
     return (
         <div>

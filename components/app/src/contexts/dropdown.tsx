@@ -14,15 +14,11 @@ type DropDownProps = {
     children: React.ReactNode;
 };
 
-type DropDownSubProps = {
-    children: React.ReactNode;
-};
-
 export const DropdownProvider = ({ children }: DropDownProps) => {
 
     const toggleDropdown = () => {
-        const dropdown = document.querySelectorAll<HTMLDivElement>('[data-value="dropdown"]');
-        dropdown[0].togglePopover();
+        const dropdown = document.querySelector<HTMLDivElement>('[data-slot="dropdown"]');
+        dropdown?.togglePopover();
     }
 
     const value = useMemo(
@@ -53,11 +49,15 @@ type DropdownSubContextType = {
 
 const DropdownSubContext = createContext<DropdownSubContextType | undefined>(undefined);
 
-export const DropdownSubProvider = ({ children }: DropDownSubProps) => {
+type DropdownSubProps = {
+    children: React.ReactNode;
+};
+
+export const DropdownSubProvider = ({ children }: DropdownSubProps) => {
 
     const toggleDropdownSub = () => {
-        const dropdown = document.querySelectorAll<HTMLDivElement>('[data-value="dropdownSub"]');
-        dropdown[0].togglePopover();
+        const dropdownSub = document.querySelector<HTMLDivElement>('[data-slot="dropdown-sub"]');
+        dropdownSub?.togglePopover();
     }
 
     const value = useMemo(

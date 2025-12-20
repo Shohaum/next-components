@@ -3,10 +3,8 @@
 import styles from "@/components/dropdown/dropdownTrigger.module.css";
 // contexts
 import { useDropdown } from "@/contexts/dropdown";
-
-type DropDownTriggerProps = {
-    children: React.ReactNode;
-}
+// types
+import { DropDownTriggerProps } from "@/types/dropdown/dropdown";
 
 const DropDownTrigger = ({ children }: DropDownTriggerProps) => {
 

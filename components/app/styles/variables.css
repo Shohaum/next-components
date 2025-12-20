@@ -100,6 +100,7 @@
     --vaul-overlay-background-end: #0006;
 
     --themed-matched-color: #fff;
+    --themed-unmatched-color: #000;
     --border-color: var(--gray-500);
     --line-color: color-mix(in hsl, hsl(0 0% 10%), transparent 80%);
 
@@ -287,6 +288,7 @@
     --shadow-border-inset: inset 0 0 0 1px #ffffff1a;
 
     --themed-matched-color: #000;
+    --themed-unmatched-color: #fff;
     --line-color: color-mix(in hsl, hsl(0 0% 90%), transparent 80%);
 }
 
@@ -298,8 +300,8 @@
     --size-xxl: clamp(3.125rem, 3.464vw + 2.229rem, 5rem);
     --size-xl: clamp(3rem, 3.464vw + 1.229rem, 4rem);
     --size-lg: clamp(2rem, 2.464vw + 1.229rem, 3rem);
-    --size-md: clamp(1.5rem, 1vw + 1rem, 2rem);
-    --size-sm: clamp(1rem, 1vw + 0.8rem, 1.3rem);
+    --size-md: clamp(0.9rem, 1vw + 0.8rem, 1.1rem);
+    --size-sm: clamp(0.8rem, 1vw + 0.7rem, 0.85rem);
     --size-xsm: clamp(0.7rem, 0.8vw + 0.6rem, 0.8rem);
 
     --text-color: var(--gray-1000);
@@ -308,4 +310,8 @@
 :root{
     /* measurements */
     --size: undefined;
+    --border-radius-lg: 0.5rem;
+    --border-radius-md: 0.3rem;
+    --border-radius-sm: 0.2rem;
+    --border-radius-none: 0rem;
 }

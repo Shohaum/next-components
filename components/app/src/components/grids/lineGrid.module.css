@@ -22,14 +22,5 @@
     transform-style: flat;
     pointer-events: none;
     z-index: -999;
-    /* content: "";
-    width: 100vw;
-    height: 100vh;
-
-    position: fixed;
-    top: 0;
-    left: 0;
-    background-image: radial-gradient(circle at center, var(--gray-500) 1px, transparent 0);
-    background-size: 20px 20px;
-    background-repeat: round; */
+    /* mask: radial-gradient(circle at center, var(--gray-1000), transparent 80%); */
 }

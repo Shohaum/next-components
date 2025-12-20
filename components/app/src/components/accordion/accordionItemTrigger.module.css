@@ -1,0 +1,12 @@
+.accordionItemTrigger > h3 > button{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-block: 1rem;
+    cursor: pointer;
+}
+
+.accordionItemTrigger > button:hover{
+    text-decoration: underline;
+}

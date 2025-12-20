@@ -1,0 +1,28 @@
+.alertDescription {
+    grid-column-start: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    font-size: var(--size-sm);
+}
+
+.alertDescription>ul>li {
+    list-style-position: inside;
+    list-style-type: disc;
+    line-height: 1.3rem;
+}
+
+.alertDescription,
+.alertDescription p,
+.alertDescription span,
+.alertDescription div,
+.alertDescription h1,
+.alertDescription h2,
+.alertDescription h3,
+.alertDescription h4,
+.alertDescription h5,
+.alertDescription h6,
+.alertDescription ul,
+.alertDescription li {
+    color: var(--gray-900);
+}

@@ -27,32 +27,49 @@
     position-visibility: anchors-visible;
 }
 
-.dropdownContent{
+.dropdownContent {
 
-    &::backdrop{
-        backdrop-filter: blur(10px);
-    }
-
-    &, &::backdrop{
+    /* &,
+    &::backdrop
+    {
         opacity: 0;
         z-index: 999999;
 
         transition: 
             display 1s allow-discrete,
             opacity 200ms allow-discrete;
-    }
+    } */
 
-    &:popover-open{
+    /* &:popover-open {
         opacity: 1;
 
         &::backdrop{
+            backdrop-filter: blur(10px);
             opacity: 0.8;
         }
+    } */
+
+    & {
+        opacity: 0;
+        z-index: 999999;
+
+        transition:
+            display 1s allow-discrete,
+            opacity 200ms allow-discrete;
     }
 
-    @starting-style{
-        &:popover-open,
-        &:popover-open::backdrop{
+    &:popover-open {
+        opacity: 1;
+    }
+
+    @starting-style {
+
+        /* &:popover-open,
+        &:popover-open::backdrop {
+            opacity: 0;
+        } */
+
+        &:popover-open {
             opacity: 0;
         }
     }

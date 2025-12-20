@@ -1,0 +1,4 @@
+.alertDialogDescription{
+    font-size: var(--size-sm);
+    color: var(--gray-900);
+}

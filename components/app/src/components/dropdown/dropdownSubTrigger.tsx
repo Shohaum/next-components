@@ -3,10 +3,8 @@
 import styles from "@/components/dropdown/dropdownSubTrigger.module.css";
 // custom hook
 import { useDropdownSub } from "@/contexts/dropdown";
-
-type DropdownSubTriggerProps = {
-    children: React.ReactNode;
-}
+// types
+import { DropdownSubTriggerProps } from "@/types/dropdown/dropdown";
 
 const DropdownSubTrigger = ({ children }: DropdownSubTriggerProps) => {
 

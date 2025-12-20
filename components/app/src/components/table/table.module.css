@@ -6,4 +6,5 @@
 .table:focus-within tbody tr:not(:focus-within){
     filter: blur(2px) saturate(0.8);
     opacity: 0.8;
+    user-select: none;
 }

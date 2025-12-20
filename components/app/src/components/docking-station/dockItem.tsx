@@ -5,12 +5,10 @@ import styles from "./dockItem.module.css";
 import { useCallback } from "react";
 // contexts
 import { useDockingStation } from "@/contexts/docking-station";
+// types
+import { DockItemProps } from "@/types/docking-station/dockingStation";
 
-type DockItemProps = {
-    children: React.ReactNode;
-}
-
-const DockItem = ({ children }: DockItemProps
+const DockItem = ({ slug, children }: DockItemProps
 ) => {
 
     const { setMagnetStyles } = useDockingStation();
@@ -25,8 +23,10 @@ const DockItem = ({ children }: DockItemProps
 
                 setMagnetStyles((prev) => ({
                     ...prev,
-                    height: `${height}px`,
+                    // do not use the height, as it will not always interpret the height of the element properly
+                    // better to use a fixed height in the magnet component, which is height 100%
                     width: `${width}px`,
+                    // height: `${height}px`,
                     transform: `translate(${targetElement.offsetLeft}px, ${targetElement.offsetTop}px)`,
                     opacity: 1,
                 }));
@@ -36,7 +36,7 @@ const DockItem = ({ children }: DockItemProps
     );
 
     return (
-        <li onMouseEnter={onMouseEnter} className={styles.dockItem}>
+        <li data-slot={slug} onMouseEnter={onMouseEnter} className={`${styles.dockItem}`}>
             {children}
         </li>
     );

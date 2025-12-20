@@ -1,0 +1,46 @@
+.alertDialogContent {
+    max-width: 32rem;
+    background: var(--themed-matched-color);
+    background: var(--gray-200);
+    margin: auto;
+    padding-block: 1.5rem;
+    padding-inline: 1.5rem;
+    border: 1px solid var(--gray-400);
+    border-radius: 0.8rem;
+    opacity: 0;
+    transition: opacity 300ms ease-in-out;
+}
+
+.alertDialogContent {
+
+    &,
+    &::backdrop {
+        opacity: 0;
+        z-index: 999999;
+
+        transition:
+            display 1s allow-discrete,
+            opacity 200ms allow-discrete;
+    }
+
+    &::backdrop{
+        background: var(--vaul-overlay-background-end);
+    }
+
+    &[open] {
+        opacity: 1;
+
+        &::backdrop {
+            backdrop-filter: blur(10px);
+            opacity: 0.4;
+        }
+    }
+
+    @starting-style {
+
+        &[open],
+        &:popover-open::backdrop {
+            opacity: 0;
+        }
+    }
+}

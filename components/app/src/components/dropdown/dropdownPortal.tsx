@@ -1,10 +1,7 @@
 // CSS
 import styles from "@/components/dropdown/dropdownPortal.module.css"
-
-type DropdownPortalProps = {
-    children: React.ReactNode;
-}
-
+// types
+import { DropdownPortalProps } from "@/types/dropdown/dropdown";
 const DropdownPortal = ({ children }: DropdownPortalProps) => {
 
     return (

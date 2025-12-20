@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 // @ts-ignore: side-effect CSS import without module declarations
 import "./styles/variables.css";
 // @ts-ignore: side-effect CSS import without module declarations
-import "./styles/reset.css";
+import "./styles/reset.css"; 
 
 export const metadata: Metadata = {
   title: "A component library",

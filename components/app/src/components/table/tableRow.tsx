@@ -1,9 +1,7 @@
 // CSS
 import styles from "@/components/table/tableRow.module.css";
-
-type TableRowProps = {
-    children: React.ReactNode;
-}
+// types
+import { TableRowProps } from "@/types/table/table";
 
 const TableRow = ({ children }: TableRowProps) => {
     return (

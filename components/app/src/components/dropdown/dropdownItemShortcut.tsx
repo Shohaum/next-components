@@ -1,10 +1,7 @@
 // CSS
 import styles from "@/components/dropdown/dropdownItemShortcut.module.css";
-
-type DropdownItemShortcutProps = {
-    children: React.ReactNode;
-}
-
+// types
+import { DropdownItemShortcutProps } from "@/types/dropdown/dropdown";
 const DropdownItemShortcut = ({ children }: DropdownItemShortcutProps) => {
     return (
         <span className={styles.dropdownItemShortcut}>

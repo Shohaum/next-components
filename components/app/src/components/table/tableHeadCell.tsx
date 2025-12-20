@@ -1,10 +1,7 @@
 // CSS
 import styles from "@/components/table/tableHeadCell.module.css";
-
-type TableHeadCellProps = {
-    children: React.ReactNode;
-}
-
+// types
+import { TableHeadCellProps } from "@/types/table/table";
 const TableHeadCell = ({ children }: TableHeadCellProps) => {
     return (
         <th className={styles.tableHeadCell}>

@@ -1,19 +1,8 @@
 "use client"
 // CSS
 import styles from "@/components/dropdown/dropdownItem.module.css";
-
-type DropdownItemProps = {
-    id?: string,
-    title?: string,
-    disabled?: boolean,
-    autofocus?: boolean,
-    name?: string,
-    type?: "button" | "reset" | "submit",
-    role?: string,
-    dataValue?: string,
-    onClick?: () => void,
-    children?: React.ReactNode;
-}
+// types
+import { DropdownItemProps } from "@/types/dropdown/dropdown";
 
 const DropdownItem = ({
     id = "",
@@ -43,6 +32,7 @@ const DropdownItem = ({
             tabIndex={0}
             autoFocus={autofocus}
             data-value={dataValue}
+            data-slot="dropdown-item"
         >
             {children}
         </button>

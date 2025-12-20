@@ -2,8 +2,10 @@
 import styles from "./magnet.module.css";
 // custom hooks
 import { useDockingStation } from "@/contexts/docking-station";
+// types
+import { MagnetProps } from "@/types/docking-station/dockingStation";
 
-const Magnet = () => {
+const Magnet: React.FC<MagnetProps> = () => {
 
     const { magnetStyles } = useDockingStation();
 

@@ -1,10 +1,5 @@
-// CSS
-// import styles from "@/components/table/tableHead.module.css";
-
-type TableHeadProps = {
-    children: React.ReactNode;
-}
-
+// types
+import { TableHeadProps } from "@/types/table/table";
 const TableHead = ({ children }: TableHeadProps) => {
     return (
         <thead>

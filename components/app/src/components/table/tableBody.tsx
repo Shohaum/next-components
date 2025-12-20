@@ -1,7 +1,5 @@
-type TableBodyProps = {
-    children: React.ReactNode;
-}
-
+// types
+import { TableBodyProps } from "@/types/table/table";
 const TableBody = ({ children }: TableBodyProps) => {
     return (
         <tbody>

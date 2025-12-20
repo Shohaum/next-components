@@ -1,9 +1,7 @@
 // CSS
 import styles from "@/components/dropdown/dropdownLabel.module.css";
-
-type DropdownLabelProps = {
-    label: string;
-}
+// types
+import { DropdownLabelProps } from "@/types/dropdown/dropdown";
 
 const DropdownLabel = ({ label }: DropdownLabelProps) => {
     return (

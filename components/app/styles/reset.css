@@ -1,4 +1,6 @@
-*, *::after, *::before{
+*,
+*::after,
+*::before {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
@@ -14,32 +16,28 @@
 }
 
 html:has(:popover-open),
-body:has(:popover-open) {
-    overflow: hidden; 
+html:has(dialog[open]) {
+    overflow: hidden;
 }
 
-body{
+body {
     height: 200vh;
     background: var(--background-200);
     scroll-behavior: smooth;
     transition: background-color 0.1s, color 0.1s;
 }
 
-a{
-    color: transparent;
-}
-
-input{
+input {
     border: none;
     background: none;
     outline: none;
 }
 
-svg{
+svg {
     display: block;
 }
 
-img{
+img {
     width: 100%;
     height: 100%;
 }

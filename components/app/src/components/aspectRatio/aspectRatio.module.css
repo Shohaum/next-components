@@ -1,0 +1,10 @@
+.aspectRatio{
+    position: relative;
+    outline: 1px solid var(--gray-300);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+}
+
+.aspectRatio > img{
+    object-fit: cover;
+}

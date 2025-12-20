@@ -1,0 +1,8 @@
+.accordionItem{
+    border-bottom: 1px solid var(--gray-400);
+    transition: border-bottom-color 200ms ease-in-out;
+}
+
+.accordionItem:focus-within{
+    border-bottom-color: var(--gray-900);
+}
