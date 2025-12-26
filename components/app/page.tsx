@@ -433,37 +433,38 @@ const App = () => {
 
                 {/* Avatar */}
                 <div style={{ display: 'flex', gap: '1rem', alignItems: 'center', padding: '1rem' }}>
-                    <Avatar width={50}>
-                        <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" />
-                        <AvatarFallback>CN</AvatarFallback>
+
+                    <Avatar width={40}>
+                        <AvatarImage grayScale={true} src="https://github.com/deno.png" alt="@deno" />
+                        <AvatarFallback>DN</AvatarFallback>
                     </Avatar>
 
-                    <Avatar showTooltip={true} name="Evil Rabbit" designation="Product Designer" width={50}>
-                        <AvatarImage grayScale={true} src="https://github.com/evilrabbit.png" alt="@evilrabbit" />
-                        <AvatarFallback>BR</AvatarFallback>
+                    <Avatar showTooltip={true} name="Vercel" designation="SDE - Vercel" width={50}>
+                        <AvatarImage src="https://github.com/vercel.png" alt="@vercel" />
+                        <AvatarFallback>MB</AvatarFallback>
                     </Avatar>
 
                     <AvatarCollapsed>
 
-                        <Avatar showTooltip={true} name="Shadcn" designation="Founder - Shadcn" width={40}>
-                            <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" />
-                            <AvatarFallback>CN</AvatarFallback>
-                        </Avatar>
-                        <Avatar showTooltip={true} name="Evil Rabbit" designation="Product Designer" width={40}>
-                            <AvatarImage src="https://github.com/evilrabbit.png" alt="@evilrabbit" />
-                            <AvatarFallback>BR</AvatarFallback>
-                        </Avatar>
-                        <Avatar showTooltip={true} name="Max Leiter" designation="UI/UX Designer" width={40}>
-                            <AvatarImage src="https://github.com/maxleiter.png" alt="@maxleiter" />
-                            <AvatarFallback>ML</AvatarFallback>
-                        </Avatar>
-                        <Avatar showTooltip={true} name="Shohaum" designation="UI/UX Designer" width={40}>
+                        <Avatar showTooltip={true} name="Shohaum" designation="Founder - Shohaum" width={40}>
                             <AvatarImage src="https://github.com/shohaum.png" alt="@shohaum" />
                             <AvatarFallback>SS</AvatarFallback>
                         </Avatar>
-                        <Avatar showTooltip={true} name="Madhurima" designation="UI/UX Designer" width={40}>
-                            <AvatarImage src="https://github.com/madhurima.png" alt="@madhurima" />
-                            <AvatarFallback>MB</AvatarFallback>
+                        <Avatar showTooltip={true} name="Redis" designation="Redis Developer" width={40}>
+                            <AvatarImage src="https://github.com/redis.png" alt="@redis" />
+                            <AvatarFallback>RR</AvatarFallback>
+                        </Avatar>
+                        <Avatar showTooltip={true} name="Excalidraw" designation="Product Lead - Excalidraw" width={40}>
+                            <AvatarImage src="https://github.com/excalidraw.png" alt="@excalidraw" />
+                            <AvatarFallback>ER</AvatarFallback>
+                        </Avatar>
+                        <Avatar showTooltip={true} name="Evil Rabbit" designation="Product Designer" width={40}>
+                            <AvatarImage src="https://github.com/evilrabbit.png" alt="@evilrabbit" />
+                            <AvatarFallback>ER</AvatarFallback>
+                        </Avatar>
+                        <Avatar showTooltip={true} name="OpenAI" designation="Founder - OpenAI" width={40}>
+                            <AvatarImage src="https://github.com/openai.png" alt="@openai" />
+                            <AvatarFallback>OA</AvatarFallback>
                         </Avatar>
 
                     </AvatarCollapsed>

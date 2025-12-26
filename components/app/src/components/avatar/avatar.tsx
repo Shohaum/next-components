@@ -20,7 +20,7 @@ const Avatar = ({
                 {children}
 
                 {showTooltip && (
-                    <span className={styles.avatarTooltip}>
+                    <span aria-label="avatarTooltip" data-slot="avatarTooltip" className={styles.avatarTooltip}>
                         <h4>{name}</h4>
                         <span>{designation}</span>
                     </span>
