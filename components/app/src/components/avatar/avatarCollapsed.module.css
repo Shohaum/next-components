@@ -1,0 +1,25 @@
+.avatarCollapsed {
+    display: flex;
+    flex-direction: row;
+}
+
+.avatarCollapsed>* {
+    transition: all 100ms ease-in-out;
+}
+
+.avatarCollapsed>:not(:first-child) {
+    outline: 2px solid var(--themed-matched-color);
+}
+
+.avatarCollapsed>:not(:last-child) {
+    margin-inline-end: -0.5rem;
+}
+
+.avatarCollapsed>*:hover {
+    transform: translateY(-4px);
+    z-index: 1;
+}
+
+.avatarCollapsed:hover>*:not(:hover) {
+    filter: blur(1px) saturate(0);
+}

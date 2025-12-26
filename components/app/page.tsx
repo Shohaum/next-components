@@ -18,11 +18,11 @@ import DropdownPortal from "@/components/dropdown/dropdownPortal";
 import DropdownSubContent from "@/components/dropdown/dropdownSubContent";
 
 import Button from "@/components/button/button";
-import LinkDocker from "@/components/docking-station/linkDocker";
-import DockItem from "@/components/docking-station/dockItem";
+import LinkDocker from "@/components/dockingStation/linkDocker";
+import DockItem from "@/components/dockingStation/dockItem";
 import Link from "next/link";
-import Magnet from "@/components/docking-station/magnet";
-import DockList from "@/components/docking-station/dockList";
+import Magnet from "@/components/dockingStation/magnet";
+import DockList from "@/components/dockingStation/dockList";
 
 import DottedGrid from "@/components/grids/dottedGrid";
 
@@ -57,6 +57,11 @@ import AspectRatio from "@/components/aspectRatio/aspectRatio";
 
 import { data } from "@/data/data";
 import Image from "next/image";
+
+import Avatar from "@/components/avatar/avatar";
+import AvatarImage from "@/components/avatar/avatarImage";
+import AvatarFallback from "@/components/avatar/avatarFallback";
+import AvatarCollapsed from "@/components/avatar/avatarCollapsed";
 
 const App = () => {
 
@@ -139,7 +144,7 @@ const App = () => {
                 </LinkDocker> */}
 
                 {/* dropdown */}
-                <DropDown>
+                {/* <DropDown>
 
                     <DropdownTrigger>
                         <Button title="dropdown" name="dropdown" type="button">
@@ -250,7 +255,7 @@ const App = () => {
 
                     </DropdownContent>
 
-                </DropDown> 
+                </DropDown> */}
 
                 {/* Table */}
                 {/* <Table>  
@@ -420,10 +425,49 @@ const App = () => {
                     </AlertItem>
                 </Alert> */}
 
+
                 {/* <AspectRatio width={330} ratio={16/9} rounded="medium">
                     <Image src="https://images.unsplash.com/photo-1588345921523-c2dcdb7f1dcd?w=800&dpr=2&q=80"
                         alt="Photo by Drew Beamer" fill/>
                 </AspectRatio> */}
+
+                {/* Avatar */}
+                <div style={{ display: 'flex', gap: '1rem', alignItems: 'center', padding: '1rem' }}>
+                    <Avatar width={50}>
+                        <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" />
+                        <AvatarFallback>CN</AvatarFallback>
+                    </Avatar>
+
+                    <Avatar showTooltip={true} name="Evil Rabbit" designation="Product Designer" width={50}>
+                        <AvatarImage grayScale={true} src="https://github.com/evilrabbit.png" alt="@evilrabbit" />
+                        <AvatarFallback>BR</AvatarFallback>
+                    </Avatar>
+
+                    <AvatarCollapsed>
+
+                        <Avatar showTooltip={true} name="Shadcn" designation="Founder - Shadcn" width={40}>
+                            <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" />
+                            <AvatarFallback>CN</AvatarFallback>
+                        </Avatar>
+                        <Avatar showTooltip={true} name="Evil Rabbit" designation="Product Designer" width={40}>
+                            <AvatarImage src="https://github.com/evilrabbit.png" alt="@evilrabbit" />
+                            <AvatarFallback>BR</AvatarFallback>
+                        </Avatar>
+                        <Avatar showTooltip={true} name="Max Leiter" designation="UI/UX Designer" width={40}>
+                            <AvatarImage src="https://github.com/maxleiter.png" alt="@maxleiter" />
+                            <AvatarFallback>ML</AvatarFallback>
+                        </Avatar>
+                        <Avatar showTooltip={true} name="Shohaum" designation="UI/UX Designer" width={40}>
+                            <AvatarImage src="https://github.com/shohaum.png" alt="@shohaum" />
+                            <AvatarFallback>SS</AvatarFallback>
+                        </Avatar>
+                        <Avatar showTooltip={true} name="Madhurima" designation="UI/UX Designer" width={40}>
+                            <AvatarImage src="https://github.com/madhurima.png" alt="@madhurima" />
+                            <AvatarFallback>MB</AvatarFallback>
+                        </Avatar>
+
+                    </AvatarCollapsed>
+                </div>
 
             </DottedGrid>
 
