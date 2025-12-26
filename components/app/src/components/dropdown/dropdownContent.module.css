@@ -1,9 +1,5 @@
 .dropdownContent {
-    min-width: 8rem;
-    width: min(11rem, 50vw);
-
-    max-height: 17.93rem;
-
+    width: max-content;
     background: var(--gray-100);
 
     overflow-y: auto;
