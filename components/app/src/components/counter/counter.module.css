@@ -1,0 +1,106 @@
+.counter {
+    width: fit-content;
+    height: 2rem;
+    display: inline-flex;
+    align-items: center;
+    outline: 1px solid var(--gray-900);
+    border-radius: 0.4rem;
+    overflow: hidden;
+}
+
+.counter:has(input:invalid:not(:focus-visible)):not(:focus-within) {
+    animation: shake 0.42s linear(0 0%, 0 1.8%, 0.01 3.6%, 0.03 6.35%, 0.07 9.1%, 0.13 11.4%, 0.19 13.4%, 0.27 15%, 0.34 16.1%, 0.54 18.35%, 0.66 20.6%, 0.72 22.4%, 0.77 24.6%, 0.81 27.3%, 0.85 30.4%, 0.88 35.1%, 0.92 40.6%, 0.94 47.2%, 0.96 55%, 0.98 64%, 0.99 74.4%, 1 86.4%, 1 100%);
+    background: hsl(0 100% 50% / 0.14);
+}
+
+@keyframes shake {
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    20%,
+    40%,
+    60%,
+    80% {
+        transform: translateX(-2%);
+    }
+
+    10%,
+    30%,
+    50%,
+    70%,
+    90% {
+        transform: translateX(2%);
+    }
+}
+
+.counter>button {
+    height: 100%;
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 100ms ease-in-out;
+}
+
+.counter>button:hover {
+    cursor: pointer;
+    background: var(--gray-100);
+}
+
+.counter>button:disabled {
+    cursor: not-allowed;
+    background: transparent;
+}
+
+.trackContainer {
+    width: 3rem;
+    height: 100%;
+    position: relative;
+    font-size: var(--size-sm);
+    /* line-height: 1.524lh; */
+    overflow: hidden;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.trackContainer input[type=number] {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    caret-color: var(--gray-900);
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    text-align: center;
+    pointer-events: none;
+}
+
+/* .trackContainer input:focus-visible {
+    opacity: 1;
+}
+
+.trackContainer input:is(:focus-visible)+.track {
+    transition-duration: 0s;
+    opacity: 0;
+} */
+
+.track {
+    box-sizing: border-box;
+    width: 100%;
+    top: 0;
+    left: 0;
+    position: absolute;
+    display: block;
+    word-break: break-all;
+    white-space: break-spaces;
+    text-align: center;
+    pointer-events: none;
+    transition: transform 900ms linear(0 0%, 0 1.8%, 0.01 3.6%, 0.03 6.35%, 0.07 9.1%, 0.13 11.4%, 0.19 13.4%, 0.27 15%, 0.34 16.1%, 0.54 18.35%, 0.66 20.6%, 0.72 22.4%, 0.77 24.6%, 0.81 27.3%, 0.85 30.4%, 0.88 35.1%, 0.92 40.6%, 0.94 47.2%, 0.96 55%, 0.98 64%, 0.99 74.4%, 1 86.4%, 1 100%)
+}
