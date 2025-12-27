@@ -1,9 +1,10 @@
 .counter {
     width: fit-content;
-    height: 2rem;
+    height: 1.6rem;
     display: inline-flex;
     align-items: center;
-    outline: 1px solid var(--gray-900);
+    background: var(--themed-matched-color);
+    outline: 1px solid var(--gray-300);
     border-radius: 0.4rem;
     overflow: hidden;
 }
@@ -56,10 +57,10 @@
 }
 
 .trackContainer {
-    width: 3rem;
+    width: 2.5rem;
     height: 100%;
     position: relative;
-    font-size: var(--size-sm);
+    font-size: var(--size-xsm);
     /* line-height: 1.524lh; */
     overflow: hidden;
 }
