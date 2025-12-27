@@ -63,6 +63,8 @@ import AvatarImage from "@/components/avatar/avatarImage";
 import AvatarFallback from "@/components/avatar/avatarFallback";
 import AvatarCollapsed from "@/components/avatar/avatarCollapsed";
 
+import Badge from "@/components/badge/badge";
+
 const App = () => {
 
     const dropdownIcon =
@@ -432,7 +434,7 @@ const App = () => {
                 </AspectRatio> */}
 
                 {/* Avatar */}
-                <div style={{ display: 'flex', gap: '1rem', alignItems: 'center', padding: '1rem' }}>
+                {/* <div style={{ display: 'flex', gap: '1rem', alignItems: 'center', padding: '1rem' }}>
 
                     <Avatar width={40}>
                         <AvatarImage grayScale={true} src="https://github.com/deno.png" alt="@deno" />
@@ -468,8 +470,16 @@ const App = () => {
                         </Avatar>
 
                     </AvatarCollapsed>
-                </div>
+                </div> */}
 
+                {/* badge */}
+                <Badge variant="verified">Verified</Badge>
+                <Badge variant="primary">Primary</Badge>
+                <Badge variant="secondary">Secondary</Badge>
+                <Badge variant="success">Success</Badge>
+                <Badge variant="danger">Danger</Badge>
+                <Badge variant="warning">Warning</Badge>
+                <Badge style={{ backgroundColor: "var(--blue-800)", color: "var(--white-100)" }}>Default</Badge>
             </DottedGrid>
 
         </main>
