@@ -307,7 +307,7 @@
     --text-color: var(--gray-1000);
 }
 
-:root{
+:root {
     /* measurements */
     --size: undefined;
     --border-radius-lg: 0.5rem;

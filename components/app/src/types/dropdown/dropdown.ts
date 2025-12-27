@@ -16,6 +16,9 @@ export type DropdownContentProps = {
     Array<ReactElement<DropdownSubProps>> |
     ReactElement<DropdownGroupSeparatorProps> |
     Array<ReactElement<DropdownGroupSeparatorProps>>;
+    width?: string;
+    minWidth?: string;
+    maxWidth?: string;
 };
 
 export type DropdownGroupProps = {
@@ -52,7 +55,7 @@ export type DropdownSubProps = {
 };
 
 export type DropdownSubContentProps = {
-    children: 
+    children:
     ReactElement<DropdownLabelProps> |
     Array<ReactElement<DropdownLabelProps>> |
     ReactElement<DropdownItemProps> |

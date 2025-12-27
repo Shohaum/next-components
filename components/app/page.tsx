@@ -4,7 +4,7 @@ import styles from "./app.module.css";
 // Component imports
 import Theme from "./src/components/theme/theme";
 // component imports
-import DropDown from "./src/components/dropdown/dropdown";
+import Dropdown from "./src/components/dropdown/dropdown";
 import DropdownTrigger from "@/components/dropdown/dropdownTrigger";
 import DropdownContent from "@/components/dropdown/dropdownContent";
 import DropdownLabel from "@/components/dropdown/dropdownLabel";
@@ -18,11 +18,11 @@ import DropdownPortal from "@/components/dropdown/dropdownPortal";
 import DropdownSubContent from "@/components/dropdown/dropdownSubContent";
 
 import Button from "@/components/button/button";
-import LinkDocker from "@/components/docking-station/linkDocker";
-import DockItem from "@/components/docking-station/dockItem";
+import LinkDocker from "@/components/dockingStation/linkDocker";
+import DockItem from "@/components/dockingStation/dockItem";
 import Link from "next/link";
-import Magnet from "@/components/docking-station/magnet";
-import DockList from "@/components/docking-station/dockList";
+import Magnet from "@/components/dockingStation/magnet";
+import DockList from "@/components/dockingStation/dockList";
 
 import DottedGrid from "@/components/grids/dottedGrid";
 
@@ -32,6 +32,7 @@ import TableRow from "@/components/table/tableRow";
 import TableHead from "@/components/table/tableHead";
 import TableHeadCell from "@/components/table/tableHeadCell";
 import TableData from "@/components/table/tableData";
+import Caption from "@/components/table/caption";
 
 import Accordion from "@/components/accordion/accordion";
 import AccordionItem from "@/components/accordion/accordionItem";
@@ -57,6 +58,19 @@ import AspectRatio from "@/components/aspectRatio/aspectRatio";
 
 import { data } from "@/data/data";
 import Image from "next/image";
+
+import Avatar from "@/components/avatar/avatar";
+import AvatarImage from "@/components/avatar/avatarImage";
+import AvatarFallback from "@/components/avatar/avatarFallback";
+import AvatarCollapsed from "@/components/avatar/avatarCollapsed";
+
+import BreadcrumbEllipsis from "@/components/breadcrumb/breadcrumbEllipsis";
+import BreadcrumbLink from "@/components/breadcrumb/breadcrumbLink";
+import BreadcrumbPage from "@/components/breadcrumb/breadcrumbPage";
+import BreadcrumbItem from "@/components/breadcrumb/breadcrumbItem";
+import BreadcrumbList from "@/components/breadcrumb/breadcrumbList";
+import Breadcrumb from "@/components/breadcrumb/breadcrumb";
+import BreadcrumbSeparator from "@/components/breadcrumb/breadcrumbSeparator";
 
 const App = () => {
 
@@ -139,7 +153,7 @@ const App = () => {
                 </LinkDocker> */}
 
                 {/* dropdown */}
-                <DropDown>
+                {/* <Dropdown>
 
                     <DropdownTrigger>
                         <Button title="dropdown" name="dropdown" type="button">
@@ -148,7 +162,7 @@ const App = () => {
                         </Button>
                     </DropdownTrigger>
 
-                    <DropdownContent>
+                    <DropdownContent width="min(11rem, 50vw)" minWidth="8rem" maxWidth="17.93rem">
 
                         <DropdownLabel label="Dropdown" />
                         <DropdownGroup>
@@ -250,10 +264,10 @@ const App = () => {
 
                     </DropdownContent>
 
-                </DropDown> 
+                </Dropdown> */}
 
                 {/* Table */}
-                {/* <Table>  
+                {/* <Table>
                     <TableHead>
                         <TableRow>
                             <TableHeadCell>
@@ -292,8 +306,8 @@ const App = () => {
                                 )
                             })
                         }
-
                     </TableBody>
+                    <Caption>A list of your recent invoices</Caption>
                 </Table> */}
 
                 {/* Accordion */}
@@ -420,10 +434,85 @@ const App = () => {
                     </AlertItem>
                 </Alert> */}
 
+
                 {/* <AspectRatio width={330} ratio={16/9} rounded="medium">
                     <Image src="https://images.unsplash.com/photo-1588345921523-c2dcdb7f1dcd?w=800&dpr=2&q=80"
                         alt="Photo by Drew Beamer" fill/>
                 </AspectRatio> */}
+
+                {/* Avatar */}
+                {/* <div style={{ display: 'flex', gap: '1rem', alignItems: 'center', padding: '1rem' }}>
+
+                    <Avatar width={40}>
+                        <AvatarImage grayScale={true} src="https://github.com/deno.png" alt="@deno" />
+                        <AvatarFallback>DN</AvatarFallback>
+                    </Avatar>
+
+                    <Avatar showTooltip={true} name="Vercel" designation="SDE - Vercel" width={50}>
+                        <AvatarImage src="https://github.com/vercel.png" alt="@vercel" />
+                        <AvatarFallback>MB</AvatarFallback>
+                    </Avatar>
+
+                    <AvatarCollapsed>
+
+                        <Avatar showTooltip={true} name="Shohaum" designation="Founder - Shohaum" width={40}>
+                            <AvatarImage src="https://github.com/shohaum.png" alt="@shohaum" />
+                            <AvatarFallback>SS</AvatarFallback>
+                        </Avatar>
+                        <Avatar showTooltip={true} name="Redis" designation="Redis Developer" width={40}>
+                            <AvatarImage src="https://github.com/redis.png" alt="@redis" />
+                            <AvatarFallback>RR</AvatarFallback>
+                        </Avatar>
+                        <Avatar showTooltip={true} name="Excalidraw" designation="Product Lead - Excalidraw" width={40}>
+                            <AvatarImage src="https://github.com/excalidraw.png" alt="@excalidraw" />
+                            <AvatarFallback>ER</AvatarFallback>
+                        </Avatar>
+                        <Avatar showTooltip={true} name="Evil Rabbit" designation="Product Designer" width={40}>
+                            <AvatarImage src="https://github.com/evilrabbit.png" alt="@evilrabbit" />
+                            <AvatarFallback>ER</AvatarFallback>
+                        </Avatar>
+                        <Avatar showTooltip={true} name="OpenAI" designation="Founder - OpenAI" width={40}>
+                            <AvatarImage src="https://github.com/openai.png" alt="@openai" />
+                            <AvatarFallback>OA</AvatarFallback>
+                        </Avatar>
+
+                    </AvatarCollapsed>
+                </div> */}
+
+                {/* breadcrumb */}
+                <Breadcrumb>
+                    <BreadcrumbList>
+                        <BreadcrumbItem>
+                            <BreadcrumbLink asChild>
+                                <Link href="/">Home</Link>
+                            </BreadcrumbLink>
+                        </BreadcrumbItem>
+                        <BreadcrumbSeparator />
+                        <BreadcrumbItem>
+                            <Dropdown>
+                                <DropdownTrigger>
+                                    <BreadcrumbEllipsis />
+                                    <span className="sr-only">Toggle menu</span>
+                                </DropdownTrigger>
+                                <DropdownContent>
+                                    <DropdownItem>Documentation</DropdownItem>
+                                    <DropdownItem>Themes</DropdownItem>
+                                    <DropdownItem>GitHub</DropdownItem>
+                                </DropdownContent>
+                            </Dropdown>
+                        </BreadcrumbItem>
+                        <BreadcrumbSeparator />
+                        <BreadcrumbItem>
+                            <BreadcrumbLink asChild>
+                                <Link href="/docs/components">Components</Link>
+                            </BreadcrumbLink>
+                        </BreadcrumbItem>
+                        <BreadcrumbSeparator />
+                        <BreadcrumbItem>
+                            <BreadcrumbPage>Breadcrumb</BreadcrumbPage>
+                        </BreadcrumbItem>
+                    </BreadcrumbList>
+                </Breadcrumb>
 
             </DottedGrid>
 
