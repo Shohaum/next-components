@@ -1,0 +1,15 @@
+.badge {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.3rem;
+    padding-block: 0.25rem;
+    padding-inline: 0.5rem;
+    border-radius: 0.9rem;
+    font-size: var(--size-xsm);
+    font-weight: 300;
+    text-align: center;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}

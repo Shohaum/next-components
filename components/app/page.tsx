@@ -64,6 +64,7 @@ import AvatarImage from "@/components/avatar/avatarImage";
 import AvatarFallback from "@/components/avatar/avatarFallback";
 import AvatarCollapsed from "@/components/avatar/avatarCollapsed";
 
+
 import BreadcrumbEllipsis from "@/components/breadcrumb/breadcrumbEllipsis";
 import BreadcrumbLink from "@/components/breadcrumb/breadcrumbLink";
 import BreadcrumbPage from "@/components/breadcrumb/breadcrumbPage";
@@ -71,6 +72,8 @@ import BreadcrumbItem from "@/components/breadcrumb/breadcrumbItem";
 import BreadcrumbList from "@/components/breadcrumb/breadcrumbList";
 import Breadcrumb from "@/components/breadcrumb/breadcrumb";
 import BreadcrumbSeparator from "@/components/breadcrumb/breadcrumbSeparator";
+
+import Badge from "@/components/badge/badge";
 
 const App = () => {
 
@@ -514,6 +517,14 @@ const App = () => {
                     </BreadcrumbList>
                 </Breadcrumb>
 
+                {/* badge */}
+                <Badge variant="verified">Verified</Badge>
+                <Badge variant="primary">Primary</Badge>
+                <Badge variant="secondary">Secondary</Badge>
+                <Badge variant="success">Success</Badge>
+                <Badge variant="danger">Danger</Badge>
+                <Badge variant="warning">Warning</Badge>
+                <Badge style={{ backgroundColor: "var(--blue-800)", color: "var(--white-100)" }}>Default</Badge>
             </DottedGrid>
 
         </main>
