@@ -4,7 +4,7 @@ import styles from "./app.module.css";
 // Component imports
 import Theme from "./src/components/theme/theme";
 // component imports
-import DropDown from "./src/components/dropdown/dropdown";
+import Dropdown from "./src/components/dropdown/dropdown";
 import DropdownTrigger from "@/components/dropdown/dropdownTrigger";
 import DropdownContent from "@/components/dropdown/dropdownContent";
 import DropdownLabel from "@/components/dropdown/dropdownLabel";
@@ -32,6 +32,7 @@ import TableRow from "@/components/table/tableRow";
 import TableHead from "@/components/table/tableHead";
 import TableHeadCell from "@/components/table/tableHeadCell";
 import TableData from "@/components/table/tableData";
+import Caption from "@/components/table/caption";
 
 import Accordion from "@/components/accordion/accordion";
 import AccordionItem from "@/components/accordion/accordionItem";
@@ -62,8 +63,6 @@ import Avatar from "@/components/avatar/avatar";
 import AvatarImage from "@/components/avatar/avatarImage";
 import AvatarFallback from "@/components/avatar/avatarFallback";
 import AvatarCollapsed from "@/components/avatar/avatarCollapsed";
-
-import Badge from "@/components/badge/badge";
 
 const App = () => {
 
@@ -146,7 +145,7 @@ const App = () => {
                 </LinkDocker> */}
 
                 {/* dropdown */}
-                {/* <DropDown>
+                {/* <Dropdown>
 
                     <DropdownTrigger>
                         <Button title="dropdown" name="dropdown" type="button">
@@ -155,7 +154,7 @@ const App = () => {
                         </Button>
                     </DropdownTrigger>
 
-                    <DropdownContent>
+                    <DropdownContent width="min(11rem, 50vw)" minWidth="8rem" maxWidth="17.93rem">
 
                         <DropdownLabel label="Dropdown" />
                         <DropdownGroup>
@@ -257,10 +256,10 @@ const App = () => {
 
                     </DropdownContent>
 
-                </DropDown> */}
+                </Dropdown> */}
 
                 {/* Table */}
-                {/* <Table>  
+                {/* <Table>
                     <TableHead>
                         <TableRow>
                             <TableHeadCell>
@@ -299,8 +298,8 @@ const App = () => {
                                 )
                             })
                         }
-
                     </TableBody>
+                    <Caption>A list of your recent invoices</Caption>
                 </Table> */}
 
                 {/* Accordion */}
@@ -470,16 +469,8 @@ const App = () => {
                         </Avatar>
 
                     </AvatarCollapsed>
-                </div> */}
+                </div>
 
-                {/* badge */}
-                <Badge variant="verified">Verified</Badge>
-                <Badge variant="primary">Primary</Badge>
-                <Badge variant="secondary">Secondary</Badge>
-                <Badge variant="success">Success</Badge>
-                <Badge variant="danger">Danger</Badge>
-                <Badge variant="warning">Warning</Badge>
-                <Badge style={{ backgroundColor: "var(--blue-800)", color: "var(--white-100)" }}>Default</Badge>
             </DottedGrid>
 
         </main>
