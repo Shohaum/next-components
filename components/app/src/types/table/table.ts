@@ -20,6 +20,11 @@ export type TableBodyProps = {
     children: Array<ReactElement<TableRowProps>>;
 }
 
+export type CaptionProps = {
+    children: string;
+};
+
 export type TableProps = {
-    children: [ReactElement<TableHeadProps>, ReactElement<TableBodyProps>] | ReactElement<TableHeadProps> | ReactElement<TableBodyProps>;
+    // children: [ReactElement<TableHeadProps>, ReactElement<TableBodyProps>] | ReactElement<TableHeadProps> | ReactElement<TableBodyProps>;
+    children: React.ReactNode;
 };

@@ -1,8 +1,9 @@
 .tableRow:nth-child(even) {
-    background: var(--gray-200);
+    background: var(--gray-100);
     transition: all 100ms ease-in-out;
 }
 
 .tableRow {
+    font-weight: 300;
     cursor: pointer;
 }

@@ -32,6 +32,7 @@ import TableRow from "@/components/table/tableRow";
 import TableHead from "@/components/table/tableHead";
 import TableHeadCell from "@/components/table/tableHeadCell";
 import TableData from "@/components/table/tableData";
+import Caption from "@/components/table/caption";
 
 import Accordion from "@/components/accordion/accordion";
 import AccordionItem from "@/components/accordion/accordionItem";
@@ -266,7 +267,7 @@ const App = () => {
                 </Dropdown> */}
 
                 {/* Table */}
-                {/* <Table>  
+                {/* <Table>
                     <TableHead>
                         <TableRow>
                             <TableHeadCell>
@@ -305,8 +306,8 @@ const App = () => {
                                 )
                             })
                         }
-
                     </TableBody>
+                    <Caption>A list of your recent invoices</Caption>
                 </Table> */}
 
                 {/* Accordion */}

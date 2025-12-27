@@ -1,0 +1,5 @@
+.caption {
+    color: var(--gray-900);
+    caption-side: bottom;
+    margin-block-start: 1rem;
+}
