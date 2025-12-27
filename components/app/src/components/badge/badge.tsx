@@ -42,7 +42,7 @@ const Badge = React.forwardRef<HTMLElement, BadgeProps>(({ children, variant = "
 
     else if (variant === "danger") {
         return (
-            <span style={{ backgroundColor: "var(--red-800)" }} {...props} ref={ref} aria-label="danger-badge" className={styles.badge}>
+            <span style={{ backgroundColor: "var(--red-800)", color: "var(--white-100)" }} {...props} ref={ref} aria-label="danger-badge" className={styles.badge}>
                 {children}
             </span>
         );
@@ -50,7 +50,7 @@ const Badge = React.forwardRef<HTMLElement, BadgeProps>(({ children, variant = "
 
     else if (variant === "warning") {
         return (
-            <span style={{ backgroundColor: "var(--amber-800)" }} {...props} ref={ref} aria-label="warning-badge" className={styles.badge}>
+            <span style={{ backgroundColor: "var(--amber-800)", color: "var(--white-100)" }} {...props} ref={ref} aria-label="warning-badge" className={styles.badge}>
                 {children}
             </span>
         );
