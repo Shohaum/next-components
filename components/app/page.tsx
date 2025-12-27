@@ -75,6 +75,8 @@ import BreadcrumbSeparator from "@/components/breadcrumb/breadcrumbSeparator";
 
 import Badge from "@/components/badge/badge";
 
+import Counter from "@/components/counter/counter";
+
 const App = () => {
 
     const dropdownIcon =
@@ -483,7 +485,7 @@ const App = () => {
                 </div> */}
 
                 {/* breadcrumb */}
-                <Breadcrumb>
+                {/* <Breadcrumb>
                     <BreadcrumbList>
                         <BreadcrumbItem>
                             <BreadcrumbLink asChild>
@@ -515,16 +517,19 @@ const App = () => {
                             <BreadcrumbPage>Breadcrumb</BreadcrumbPage>
                         </BreadcrumbItem>
                     </BreadcrumbList>
-                </Breadcrumb>
+                </Breadcrumb> */}
 
                 {/* badge */}
-                <Badge variant="verified">Verified</Badge>
+                {/* <Badge variant="verified">Verified</Badge>
                 <Badge variant="primary">Primary</Badge>
                 <Badge variant="secondary">Secondary</Badge>
                 <Badge variant="success">Success</Badge>
                 <Badge variant="danger">Danger</Badge>
                 <Badge variant="warning">Warning</Badge>
-                <Badge style={{ backgroundColor: "var(--blue-800)", color: "var(--white-100)" }}>Default</Badge>
+                <Badge style={{ backgroundColor: "var(--blue-800)", color: "var(--white-100)" }}>Default</Badge> */}
+
+                {/* counter */}
+                <Counter min={-10} max={13} step={1} value={0} />
             </DottedGrid>
 
         </main>
