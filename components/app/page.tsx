@@ -446,7 +446,7 @@ const App = () => {
                 </AspectRatio> */}
 
                 {/* Avatar */}
-                {/* <div style={{ display: 'flex', gap: '1rem', alignItems: 'center', padding: '1rem' }}>
+                <div style={{ display: 'flex', gap: '1rem', alignItems: 'center', padding: '1rem' }}>
 
                     <Avatar width={40}>
                         <AvatarImage grayScale={true} src="https://github.com/deno.png" alt="@deno" />
@@ -482,7 +482,7 @@ const App = () => {
                         </Avatar>
 
                     </AvatarCollapsed>
-                </div> */}
+                </div>
 
                 {/* breadcrumb */}
                 {/* <Breadcrumb>
@@ -529,7 +529,7 @@ const App = () => {
                 <Badge style={{ backgroundColor: "var(--blue-800)", color: "var(--white-100)" }}>Default</Badge> */}
 
                 {/* counter */}
-                <Counter min={-10} max={13} step={1} value={0} />
+                {/* <Counter min={-10} max={13} step={1} value={0} /> */}
             </DottedGrid>
 
         </main>

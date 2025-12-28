@@ -1,6 +1,5 @@
 .avatarCollapsed {
-    display: flex;
-    flex-direction: row;
+    display: inline-flex;
 }
 
 .avatarCollapsed>* {
@@ -20,6 +19,8 @@
     z-index: 1;
 }
 
-.avatarCollapsed:hover>*:not(:hover) {
+/* (.avatarCollapsed>*:hover~*) can be used to select the next siblings */
+.avatarCollapsed>*:hover~*:not(:hover),
+.avatarCollapsed>*:has(~ :hover) {
     filter: blur(1px) saturate(0);
 }
