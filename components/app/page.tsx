@@ -350,7 +350,7 @@ const App = () => {
                         <AccordionItemTrigger>Return Policy</AccordionItemTrigger>
                         <AccordionItemContent>
                             <p>
-                                We stand behind our products with a comprehensive 30-day return policy. 
+                                We stand behind our products with a comprehensive 30-day return policy.
                                 If you're not completely satisfied, simply return the item in its original condition.
                             </p>
                             <p>

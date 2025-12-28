@@ -64,7 +64,7 @@ const Counter = React.forwardRef<HTMLDivElement, CounterProps>(({ min = 0, max =
     return (
         <div style={{ ...props.style }} {...props} ref={ref} aria-label="counter" className={styles.counter} data-slot="counter">
             <button disabled={currentValue === min} onClick={handleDecrement} type="button" role="button" aria-label="decrement" aria-roledescription="decrement" data-slot="decrement" aria-controls="counter" aria-activedescendant="counter">
-                <svg width="14" height="14" strokeLinejoin="round" viewBox="0 0 16 16"><path fillRule="evenodd" clipRule="evenodd" d="M2 7.25H2.75H13.25H14V8.75H13.25H2.75H2V7.25Z" fill="currentColor"></path>
+                <svg width="12" height="12" strokeLinejoin="round" viewBox="0 0 16 16"><path fillRule="evenodd" clipRule="evenodd" d="M2 7.25H2.75H13.25H14V8.75H13.25H2.75H2V7.25Z" fill="currentColor"></path>
                 </svg>
             </button>
             <div className={styles.trackContainer}>
@@ -77,7 +77,7 @@ const Counter = React.forwardRef<HTMLDivElement, CounterProps>(({ min = 0, max =
                 </div>
             </div>
             <button disabled={currentValue === max} onClick={handleIncrement} type="button" role="button" aria-label="increment" aria-roledescription="increment" data-slot="increment" aria-controls="counter" aria-activedescendant="counter">
-                <svg width="14" height="14" strokeLinejoin="round" viewBox="0 0 16 16"><path fillRule="evenodd" clipRule="evenodd" d="M 8.75,1 H7.25 V7.25 H1.5 V8.75 H7.25 V15 H8.75 V8.75 H14.5 V7.25 H8.75 V1.75 Z" fill="currentColor"></path>
+                <svg width="12" height="12" strokeLinejoin="round" viewBox="0 0 16 16"><path fillRule="evenodd" clipRule="evenodd" d="M 8.75,1 H7.25 V7.25 H1.5 V8.75 H7.25 V15 H8.75 V8.75 H14.5 V7.25 H8.75 V1.75 Z" fill="currentColor"></path>
                 </svg>
             </button>
         </div>
