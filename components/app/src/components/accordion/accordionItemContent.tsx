@@ -23,18 +23,18 @@ const AccordionItemContent = ({ children }: AccordionItemContentProps) => {
 
     if (isOpen && contentRef.current) {
         const scrollHeight = contentRef.current.scrollHeight;
-        contentRef.current.style.maxHeight = `${scrollHeight}px`;
+        // set --content-height to scrollHeight
+        contentRef.current.style.setProperty("--content-height", `${scrollHeight}px`);
+        contentRef.current.style.filter = `blur(0px)`;
     }
     else if (contentRef.current) {
-        contentRef.current.style.maxHeight = `0px`;
+        contentRef.current.style.setProperty("--content-height", `0px`);
+        contentRef.current.style.filter = `blur(3px)`;
     }
-
 
     return (
         <div ref={contentRef} aria-expanded={isOpen} contentEditable={false} className={styles.accordionItemContent}>
-            <div className={styles.innerContent}>
-                {children}
-            </div>
+            {children}
         </div>
     );
 };
