@@ -529,7 +529,9 @@ const App = () => {
                 <Badge style={{ backgroundColor: "var(--blue-800)", color: "var(--white-100)" }}>Default</Badge> */}
 
                 {/* counter */}
-                <Counter min={-10} max={13} step={1} value={0} />
+                <div style={{width: "fit-content", height: "1.6rem", background: "var(--themed-matched-color)"}}>
+                    <Counter min={-10} max={13} step={3} value={0} />
+                </div>
             </DottedGrid>
 
         </main>

@@ -62,7 +62,7 @@ const Counter = React.forwardRef<HTMLDivElement, CounterProps>(({ min = 0, max =
     }, []);
 
     return (
-        <div style={{ ...props.style }} {...props} ref={ref} aria-label="counter" className={styles.counter} data-slot="counter">
+        <div {...props} ref={ref} aria-label="counter" className={styles.counter} data-slot="counter">
             <button disabled={currentValue === min} onClick={handleDecrement} type="button" role="button" aria-label="decrement" aria-roledescription="decrement" data-slot="decrement" aria-controls="counter" aria-activedescendant="counter">
                 <svg width="12" height="12" strokeLinejoin="round" viewBox="0 0 16 16"><path fillRule="evenodd" clipRule="evenodd" d="M2 7.25H2.75H13.25H14V8.75H13.25H2.75H2V7.25Z" fill="currentColor"></path>
                 </svg>
