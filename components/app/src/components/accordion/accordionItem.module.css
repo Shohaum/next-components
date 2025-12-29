@@ -1,8 +1,75 @@
-.accordionItem{
-    border-bottom: 1px solid var(--gray-400);
-    transition: border-bottom-color 200ms ease-in-out;
+.accordionItem {
+    background: var(--matte-background);
+    border: 2px solid;
+    border-block-color: transparent;
+    border-inline-color: var(--border-color);
+    transition: all 1000ms linear(0 0%, 0.5571 7.53%, 0.8252 11.98%,
+            0.9337 14.38%, 1.0166 16.8%,
+            1.0765 19.31%, 1.1146 21.97%,
+            1.1263 23.47%, 1.1325 25.06%,
+            1.133 26.76%, 1.128 28.62%,
+            1.1094 31.9%, 1.0484 39.77%,
+            1.0218 43.85%, 1.0011 48.42%,
+            0.9895 53.23%, 0.9861 59.8%,
+            1 81.27% 100%)
 }
 
-.accordionItem:focus-within{
-    border-bottom-color: var(--gray-900);
+.accordionItem:not(:last-child) {
+    border-block-end-color: var(--border-color);
+}
+
+.accordionItem:open {
+    margin-block: 1rem;
+    border-block-color: var(--border-color);
+    border-radius: 1rem;
+}
+
+.accordionItem:first-of-type {
+    border-block-start-color: var(--border-color);
+}
+
+.accordionItem:last-of-type {
+    border-block-end-color: var(--border-color);
+}
+
+.accordionItem:first-of-type,
+.accordionItem:open+.accordionItem {
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+}
+
+.accordionItem:open+.accordionItem {
+    border-block-start-color: var(--border-color);
+}
+
+.accordionItem:last-of-type,
+.accordionItem:has(+.accordionItem:open) {
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+}
+
+.accordionItem::details-content {
+    height: 0;
+    transition-property: content-visibility, height;
+    transition-behavior: allow-discrete;
+    transition-duration: 1000ms;
+    transition-timing-function: linear(0 0%, 0.5571 7.53%, 0.8252 11.98%,
+            0.9337 14.38%, 1.0166 16.8%,
+            1.0765 19.31%, 1.1146 21.97%,
+            1.1263 23.47%, 1.1325 25.06%,
+            1.133 26.76%, 1.128 28.62%,
+            1.1094 31.9%, 1.0484 39.77%,
+            1.0218 43.85%, 1.0011 48.42%,
+            0.9895 53.23%, 0.9861 59.8%,
+            1 81.27% 100%);
+    overflow: hidden;
+}
+
+.accordionItem,
+.accordionItem::details-content {
+    interpolate-size: allow-keywords;
+}
+
+.accordionItem:open::details-content {
+    height: var(--content-height);
 }

@@ -1,0 +1,8 @@
+.breadcrumbLink {
+    color: var(--gray-800);
+    transition: color 200ms ease-in-out;
+}
+
+.breadcrumbLink:hover {
+    color: var(--text-color);
+}

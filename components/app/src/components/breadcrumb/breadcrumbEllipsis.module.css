@@ -1,0 +1,9 @@
+.breadcrumbEllipsis {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.breadcrumbEllipsis svg {
+    stroke: var(--gray-800);
+}

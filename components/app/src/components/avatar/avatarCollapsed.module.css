@@ -1,0 +1,26 @@
+.avatarCollapsed {
+    display: inline-flex;
+}
+
+.avatarCollapsed>* {
+    transition: all 100ms ease-in-out;
+}
+
+.avatarCollapsed>:not(:first-child) {
+    outline: 2px solid var(--themed-matched-color);
+}
+
+.avatarCollapsed>:not(:last-child) {
+    margin-inline-end: -0.5rem;
+}
+
+.avatarCollapsed>*:hover {
+    transform: translateY(-4px);
+    z-index: 1;
+}
+
+/* (.avatarCollapsed>*:hover~*) can be used to select the next siblings */
+.avatarCollapsed>*:hover~*:not(:hover),
+.avatarCollapsed>*:has(~ :hover) {
+    filter: blur(1px) saturate(0);
+}

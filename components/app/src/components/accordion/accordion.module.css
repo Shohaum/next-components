@@ -1,7 +1,4 @@
-.accordion{
-    max-width: min(40rem, 75vw);
-    padding-block: 3.5rem;
-    padding-inline: 5rem;
-    border: 1px solid var(--gray-400);
-    border-radius: 0.3rem;
+.accordion {
+    width: min(21.25rem, 90vw);
+    border-radius: 1rem;
 }
