@@ -4,9 +4,11 @@ import styles from "@/components/table/table.module.css";
 import { TableProps } from "@/types/table/table";
 const Table = ({ children }: TableProps) => {
     return (
-        <table className={styles.table}>
-            {children}
-        </table>
+        <div className={styles.tableContainer}>
+            <table className={styles.table}>
+                {children}
+            </table>
+        </div>
     );
 }
 

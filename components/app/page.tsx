@@ -272,7 +272,7 @@ const App = () => {
                 </Dropdown> */}
 
                 {/* Table */}
-                {/* <Table>
+                <Table>
                     <TableHead>
                         <TableRow>
                             <TableHeadCell>
@@ -312,11 +312,11 @@ const App = () => {
                             })
                         }
                     </TableBody>
-                    <Caption>A list of your recent invoices</Caption>
-                </Table> */}
+                    {/* <Caption>A list of your recent invoices</Caption> */}
+                </Table>
 
                 {/* Accordion */}
-                <Accordion textWrap="wrap" isMultiple={false}>
+                {/* <Accordion textWrap="wrap" isMultiple={false}>
                     <AccordionItem id="item-1">
                         <AccordionItemTrigger>
                             <svg viewBox="0 0 24 24" fill="currentColor">
@@ -384,7 +384,7 @@ const App = () => {
                             </p>
                         </AccordionItemContent>
                     </AccordionItem>
-                </Accordion>
+                </Accordion> */}
 
                 {/* AlertDialog */}
                 {/* <AlertDialog>
