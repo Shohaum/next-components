@@ -1,10 +1,11 @@
-.table{
-    font-size: var(--size-xsm);
-    border-collapse: collapse;
+.tableContainer{
+    display: inline-block;
+    background: var(--matte-background);
+    border: 1px solid var(--gray-300);
+    border-radius: 0.5em;
+    overflow: hidden;
 }
 
-.table:focus-within tbody tr:not(:focus-within){
-    filter: blur(2px) saturate(0.8);
-    opacity: 0.8;
-    user-select: none;
+.table{
+    border-collapse: collapse;
 }
