@@ -272,48 +272,50 @@ const App = () => {
                 </Dropdown> */}
 
                 {/* Table */}
-                <Table>
-                    <TableHead>
-                        <TableRow>
-                            <TableHeadCell>
-                                <span>Name</span>
-                            </TableHeadCell>
-                            <TableHeadCell>
-                                <span>Email</span>
-                            </TableHeadCell>
-                            <TableHeadCell>
-                                <span>Country</span>
-                            </TableHeadCell>
-                            <TableHeadCell>
-                                <span>Alias</span>
-                            </TableHeadCell>
-                        </TableRow>
-                    </TableHead>
+                <div style={{ display: 'inline-block' }}>
+                    <Table style={{ background: 'var(--matte-background)' }}>
+                        <TableHead>
+                            <TableRow>
+                                <TableHeadCell>
+                                    <span>Name</span>
+                                </TableHeadCell>
+                                <TableHeadCell>
+                                    <span>Email</span>
+                                </TableHeadCell>
+                                <TableHeadCell>
+                                    <span>Country</span>
+                                </TableHeadCell>
+                                <TableHeadCell>
+                                    <span>Alias</span>
+                                </TableHeadCell>
+                            </TableRow>
+                        </TableHead>
 
-                    <TableBody>
-                        {
-                            data.map((item, index) => {
-                                return (
-                                    <TableRow key={index}>
-                                        <TableData>
-                                            {item.name}
-                                        </TableData>
-                                        <TableData>
-                                            {item.email}
-                                        </TableData>
-                                        <TableData>
-                                            {item.country}
-                                        </TableData>
-                                        <TableData>
-                                            {item.alias}
-                                        </TableData>
-                                    </TableRow>
-                                )
-                            })
-                        }
-                    </TableBody>
-                    {/* <Caption>A list of your recent invoices</Caption> */}
-                </Table>
+                        <TableBody>
+                            {
+                                data.map((item, index) => {
+                                    return (
+                                        <TableRow key={index}>
+                                            <TableData>
+                                                {item.name}
+                                            </TableData>
+                                            <TableData>
+                                                {item.email}
+                                            </TableData>
+                                            <TableData>
+                                                {item.country}
+                                            </TableData>
+                                            <TableData>
+                                                {item.alias}
+                                            </TableData>
+                                        </TableRow>
+                                    )
+                                })
+                            }
+                        </TableBody>
+                        <Caption>A list of your recent invoices</Caption>
+                    </Table>
+                </div>
 
                 {/* Accordion */}
                 {/* <Accordion textWrap="wrap" isMultiple={false}>
