@@ -5,7 +5,9 @@
     margin: 0;
     box-sizing: border-box;
     outline: none;
+    outline-color: transparent;
     border: none;
+    border-color: transparent;
     background: transparent;
     list-style: none;
     text-decoration: none;
