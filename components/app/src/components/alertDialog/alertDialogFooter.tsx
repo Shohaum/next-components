@@ -1,16 +1,18 @@
+// utilities
+import React from "react";
 // CSS
 import styles from "@/components/alertDialog/alertDialogFooter.module.css";
 // types
-type AlertDialogFooter = {
-    children: React.ReactNode;
-}
+import { AlertDialogFooterProps } from "@/types/alertDialog/alertDialog";
 
-const AlertDialogFooter = ({ children }: AlertDialogFooter) => {
+const AlertDialogFooter = React.forwardRef<HTMLDivElement, AlertDialogFooterProps>(({ children, ...props }, ref) => {
     return (
-        <div className={styles.alertDialogFooter}>
+        <div {...props} className={styles.alertDialogFooter} ref={ref}>
             {children}
         </div>
     );
-};
+});
+
+AlertDialogFooter.displayName = "AlertDialogFooter";
 
 export default AlertDialogFooter;

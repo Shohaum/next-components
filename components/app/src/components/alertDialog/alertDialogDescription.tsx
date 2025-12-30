@@ -1,16 +1,21 @@
+// utilities
+import React from "react";
 // CSS
 import styles from "@/components/alertDialog/alertDialogDescription.module.css";
 // types
-type AlertDialogDescription = {
-    children: React.ReactNode;
-}
+import { useAlertDialog } from "@/contexts/alertDialog";
+// types
+import { AlertDialogDescriptionProps } from "@/types/alertDialog/alertDialog";
 
-const AlertDialogDescription = ({ children }: AlertDialogDescription) => {
+const AlertDialogDescription = React.forwardRef<HTMLParagraphElement, AlertDialogDescriptionProps>(({ children, ...props }, ref) => {
+    const { descriptionId } = useAlertDialog();
     return (
-        <p className={styles.alertDialogDescription}>
+        <p id={descriptionId} {...props} className={styles.alertDialogDescription} ref={ref}>
             {children}
         </p>
     );
-};
+});
+
+AlertDialogDescription.displayName = "AlertDialogDescription";
 
 export default AlertDialogDescription;

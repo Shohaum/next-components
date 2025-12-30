@@ -1,5 +1,6 @@
-.alertDialogFooter{
+.alertDialogFooter {
     display: flex;
     gap: 0.5rem;
     justify-content: end;
+    margin-block-start: 1rem;
 }

@@ -318,9 +318,9 @@ const App = () => {
                 </div> */}
 
                 {/* Accordion */}
-                <div style={{ width: "min(21.25rem, 90vw)" }}>
+                {/* we might not pass an id to the accordion item but we encourage to pass an id to the accordion item */}
+                {/* <div style={{ width: "min(21.25rem, 90vw)" }}>
                     <Accordion style={{ textWrap: "pretty" }} isMultiple={false}>
-                        {/* we might not pass an id to the accordion item but we encourage to pass an id to the accordion item */}
                         <AccordionItem style={{ background: "var(--matte-background)", "--borderColor": "var(--border-color)" } as React.CSSProperties}>
                             <AccordionItemTrigger style={{ "--fontSize": "var(--size-sm)" } as React.CSSProperties}>
                                 <svg width={19} height={19} viewBox="0 0 24 24" fill="currentColor">
@@ -389,35 +389,35 @@ const App = () => {
                             </AccordionItemContent>
                         </AccordionItem>
                     </Accordion>
-                </div>
+                </div> */}
 
                 {/* AlertDialog */}
-                {/* <AlertDialog>
+                <div style={{ width: "100%", height: "100%", display: "flex", justifyContent: "center", alignItems: "center" }}>
+                    <AlertDialog>
 
-                    <AlertDialogTrigger>
-                        <Button>
+                        <AlertDialogTrigger style={{ backgroundColor: "var(--matte-background)", outlineColor: "var(--border-color)" }}>
                             Show Dialog
-                        </Button>
-                    </AlertDialogTrigger>
+                        </AlertDialogTrigger>
 
-                    <AlertDialogContent>
-                        <AlertDialogHeader>
-                            <AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle>
+                        <AlertDialogContent style={{ width: "min(32rem, 90%)" }}>
+                            <AlertDialogHeader>
+                                <AlertDialogTitle style={{ fontSize: "var(--size-md)" } as React.CSSProperties}>Are you absolutely sure?</AlertDialogTitle>
 
-                            <AlertDialogDescription>
-                                This action cannot be undone. This will permanently delete your
-                                account and remove your data from our servers.
-                            </AlertDialogDescription>
+                                <AlertDialogDescription>
+                                    This action cannot be undone. This will permanently delete your
+                                    account and remove your data from our servers.
+                                </AlertDialogDescription>
+
+                            </AlertDialogHeader>
 
                             <AlertDialogFooter>
                                 <AlertDialogCancel>Cancel</AlertDialogCancel>
                                 <AlertDialogAction onClick={() => alert("Conitue clicked")}>Continue</AlertDialogAction>
                             </AlertDialogFooter>
+                        </AlertDialogContent>
 
-                        </AlertDialogHeader>
-                    </AlertDialogContent>
-
-                </AlertDialog> */}
+                    </AlertDialog>
+                </div>
 
                 {/* Alert */}
                 {/* <div style={{ maxWidth: "min(36rem, 90vw)", minWidth: "min(25rem, 90vw)" }}>
