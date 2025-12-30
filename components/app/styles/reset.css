@@ -42,6 +42,19 @@ img {
     height: 100%;
 }
 
+details {
+    display: block;
+}
+
+summary {
+    list-style: none;
+    cursor: pointer;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
 .sr-only {
     position: absolute;
     width: 1px;

@@ -102,8 +102,9 @@
 
     --themed-matched-color: #fff;
     --themed-unmatched-color: #000;
-    --border-color: var(--gray-500);
+    --border-color: hsl(0 0% 80%);
     --line-color: color-mix(in hsl, hsl(0 0% 10%), transparent 80%);
+    --matte-background: #fff;
 
     --white-100: hsla(var(--white-value), 1);
     --gray-100: hsla(var(--gray-100-value), 1);
@@ -291,7 +292,9 @@
 
     --themed-matched-color: #000;
     --themed-unmatched-color: #fff;
+    --border-color: hsl(0 0% 20%);
     --line-color: color-mix(in hsl, hsl(0 0% 90%), transparent 80%);
+    --matte-background: hsl(0 0% 4%);
 }
 
 :root {

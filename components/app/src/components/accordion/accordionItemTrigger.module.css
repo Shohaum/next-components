@@ -1,12 +1,20 @@
-.accordionItemTrigger > h3 > button{
+.accordionItemTrigger {
     width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 1rem;
+    font-size: var(--size-sm);
+    text-align: left;
+    text-wrap: pretty;
     padding-block: 1rem;
+    padding-inline: 1rem;
     cursor: pointer;
 }
 
-.accordionItemTrigger > button:hover{
+.accordionItemTrigger>svg {
+    min-width: 1.2rem;
+}
+
+.accordionItemTrigger:hover {
     text-decoration: underline;
 }
