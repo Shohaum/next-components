@@ -14,7 +14,7 @@ import { AccordionContext } from "@/components/accordion/accordion";
 
 export const AccordionItemContext = createContext<AccrodionItemContextType | undefined>(undefined);
 
-const AccordionItem = ({ id = "", children }: AccordionItemProps) => {
+const AccordionItem = ({ id = "", children, ...props }: AccordionItemProps) => {
 
     const [key, setKey] = useState<string>(id);
 
@@ -29,7 +29,7 @@ const AccordionItem = ({ id = "", children }: AccordionItemProps) => {
 
     return (
         <AccordionItemContext.Provider value={value}>
-            <details className={styles.accordionItem} id={id} open={isOpen}>
+            <details {...props} className={styles.accordionItem} id={id} open={isOpen}>
                 {children}
             </details>
         </AccordionItemContext.Provider>

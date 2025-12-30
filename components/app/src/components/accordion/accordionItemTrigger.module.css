@@ -1,20 +1,19 @@
 .accordionItemTrigger {
     width: 100%;
-    display: grid;
-    grid-template-columns: auto 1fr auto;
+    display: flex;
+    align-items: center;
     gap: 1rem;
-    font-size: var(--size-sm);
+    font-size: var(--fontSize);
     text-align: left;
-    text-wrap: pretty;
     padding-block: 1rem;
     padding-inline: 1rem;
     cursor: pointer;
 }
 
 .accordionItemTrigger>svg {
-    min-width: 1.2rem;
+    min-width: 1rem;
 }
 
-.accordionItemTrigger:hover {
-    text-decoration: underline;
+.accordionItemTrigger>svg:last-child {
+    margin-inline-start: auto;
 }

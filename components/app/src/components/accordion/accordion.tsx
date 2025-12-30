@@ -11,7 +11,7 @@ import { AccrodionContextType, AccordionProps } from "@/types/accordion/accordio
 
 export const AccordionContext = createContext<AccrodionContextType | undefined>(undefined);
 
-const Accordion = ({ textWrap = "wrap", isMultiple = false, children }: AccordionProps) => {
+const Accordion = ({ textWrap = "wrap", isMultiple = false, children, ...props }: AccordionProps) => {
 
     const [openids, setOpenids] = useState<string[]>([]);
     const [allowMultiple, setAllowMultiple] = useState<boolean>(isMultiple);
@@ -43,7 +43,7 @@ const Accordion = ({ textWrap = "wrap", isMultiple = false, children }: Accordio
 
     return (
         <AccordionContext.Provider value={value}>
-            <div role="presentation" style={{ textWrap }} className={styles.accordion}>
+            <div {...props} role="presentation" style={{ textWrap }} className={styles.accordion}>
                 {children}
             </div >
         </AccordionContext.Provider>

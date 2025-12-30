@@ -1,8 +1,7 @@
 .accordionItem {
-    background: var(--matte-background);
     border: 2px solid;
     border-block-color: transparent;
-    border-inline-color: var(--border-color);
+    border-inline-color: var(--borderColor);
     transition: all 1000ms linear(0 0%, 0.5571 7.53%, 0.8252 11.98%,
             0.9337 14.38%, 1.0166 16.8%,
             1.0765 19.31%, 1.1146 21.97%,
@@ -15,21 +14,21 @@
 }
 
 .accordionItem:not(:last-child) {
-    border-block-end-color: var(--border-color);
+    border-block-end-color: var(--borderColor);
 }
 
 .accordionItem:open {
     margin-block: 1rem;
-    border-block-color: var(--border-color);
+    border-block-color: var(--borderColor);
     border-radius: 1rem;
 }
 
 .accordionItem:first-of-type {
-    border-block-start-color: var(--border-color);
+    border-block-start-color: var(--borderColor);
 }
 
 .accordionItem:last-of-type {
-    border-block-end-color: var(--border-color);
+    border-block-end-color: var(--borderColor);
 }
 
 .accordionItem:first-of-type,
@@ -39,7 +38,7 @@
 }
 
 .accordionItem:open+.accordionItem {
-    border-block-start-color: var(--border-color);
+    border-block-start-color: var(--borderColor);
 }
 
 .accordionItem:last-of-type,
