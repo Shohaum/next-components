@@ -1,7 +1,7 @@
+// utilities
+import { useContext, useRef, useLayoutEffect } from "react";
 // CSS
 import styles from "@/components/accordion/accordionItemContent.module.css"
-// utilities
-import { useContext, useRef } from "react";
 // contexts
 import { AccordionContext } from "./accordion";
 import { AccordionItemContext } from "./accordionItem";
@@ -13,30 +13,38 @@ const AccordionItemContent = ({ children, ...props }: AccordionItemContentProps)
     const accordionContext = useContext(AccordionContext);
     const accordionItemContext = useContext(AccordionItemContext);
 
-    if (!accordionContext || !accordionItemContext) {
-        return null;
+    if (!accordionContext) {
+        throw new Error("AccordionItemContent must be used inside <Accordion>");
+    }
+    if (!accordionItemContext) {
+        throw new Error("AccordionItemContent must be used inside <AccordionItem>");
     }
 
     const contentRef = useRef<HTMLDivElement>(null);
 
     const isOpen = accordionContext.openids.includes(accordionItemContext.key);
 
-    if (isOpen && contentRef.current) {
-        const scrollHeight = contentRef.current.scrollHeight;
-        // set --content-height to scrollHeight
-        contentRef.current.style.setProperty("--content-height", `${scrollHeight}px`);
-        contentRef.current.style.filter = `blur(0px)`;
-    }
-    else if (contentRef.current) {
-        contentRef.current.style.setProperty("--content-height", `0px`);
-        contentRef.current.style.filter = `blur(3px)`;
-    }
+    // use useLayoutEffect (instead of useEffect) as it runs before paint
+    useLayoutEffect(() => {
+        const element = contentRef.current;
+        if (!element) return;
+
+        if (isOpen) {
+            element.style.setProperty("--content-height", `${element.scrollHeight}px`);
+            element.style.filter = "blur(0px)";
+        } else {
+            element.style.setProperty("--content-height", "0px");
+            element.style.filter = "blur(3px)";
+        }
+    }, [isOpen]);
 
     return (
-        <div {...props} ref={contentRef} contentEditable={false} className={styles.accordionItemContent}>
+        <div id={`${accordionItemContext.key}-content`} aria-labelledby={`${accordionItemContext.key}-trigger`} {...props} ref={contentRef} className={styles.accordionItemContent}>
             {children}
         </div>
     );
 };
+
+AccordionItemContent.displayName = "AccordionItemContent";
 
 export default AccordionItemContent;

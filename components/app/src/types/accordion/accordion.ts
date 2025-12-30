@@ -1,16 +1,15 @@
-export interface AccrodionContextType {
+export interface AccordionContextType {
     allowMultiple: boolean,
     openids: string[],
     toggleAccordion: (allowMultiple: boolean, id: string) => void;
 };
 
 export interface AccordionProps extends React.HTMLAttributes<HTMLDivElement> {
-    textWrap?: "wrap" | "pretty" | "balance" | "stable" | "nowrap",
     isMultiple?: boolean;
     children: Array<React.ReactElement<AccordionItemProps>> | React.ReactElement<AccordionItemProps>;
 };
 
-export interface AccrodionItemContextType {
+export interface AccordionItemContextType {
     key: string;
 };
 
