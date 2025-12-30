@@ -33,7 +33,7 @@ const AccordionItemContent = ({ children, ...props }: AccordionItemContentProps)
     }
 
     return (
-        <div {...props} ref={contentRef} aria-expanded={isOpen} contentEditable={false} className={styles.accordionItemContent}>
+        <div {...props} ref={contentRef} contentEditable={false} className={styles.accordionItemContent}>
             {children}
         </div>
     );

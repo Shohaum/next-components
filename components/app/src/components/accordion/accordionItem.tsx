@@ -29,11 +29,13 @@ const AccordionItem = React.forwardRef<HTMLDetailsElement, AccordionItemProps>((
 
     return (
         <AccordionItemContext.Provider value={value}>
-            <details ref={ref} {...props} className={styles.accordionItem} id={id} open={isOpen}>
+            <details ref={ref} {...props} className={styles.accordionItem} id={id} aria-expanded={isOpen} open={isOpen}>
                 {children}
             </details>
         </AccordionItemContext.Provider>
     );
 });
+
+AccordionItem.displayName = "AccordionItem";
 
 export default AccordionItem;
