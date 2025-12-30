@@ -1,5 +1,4 @@
-.alertTitle{
-    font-size: var(--size-sm);
-    font-weight: lighter;
+.alertTitle {
+    font-weight: 300;
     color: var(--alert-color);
 }

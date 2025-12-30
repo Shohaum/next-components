@@ -8,7 +8,7 @@ import { AccordionItemContext } from "./accordionItem";
 // types
 import { AccordionItemContentProps } from "@/types/accordion/accordion";
 
-const AccordionItemContent = ({ children }: AccordionItemContentProps) => {
+const AccordionItemContent = ({ children, ...props }: AccordionItemContentProps) => {
 
     const accordionContext = useContext(AccordionContext);
     const accordionItemContext = useContext(AccordionItemContext);
@@ -33,7 +33,7 @@ const AccordionItemContent = ({ children }: AccordionItemContentProps) => {
     }
 
     return (
-        <div ref={contentRef} aria-expanded={isOpen} contentEditable={false} className={styles.accordionItemContent}>
+        <div {...props} ref={contentRef} aria-expanded={isOpen} contentEditable={false} className={styles.accordionItemContent}>
             {children}
         </div>
     );

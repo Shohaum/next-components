@@ -272,119 +272,123 @@ const App = () => {
                 </Dropdown> */}
 
                 {/* Table */}
-                {/* <Table>
-                    <TableHead>
-                        <TableRow>
-                            <TableHeadCell>
-                                <span>Name</span>
-                            </TableHeadCell>
-                            <TableHeadCell>
-                                <span>Email</span>
-                            </TableHeadCell>
-                            <TableHeadCell>
-                                <span>Country</span>
-                            </TableHeadCell>
-                            <TableHeadCell>
-                                <span>Alias</span>
-                            </TableHeadCell>
-                        </TableRow>
-                    </TableHead>
+                {/* <div style={{ display: 'inline-block' }}>
+                    <Table style={{ background: 'var(--matte-background)' }}>
+                        <TableHead>
+                            <TableRow>
+                                <TableHeadCell>
+                                    <span>Name</span>
+                                </TableHeadCell>
+                                <TableHeadCell>
+                                    <span>Email</span>
+                                </TableHeadCell>
+                                <TableHeadCell>
+                                    <span>Country</span>
+                                </TableHeadCell>
+                                <TableHeadCell>
+                                    <span>Alias</span>
+                                </TableHeadCell>
+                            </TableRow>
+                        </TableHead>
 
-                    <TableBody>
-                        {
-                            data.map((item, index) => {
-                                return (
-                                    <TableRow key={index}>
-                                        <TableData>
-                                            {item.name}
-                                        </TableData>
-                                        <TableData>
-                                            {item.email}
-                                        </TableData>
-                                        <TableData>
-                                            {item.country}
-                                        </TableData>
-                                        <TableData>
-                                            {item.alias}
-                                        </TableData>
-                                    </TableRow>
-                                )
-                            })
-                        }
-                    </TableBody>
-                    <Caption>A list of your recent invoices</Caption>
-                </Table> */}
+                        <TableBody>
+                            {
+                                data.map((item, index) => {
+                                    return (
+                                        <TableRow key={index}>
+                                            <TableData>
+                                                {item.name}
+                                            </TableData>
+                                            <TableData>
+                                                {item.email}
+                                            </TableData>
+                                            <TableData>
+                                                {item.country}
+                                            </TableData>
+                                            <TableData>
+                                                {item.alias}
+                                            </TableData>
+                                        </TableRow>
+                                    )
+                                })
+                            }
+                        </TableBody>
+                        <Caption>A list of your recent invoices</Caption>
+                    </Table>
+                </div> */}
 
                 {/* Accordion */}
-                <Accordion textWrap="wrap" isMultiple={false}>
-                    <AccordionItem id="item-1">
-                        <AccordionItemTrigger>
-                            <svg viewBox="0 0 24 24" fill="currentColor">
-                                <path fillRule="evenodd" d="M12 6.75a5.25 5.25 0 0 1 6.775-5.025.75.75 0 0 1 .313 1.248l-3.32 3.319c.063.475.276.934.641 1.299.365.365.824.578 1.3.64l3.318-3.319a.75.75 0 0 1 1.248.313 5.25 5.25 0 0 1-5.472 6.756c-1.018-.086-1.87.1-2.309.634L7.344 21.3A3.298 3.298 0 1 1 2.7 16.657l8.684-7.151c.533-.44.72-1.291.634-2.309A5.342 5.342 0 0 1 12 6.75ZM4.117 19.125a.75.75 0 0 1 .75-.75h.008a.75.75 0 0 1 .75.75v.008a.75.75 0 0 1-.75.75h-.008a.75.75 0 0 1-.75-.75v-.008Z" clipRule="evenodd"></path>
-                            </svg>
-                            What is design engineering?
-                        </AccordionItemTrigger>
-                        <AccordionItemContent>
-                            <p>
-                                Where design intuition meets code execution — enabling you to see UI problems and build solutions from the ground up.
-                            </p>
-                        </AccordionItemContent>
-                    </AccordionItem>
+                {/* <div style={{ width: "min(21.25rem, 90vw)" }}>
+                    <Accordion textWrap="wrap" isMultiple={false}>
+                        <AccordionItem style={{ background: "var(--matte-background)", "--borderColor": "var(--border-color)" } as React.CSSProperties} id="item-1">
+                            <AccordionItemTrigger style={{ textWrap: "pretty", "--fontSize": "var(--size-sm)" } as React.CSSProperties}>
+                                <svg width={19} height={19} viewBox="0 0 24 24" fill="currentColor">
+                                    <path fillRule="evenodd" d="M12 6.75a5.25 5.25 0 0 1 6.775-5.025.75.75 0 0 1 .313 1.248l-3.32 3.319c.063.475.276.934.641 1.299.365.365.824.578 1.3.64l3.318-3.319a.75.75 0 0 1 1.248.313 5.25 5.25 0 0 1-5.472 6.756c-1.018-.086-1.87.1-2.309.634L7.344 21.3A3.298 3.298 0 1 1 2.7 16.657l8.684-7.151c.533-.44.72-1.291.634-2.309A5.342 5.342 0 0 1 12 6.75ZM4.117 19.125a.75.75 0 0 1 .75-.75h.008a.75.75 0 0 1 .75.75v.008a.75.75 0 0 1-.75.75h-.008a.75.75 0 0 1-.75-.75v-.008Z" clipRule="evenodd"></path>
+                                </svg>
+                                What is design engineering?
+                            </AccordionItemTrigger>
+                            <AccordionItemContent style={{ "--fontSize": "var(--size-xsm)", "--lineHeight": "1.2rem" } as React.CSSProperties}>
+                                <p>
+                                    Where design intuition meets code execution — enabling you to see UI problems and build solutions from the ground up.
+                                </p>
+                            </AccordionItemContent>
+                        </AccordionItem>
 
-                    <AccordionItem id="item-2">
-                        <AccordionItemTrigger>
-                            <svg viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M11.25 5.337c0-.355-.186-.676-.401-.959a1.647 1.647 0 0 1-.349-1.003c0-1.036 1.007-1.875 2.25-1.875S15 2.34 15 3.375c0 .369-.128.713-.349 1.003-.215.283-.401.604-.401.959 0 .332.278.598.61.578 1.91-.114 3.79-.342 5.632-.676a.75.75 0 0 1 .878.645 49.17 49.17 0 0 1 .376 5.452.657.657 0 0 1-.66.664c-.354 0-.675-.186-.958-.401a1.647 1.647 0 0 0-1.003-.349c-1.035 0-1.875 1.007-1.875 2.25s.84 2.25 1.875 2.25c.369 0 .713-.128 1.003-.349.283-.215.604-.401.959-.401.31 0 .557.262.534.571a48.774 48.774 0 0 1-.595 4.845.75.75 0 0 1-.61.61c-1.82.317-3.673.533-5.555.642a.58.58 0 0 1-.611-.581c0-.355.186-.676.401-.959.221-.29.349-.634.349-1.003 0-1.035-1.007-1.875-2.25-1.875s-2.25.84-2.25 1.875c0 .369.128.713.349 1.003.215.283.401.604.401.959a.641.641 0 0 1-.658.643 49.118 49.118 0 0 1-4.708-.36.75.75 0 0 1-.645-.878c.293-1.614.504-3.257.629-4.924A.53.53 0 0 0 5.337 15c-.355 0-.676.186-.959.401-.29.221-.634.349-1.003.349-1.036 0-1.875-1.007-1.875-2.25s.84-2.25 1.875-2.25c.369 0 .713.128 1.003.349.283.215.604.401.959.401a.656.656 0 0 0 .659-.663 47.703 47.703 0 0 0-.31-4.82.75.75 0 0 1 .83-.832c1.343.155 2.703.254 4.077.294a.64.64 0 0 0 .657-.642Z"></path>
-                            </svg>
-                            What is the craft of UI?
-                        </AccordionItemTrigger>
-                        <AccordionItemContent>
-                            <p>
-                                A course about building things *well* — mastering the web platform so you’re not limited by tools or libraries.
-                            </p>
-                        </AccordionItemContent>
-                    </AccordionItem>
+                        <AccordionItem style={{ background: "var(--matte-background)", "--borderColor": "var(--border-color)" } as React.CSSProperties} id="item-2">
+                            <AccordionItemTrigger style={{ textWrap: "pretty", "--fontSize": "var(--size-sm)" } as React.CSSProperties}>
+                                <svg width={19} height={19} viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M11.25 5.337c0-.355-.186-.676-.401-.959a1.647 1.647 0 0 1-.349-1.003c0-1.036 1.007-1.875 2.25-1.875S15 2.34 15 3.375c0 .369-.128.713-.349 1.003-.215.283-.401.604-.401.959 0 .332.278.598.61.578 1.91-.114 3.79-.342 5.632-.676a.75.75 0 0 1 .878.645 49.17 49.17 0 0 1 .376 5.452.657.657 0 0 1-.66.664c-.354 0-.675-.186-.958-.401a1.647 1.647 0 0 0-1.003-.349c-1.035 0-1.875 1.007-1.875 2.25s.84 2.25 1.875 2.25c.369 0 .713-.128 1.003-.349.283-.215.604-.401.959-.401.31 0 .557.262.534.571a48.774 48.774 0 0 1-.595 4.845.75.75 0 0 1-.61.61c-1.82.317-3.673.533-5.555.642a.58.58 0 0 1-.611-.581c0-.355.186-.676.401-.959.221-.29.349-.634.349-1.003 0-1.035-1.007-1.875-2.25-1.875s-2.25.84-2.25 1.875c0 .369.128.713.349 1.003.215.283.401.604.401.959a.641.641 0 0 1-.658.643 49.118 49.118 0 0 1-4.708-.36.75.75 0 0 1-.645-.878c.293-1.614.504-3.257.629-4.924A.53.53 0 0 0 5.337 15c-.355 0-.676.186-.959.401-.29.221-.634.349-1.003.349-1.036 0-1.875-1.007-1.875-2.25s.84-2.25 1.875-2.25c.369 0 .713.128 1.003.349.283.215.604.401.959.401a.656.656 0 0 0 .659-.663 47.703 47.703 0 0 0-.31-4.82.75.75 0 0 1 .83-.832c1.343.155 2.703.254 4.077.294a.64.64 0 0 0 .657-.642Z"></path>
+                                </svg>
+                                What is the craft of UI?
+                            </AccordionItemTrigger>
+                            <AccordionItemContent style={{ "--fontSize": "var(--size-xsm)", "--lineHeight": "1.2rem" } as React.CSSProperties}>
+                                <p>
+                                    A course about building things *well* — mastering the web platform so you’re not limited by tools or libraries.
+                                </p>
+                            </AccordionItemContent>
+                        </AccordionItem>
 
-                    <AccordionItem id="item-3">
-                        <AccordionItemTrigger>
-                            <svg viewBox="0 0 24 24" fill="currentColor" >
-                                <path fillRule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25ZM6.262 6.072a8.25 8.25 0 1 0 10.562-.766 4.5 4.5 0 0 1-1.318 1.357L14.25 7.5l.165.33a.809.809 0 0 1-1.086 1.085l-.604-.302a1.125 1.125 0 0 0-1.298.21l-.132.131c-.439.44-.439 1.152 0 1.591l.296.296c.256.257.622.374.98.314l1.17-.195c.323-.054.654.036.905.245l1.33 1.108c.32.267.46.694.358 1.1a8.7 8.7 0 0 1-2.288 4.04l-.723.724a1.125 1.125 0 0 1-1.298.21l-.153-.076a1.125 1.125 0 0 1-.622-1.006v-1.089c0-.298-.119-.585-.33-.796l-1.347-1.347a1.125 1.125 0 0 1-.21-1.298L9.75 12l-1.64-1.64a6 6 0 0 1-1.676-3.257l-.172-1.03Z" clipRule="evenodd"></path>
-                            </svg>
-                            Why focus on the web platform?
-                        </AccordionItemTrigger>
-                        <AccordionItemContent>
-                            <p>
-                                Because when you work *with* the web — not fight it — you unlock performance, accessibility, and durability that last.
-                            </p>
-                        </AccordionItemContent>
-                    </AccordionItem>
-                    <AccordionItem id="item-4">
-                        <AccordionItemTrigger>
-                            <svg viewBox="0 0 24 24" fill="currentColor">
-                                <path fillRule="evenodd" d="M9 4.5a.75.75 0 0 1 .721.544l.813 2.846a3.75 3.75 0 0 0 2.576 2.576l2.846.813a.75.75 0 0 1 0 1.442l-2.846.813a3.75 3.75 0 0 0-2.576 2.576l-.813 2.846a.75.75 0 0 1-1.442 0l-.813-2.846a3.75 3.75 0 0 0-2.576-2.576l-2.846-.813a.75.75 0 0 1 0-1.442l2.846-.813A3.75 3.75 0 0 0 7.466 7.89l.813-2.846A.75.75 0 0 1 9 4.5ZM18 1.5a.75.75 0 0 1 .728.568l.258 1.036c.236.94.97 1.674 1.91 1.91l1.036.258a.75.75 0 0 1 0 1.456l-1.036.258c-.94.236-1.674.97-1.91 1.91l-.258 1.036a.75.75 0 0 1-1.456 0l-.258-1.036a2.625 2.625 0 0 0-1.91-1.91l-1.036-.258a.75.75 0 0 1 0-1.456l1.036-.258a2.625 2.625 0 0 0 1.91-1.91l.258-1.036A.75.75 0 0 1 18 1.5ZM16.5 15a.75.75 0 0 1 .712.513l.394 1.183c.15.447.5.799.948.948l1.183.395a.75.75 0 0 1 0 1.422l-1.183.395c-.447.15-.799.5-.948.948l-.395 1.183a.75.75 0 0 1-1.422 0l-.395-1.183a1.5 1.5 0 0 0-.948-.948l-1.183-.395a.75.75 0 0 1 0-1.422l1.183-.395c.447-.15.799-.5.948-.948l.395-1.183A.75.75 0 0 1 16.5 15Z" clipRule="evenodd"></path>
-                            </svg>
-                            Why does craft matter?
-                        </AccordionItemTrigger>
-                        <AccordionItemContent>
-                            <p>
-                                Because it’s more than making something work — it’s making something feel right: inclusive, resilient, and scalable.
-                            </p>
-                        </AccordionItemContent>
-                    </AccordionItem>
-                    <AccordionItem id="item-5">
-                        <AccordionItemTrigger>
-                            <svg viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M4.5 6.375a4.125 4.125 0 1 1 8.25 0 4.125 4.125 0 0 1-8.25 0ZM14.25 8.625a3.375 3.375 0 1 1 6.75 0 3.375 3.375 0 0 1-6.75 0ZM1.5 19.125a7.125 7.125 0 0 1 14.25 0v.003l-.001.119a.75.75 0 0 1-.363.63 13.067 13.067 0 0 1-6.761 1.873c-2.472 0-4.786-.684-6.76-1.873a.75.75 0 0 1-.364-.63l-.001-.122ZM17.25 19.128l-.001.144a2.25 2.25 0 0 1-.233.96 10.088 10.088 0 0 0 5.06-1.01.75.75 0 0 0 .42-.643 4.875 4.875 0 0 0-6.957-4.611 8.586 8.586 0 0 1 1.71 5.157v.003Z"></path>
-                            </svg>
-                            Why does craft matter?
-                        </AccordionItemTrigger>
-                        <AccordionItemContent>
-                            <p>
-                                Because it’s more than making something work — it’s making something feel right: inclusive, resilient, and scalable.
-                            </p>
-                        </AccordionItemContent>
-                    </AccordionItem>
-                </Accordion>
+                        <AccordionItem style={{ background: "var(--matte-background)", "--borderColor": "var(--border-color)" } as React.CSSProperties} id="item-3">
+                            <AccordionItemTrigger style={{ textWrap: "pretty", "--fontSize": "var(--size-sm)" } as React.CSSProperties}>
+                                <svg width={19} height={19} viewBox="0 0 24 24" fill="currentColor" >
+                                    <path fillRule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25ZM6.262 6.072a8.25 8.25 0 1 0 10.562-.766 4.5 4.5 0 0 1-1.318 1.357L14.25 7.5l.165.33a.809.809 0 0 1-1.086 1.085l-.604-.302a1.125 1.125 0 0 0-1.298.21l-.132.131c-.439.44-.439 1.152 0 1.591l.296.296c.256.257.622.374.98.314l1.17-.195c.323-.054.654.036.905.245l1.33 1.108c.32.267.46.694.358 1.1a8.7 8.7 0 0 1-2.288 4.04l-.723.724a1.125 1.125 0 0 1-1.298.21l-.153-.076a1.125 1.125 0 0 1-.622-1.006v-1.089c0-.298-.119-.585-.33-.796l-1.347-1.347a1.125 1.125 0 0 1-.21-1.298L9.75 12l-1.64-1.64a6 6 0 0 1-1.676-3.257l-.172-1.03Z" clipRule="evenodd"></path>
+                                </svg>
+                                Why focus on the web platform?
+                            </AccordionItemTrigger>
+                            <AccordionItemContent style={{ "--fontSize": "var(--size-xsm)", "--lineHeight": "1.2rem" } as React.CSSProperties}>
+                                <p>
+                                    Because when you work *with* the web — not fight it — you unlock performance, accessibility, and durability that last.
+                                </p>
+                            </AccordionItemContent>
+                        </AccordionItem>
+                        <AccordionItem style={{ background: "var(--matte-background)", "--borderColor": "var(--border-color)" } as React.CSSProperties} id="item-4">
+                            <AccordionItemTrigger style={{ textWrap: "pretty", "--fontSize": "var(--size-sm)" } as React.CSSProperties}>
+                                <svg width={19} height={19} viewBox="0 0 24 24" fill="currentColor">
+                                    <path fillRule="evenodd" d="M9 4.5a.75.75 0 0 1 .721.544l.813 2.846a3.75 3.75 0 0 0 2.576 2.576l2.846.813a.75.75 0 0 1 0 1.442l-2.846.813a3.75 3.75 0 0 0-2.576 2.576l-.813 2.846a.75.75 0 0 1-1.442 0l-.813-2.846a3.75 3.75 0 0 0-2.576-2.576l-2.846-.813a.75.75 0 0 1 0-1.442l2.846-.813A3.75 3.75 0 0 0 7.466 7.89l.813-2.846A.75.75 0 0 1 9 4.5ZM18 1.5a.75.75 0 0 1 .728.568l.258 1.036c.236.94.97 1.674 1.91 1.91l1.036.258a.75.75 0 0 1 0 1.456l-1.036.258c-.94.236-1.674.97-1.91 1.91l-.258 1.036a.75.75 0 0 1-1.456 0l-.258-1.036a2.625 2.625 0 0 0-1.91-1.91l-1.036-.258a.75.75 0 0 1 0-1.456l1.036-.258a2.625 2.625 0 0 0 1.91-1.91l.258-1.036A.75.75 0 0 1 18 1.5ZM16.5 15a.75.75 0 0 1 .712.513l.394 1.183c.15.447.5.799.948.948l1.183.395a.75.75 0 0 1 0 1.422l-1.183.395c-.447.15-.799.5-.948.948l-.395 1.183a.75.75 0 0 1-1.422 0l-.395-1.183a1.5 1.5 0 0 0-.948-.948l-1.183-.395a.75.75 0 0 1 0-1.422l1.183-.395c.447-.15.799-.5.948-.948l.395-1.183A.75.75 0 0 1 16.5 15Z" clipRule="evenodd"></path>
+                                </svg>
+                                Why does craft matter?
+                            </AccordionItemTrigger>
+                            <AccordionItemContent style={{ "--fontSize": "var(--size-xsm)", "--lineHeight": "1.2rem" } as React.CSSProperties}>
+                                <p>
+                                    Because it’s more than making something work — it’s making something feel right: inclusive, resilient, and scalable.
+                                </p>
+                            </AccordionItemContent>
+                        </AccordionItem>
+                        <AccordionItem style={{ background: "var(--matte-background)", "--borderColor": "var(--border-color)" } as React.CSSProperties} id="item-5">
+                            <AccordionItemTrigger style={{ textWrap: "pretty", "--fontSize": "var(--size-sm)" } as React.CSSProperties}>
+                                <svg width={19} height={19} viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M4.5 6.375a4.125 4.125 0 1 1 8.25 0 4.125 4.125 0 0 1-8.25 0ZM14.25 8.625a3.375 3.375 0 1 1 6.75 0 3.375 3.375 0 0 1-6.75 0ZM1.5 19.125a7.125 7.125 0 0 1 14.25 0v.003l-.001.119a.75.75 0 0 1-.363.63 13.067 13.067 0 0 1-6.761 1.873c-2.472 0-4.786-.684-6.76-1.873a.75.75 0 0 1-.364-.63l-.001-.122ZM17.25 19.128l-.001.144a2.25 2.25 0 0 1-.233.96 10.088 10.088 0 0 0 5.06-1.01.75.75 0 0 0 .42-.643 4.875 4.875 0 0 0-6.957-4.611 8.586 8.586 0 0 1 1.71 5.157v.003Z"></path>
+                                </svg>
+                                Why does craft matter?
+                            </AccordionItemTrigger>
+                            <AccordionItemContent style={{ "--fontSize": "var(--size-xsm)", "--lineHeight": "1.2rem" } as React.CSSProperties}>
+                                <p>
+                                    Because it’s more than making something work — it’s making something feel right: inclusive, resilient, and scalable.
+                                </p>
+                            </AccordionItemContent>
+                        </AccordionItem>
+                    </Accordion>
+                </div> */}
 
                 {/* AlertDialog */}
                 {/* <AlertDialog>
@@ -415,55 +419,56 @@ const App = () => {
                 </AlertDialog> */}
 
                 {/* Alert */}
-                {/* <Alert>
-                    
-                    <AlertItem type="normal">
-                        <svg width="16" height="16" strokeLinejoin="round" viewBox="0 0 16 16">
-                            <path fillRule="evenodd" clipRule="evenodd" d="M16 8C16 12.4183 12.4183 16 8 16C3.58172 16 0 12.4183 0 8C0 3.58172 3.58172 0 8 0C12.4183 0 16 3.58172 16 8ZM6.25002 7H7.00002H7.75C8.30229 7 8.75 7.44772 8.75 8V11.5V12.25H7.25V11.5V8.5H7.00002H6.25002V7ZM8 6C8.55229 6 9 5.55228 9 5C9 4.44772 8.55229 4 8 4C7.44772 4 7 4.44772 7 5C7 5.55228 7.44772 6 8 6Z" fill="currentColor">
-                            </path>
-                        </svg>
-                        <AlertTitle>This is a normal alert</AlertTitle>
-                        <AlertDescription>
-                            This is an alert with icon, title and description.
-                        </AlertDescription>
-                    </AlertItem>
+                <div style={{ maxWidth: "min(36rem, 90vw)", minWidth: "min(25rem, 90vw)" }}>
+                    <Alert>
+                        <AlertItem style={{ background: "var(--matte-background)", outlineColor: "var(--border-color)" } as React.CSSProperties} type="normal">
+                            <svg width="16" height="16" strokeLinejoin="round" viewBox="0 0 16 16">
+                                <path fillRule="evenodd" clipRule="evenodd" d="M16 8C16 12.4183 12.4183 16 8 16C3.58172 16 0 12.4183 0 8C0 3.58172 3.58172 0 8 0C12.4183 0 16 3.58172 16 8ZM6.25002 7H7.00002H7.75C8.30229 7 8.75 7.44772 8.75 8V11.5V12.25H7.25V11.5V8.5H7.00002H6.25002V7ZM8 6C8.55229 6 9 5.55228 9 5C9 4.44772 8.55229 4 8 4C7.44772 4 7 4.44772 7 5C7 5.55228 7.44772 6 8 6Z" fill="currentColor">
+                                </path>
+                            </svg>
+                            <AlertTitle style={{ fontSize: "var(--size-sm)" }}>This is a normal alert</AlertTitle>
+                            <AlertDescription style={{ fontSize: "var(--size-sm)" }}>
+                                This is an alert with icon, title and description.
+                            </AlertDescription>
+                        </AlertItem>
 
-                    <AlertItem type="success">
-                        <svg width="16" height="16" strokeLinejoin="round" viewBox="0 0 16 16">
-                            <path fillRule="evenodd" clipRule="evenodd" d="M14.5 8C14.5 11.5899 11.5899 14.5 8 14.5C4.41015 14.5 1.5 11.5899 1.5 8C1.5 4.41015 4.41015 1.5 8 1.5C11.5899 1.5 14.5 4.41015 14.5 8ZM16 8C16 12.4183 12.4183 16 8 16C3.58172 16 0 12.4183 0 8C0 3.58172 3.58172 0 8 0C12.4183 0 16 3.58172 16 8ZM11.5303 6.53033L12.0607 6L11 4.93934L10.4697 5.46967L6.5 9.43934L5.53033 8.46967L5 7.93934L3.93934 9L4.46967 9.53033L5.96967 11.0303C6.26256 11.3232 6.73744 11.3232 7.03033 11.0303L11.5303 6.53033Z" fill="currentColor">
-                            </path>
-                        </svg>
-                        <AlertTitle>Success! Your changes have been saved</AlertTitle>
-                        <AlertDescription>
-                            This is an alert with icon, title and description.
-                        </AlertDescription>
-                    </AlertItem>
+                        <AlertItem style={{ background: "var(--matte-background)", outlineColor: "var(--border-color)" } as React.CSSProperties} type="success">
+                            <svg width="16" height="16" strokeLinejoin="round" viewBox="0 0 16 16">
+                                <path fillRule="evenodd" clipRule="evenodd" d="M14.5 8C14.5 11.5899 11.5899 14.5 8 14.5C4.41015 14.5 1.5 11.5899 1.5 8C1.5 4.41015 4.41015 1.5 8 1.5C11.5899 1.5 14.5 4.41015 14.5 8ZM16 8C16 12.4183 12.4183 16 8 16C3.58172 16 0 12.4183 0 8C0 3.58172 3.58172 0 8 0C12.4183 0 16 3.58172 16 8ZM11.5303 6.53033L12.0607 6L11 4.93934L10.4697 5.46967L6.5 9.43934L5.53033 8.46967L5 7.93934L3.93934 9L4.46967 9.53033L5.96967 11.0303C6.26256 11.3232 6.73744 11.3232 7.03033 11.0303L11.5303 6.53033Z" fill="currentColor">
+                                </path>
+                            </svg>
+                            <AlertTitle style={{ fontSize: "var(--size-sm)" }}>Success! Your changes have been saved</AlertTitle>
+                            <AlertDescription style={{ fontSize: "var(--size-sm)" }}>
+                                This is an alert with icon, title and description.
+                            </AlertDescription>
+                        </AlertItem>
 
-                    <AlertItem type="warn">
-                        <svg width="16" height="16" strokeLinejoin="round" viewBox="0 0 16 16">
-                            <path fillRule="evenodd" clipRule="evenodd" d="M8.55846 2H7.44148L1.88975 13.5H14.1102L8.55846 2ZM9.90929 1.34788C9.65902 0.829456 9.13413 0.5 8.55846 0.5H7.44148C6.86581 0.5 6.34092 0.829454 6.09065 1.34787L0.192608 13.5653C-0.127943 14.2293 0.355835 15 1.09316 15H14.9068C15.6441 15 16.1279 14.2293 15.8073 13.5653L9.90929 1.34788ZM8.74997 4.75V5.5V8V8.75H7.24997V8V5.5V4.75H8.74997ZM7.99997 12C8.55226 12 8.99997 11.5523 8.99997 11C8.99997 10.4477 8.55226 10 7.99997 10C7.44769 10 6.99997 10.4477 6.99997 11C6.99997 11.5523 7.44769 12 7.99997 12Z" fill="currentColor">
-                            </path>
-                        </svg>
-                        <AlertTitle>
-                            This Alert has a title and an icon. No description.
-                        </AlertTitle>
-                    </AlertItem>
+                        <AlertItem style={{ background: "var(--matte-background)", outlineColor: "var(--border-color)" } as React.CSSProperties} type="warn">
+                            <svg width="16" height="16" strokeLinejoin="round" viewBox="0 0 16 16">
+                                <path fillRule="evenodd" clipRule="evenodd" d="M8.55846 2H7.44148L1.88975 13.5H14.1102L8.55846 2ZM9.90929 1.34788C9.65902 0.829456 9.13413 0.5 8.55846 0.5H7.44148C6.86581 0.5 6.34092 0.829454 6.09065 1.34787L0.192608 13.5653C-0.127943 14.2293 0.355835 15 1.09316 15H14.9068C15.6441 15 16.1279 14.2293 15.8073 13.5653L9.90929 1.34788ZM8.74997 4.75V5.5V8V8.75H7.24997V8V5.5V4.75H8.74997ZM7.99997 12C8.55226 12 8.99997 11.5523 8.99997 11C8.99997 10.4477 8.55226 10 7.99997 10C7.44769 10 6.99997 10.4477 6.99997 11C6.99997 11.5523 7.44769 12 7.99997 12Z" fill="currentColor">
+                                </path>
+                            </svg>
+                            <AlertTitle style={{ fontSize: "var(--size-sm)" }}>
+                                This Alert has a title and an icon. No description.
+                            </AlertTitle>
+                        </AlertItem>
 
-                    <AlertItem type="failure">
-                        <svg width="16" height="16" strokeLinejoin="round" viewBox="0 0 16 16">
-                            <path d="M7.97723 14.618C12.0892 14.618 15.4222 11.9264 15.4222 8.60708C15.4222 6.54891 14.1461 4.73091 12.1844 3.65267C11.3861 3.20905 10.759 2.81086 10.237 2.47986C9.25394 1.85519 8.64731 1.47006 7.97723 1.47006C7.29656 1.47006 6.52942 1.95723 5.51651 2.59994C4.94586 2.96994 4.36319 3.32104 3.76943 3.65267C1.80832 4.73091 0.532227 6.54891 0.532227 8.60708C0.532227 11.9264 3.86524 14.618 7.97723 14.618ZM7.10804 3.5245C7.31503 3.0534 7.42039 2.54396 7.41727 2.0294C7.41727 1.93981 7.54232 1.91368 7.55974 2.01198C7.96789 3.73853 6.99978 4.59403 6.28365 4.88023C6.2065 4.91009 6.15984 4.80557 6.21957 4.75081C6.59987 4.41015 6.90282 3.99201 7.10804 3.5245ZM8.38476 3.46104C8.32588 2.95511 8.16048 2.4674 7.89945 2.03002V2.02069C7.85715 1.94416 7.95296 1.85706 8.01456 1.91368C9.23154 3.22336 8.82526 4.43661 8.35925 5.04759C8.30823 5.11106 8.21677 5.04573 8.24228 4.9692C8.39526 4.48208 8.44381 3.96818 8.38476 3.46104ZM9.48664 3.11324C9.23704 2.67272 8.89614 2.29067 8.48679 1.99269V1.98398C8.41711 1.9311 8.47186 1.81351 8.5571 1.84835C10.1673 2.52279 10.278 3.82128 10.0827 4.58283C10.0787 4.60082 10.068 4.61663 10.0528 4.627C10.038 4.63744 10.0197 4.64159 10.0019 4.63856C9.98404 4.63553 9.96813 4.62556 9.95762 4.61082C9.94674 4.59594 9.94185 4.57751 9.94394 4.55918C9.89446 4.05049 9.73866 3.55787 9.48664 3.11324ZM6.33094 3.46104C5.94768 3.7995 5.53517 3.93265 5.05049 4.08135C4.97832 4.08135 4.92979 4.03282 4.95406 3.96936C6.041 3.40504 6.428 2.94587 6.81437 2.2453C6.81437 2.2453 6.91081 2.1725 6.93134 2.29818C6.93134 2.4867 6.71482 3.12257 6.33094 3.46104ZM9.39891 10.4326C9.31077 10.8068 9.10728 11.144 8.81717 11.3963C8.60236 11.6109 8.32122 11.7464 8.01954 11.7808C7.70893 11.7517 7.41803 11.6159 7.19639 11.3963C6.90907 11.1429 6.70827 10.8059 6.62212 10.4326C6.61932 10.4105 6.62143 10.388 6.62832 10.3668C6.6352 10.3456 6.64668 10.3262 6.66194 10.31C6.67721 10.2941 6.69593 10.282 6.71665 10.2746C6.73737 10.2671 6.75953 10.2645 6.7814 10.2671H9.2415C9.26323 10.2646 9.28523 10.2673 9.30575 10.2749C9.32628 10.2824 9.34475 10.2947 9.35971 10.3106C9.37492 10.3267 9.38633 10.346 9.39311 10.3671C9.39989 10.3882 9.40187 10.4106 9.39891 10.4326ZM6.01238 9.08243C5.78772 9.23606 5.51588 9.30511 5.24513 9.27732C4.97438 9.24953 4.72223 9.12669 4.53346 8.93062C4.34125 8.73122 4.22228 8.47257 4.19595 8.19687C4.16963 7.92116 4.2375 7.64467 4.3885 7.4125C4.51729 7.21465 4.70083 7.06097 4.91486 6.97013C5.12854 6.87911 5.36485 6.85524 5.59241 6.90169C5.81951 6.94835 6.02856 7.06346 6.19219 7.23144C6.35645 7.39943 6.46782 7.61471 6.51262 7.8474C6.55783 8.08089 6.53449 8.32248 6.44542 8.543C6.35723 8.7613 6.2066 8.94934 6.01238 9.08243ZM11.2829 9.08554C11.0578 9.23817 10.786 9.30617 10.5156 9.27747C10.2453 9.24877 9.99378 9.12522 9.80581 8.92875C9.5869 8.70107 9.46508 8.39719 9.4661 8.08134C9.4661 7.84305 9.53454 7.60973 9.66458 7.41188C9.79337 7.21402 9.97691 7.05972 10.1916 6.96951C10.4056 6.87878 10.6421 6.85535 10.8697 6.90231C11.0975 6.9496 11.3065 7.0647 11.4701 7.23393C11.6338 7.40317 11.7439 7.61782 11.7887 7.85176C11.8329 8.08555 11.8085 8.32714 11.7184 8.54735C11.6295 8.76577 11.4779 8.95301 11.2829 9.08554Z" fill="currentColor"></path>
-                        </svg>
-                        <AlertTitle>Unable to process your payment.</AlertTitle>
-                        <AlertDescription>
-                            <p>Please verify your billing information and try again.</p>
-                            <ul>
-                                <li>Check your card details</li>
-                                <li>Ensure sufficient funds</li>
-                                <li>Verify billing address</li>
-                            </ul>
-                        </AlertDescription>
-                    </AlertItem>
-                </Alert> */}
+                        <AlertItem style={{ background: "var(--matte-background)", outlineColor: "var(--border-color)" } as React.CSSProperties} type="failure">
+                            <svg width="16" height="16" strokeLinejoin="round" viewBox="0 0 16 16">
+                                <path d="M7.97723 14.618C12.0892 14.618 15.4222 11.9264 15.4222 8.60708C15.4222 6.54891 14.1461 4.73091 12.1844 3.65267C11.3861 3.20905 10.759 2.81086 10.237 2.47986C9.25394 1.85519 8.64731 1.47006 7.97723 1.47006C7.29656 1.47006 6.52942 1.95723 5.51651 2.59994C4.94586 2.96994 4.36319 3.32104 3.76943 3.65267C1.80832 4.73091 0.532227 6.54891 0.532227 8.60708C0.532227 11.9264 3.86524 14.618 7.97723 14.618ZM7.10804 3.5245C7.31503 3.0534 7.42039 2.54396 7.41727 2.0294C7.41727 1.93981 7.54232 1.91368 7.55974 2.01198C7.96789 3.73853 6.99978 4.59403 6.28365 4.88023C6.2065 4.91009 6.15984 4.80557 6.21957 4.75081C6.59987 4.41015 6.90282 3.99201 7.10804 3.5245ZM8.38476 3.46104C8.32588 2.95511 8.16048 2.4674 7.89945 2.03002V2.02069C7.85715 1.94416 7.95296 1.85706 8.01456 1.91368C9.23154 3.22336 8.82526 4.43661 8.35925 5.04759C8.30823 5.11106 8.21677 5.04573 8.24228 4.9692C8.39526 4.48208 8.44381 3.96818 8.38476 3.46104ZM9.48664 3.11324C9.23704 2.67272 8.89614 2.29067 8.48679 1.99269V1.98398C8.41711 1.9311 8.47186 1.81351 8.5571 1.84835C10.1673 2.52279 10.278 3.82128 10.0827 4.58283C10.0787 4.60082 10.068 4.61663 10.0528 4.627C10.038 4.63744 10.0197 4.64159 10.0019 4.63856C9.98404 4.63553 9.96813 4.62556 9.95762 4.61082C9.94674 4.59594 9.94185 4.57751 9.94394 4.55918C9.89446 4.05049 9.73866 3.55787 9.48664 3.11324ZM6.33094 3.46104C5.94768 3.7995 5.53517 3.93265 5.05049 4.08135C4.97832 4.08135 4.92979 4.03282 4.95406 3.96936C6.041 3.40504 6.428 2.94587 6.81437 2.2453C6.81437 2.2453 6.91081 2.1725 6.93134 2.29818C6.93134 2.4867 6.71482 3.12257 6.33094 3.46104ZM9.39891 10.4326C9.31077 10.8068 9.10728 11.144 8.81717 11.3963C8.60236 11.6109 8.32122 11.7464 8.01954 11.7808C7.70893 11.7517 7.41803 11.6159 7.19639 11.3963C6.90907 11.1429 6.70827 10.8059 6.62212 10.4326C6.61932 10.4105 6.62143 10.388 6.62832 10.3668C6.6352 10.3456 6.64668 10.3262 6.66194 10.31C6.67721 10.2941 6.69593 10.282 6.71665 10.2746C6.73737 10.2671 6.75953 10.2645 6.7814 10.2671H9.2415C9.26323 10.2646 9.28523 10.2673 9.30575 10.2749C9.32628 10.2824 9.34475 10.2947 9.35971 10.3106C9.37492 10.3267 9.38633 10.346 9.39311 10.3671C9.39989 10.3882 9.40187 10.4106 9.39891 10.4326ZM6.01238 9.08243C5.78772 9.23606 5.51588 9.30511 5.24513 9.27732C4.97438 9.24953 4.72223 9.12669 4.53346 8.93062C4.34125 8.73122 4.22228 8.47257 4.19595 8.19687C4.16963 7.92116 4.2375 7.64467 4.3885 7.4125C4.51729 7.21465 4.70083 7.06097 4.91486 6.97013C5.12854 6.87911 5.36485 6.85524 5.59241 6.90169C5.81951 6.94835 6.02856 7.06346 6.19219 7.23144C6.35645 7.39943 6.46782 7.61471 6.51262 7.8474C6.55783 8.08089 6.53449 8.32248 6.44542 8.543C6.35723 8.7613 6.2066 8.94934 6.01238 9.08243ZM11.2829 9.08554C11.0578 9.23817 10.786 9.30617 10.5156 9.27747C10.2453 9.24877 9.99378 9.12522 9.80581 8.92875C9.5869 8.70107 9.46508 8.39719 9.4661 8.08134C9.4661 7.84305 9.53454 7.60973 9.66458 7.41188C9.79337 7.21402 9.97691 7.05972 10.1916 6.96951C10.4056 6.87878 10.6421 6.85535 10.8697 6.90231C11.0975 6.9496 11.3065 7.0647 11.4701 7.23393C11.6338 7.40317 11.7439 7.61782 11.7887 7.85176C11.8329 8.08555 11.8085 8.32714 11.7184 8.54735C11.6295 8.76577 11.4779 8.95301 11.2829 9.08554Z" fill="currentColor"></path>
+                            </svg>
+                            <AlertTitle style={{ fontSize: "var(--size-sm)" }}>Unable to process your payment.</AlertTitle>
+                            <AlertDescription style={{ fontSize: "var(--size-sm)" }}>
+                                <p>Please verify your billing information and try again.</p>
+                                <ul>
+                                    <li>Check your card details</li>
+                                    <li>Ensure sufficient funds</li>
+                                    <li>Verify billing address</li>
+                                </ul>
+                            </AlertDescription>
+                        </AlertItem>
+                    </Alert>
+                </div>
 
 
                 {/* <AspectRatio width={330} ratio={16/9} rounded="medium">
@@ -555,10 +560,12 @@ const App = () => {
                 <Badge style={{ backgroundColor: "var(--blue-800)", color: "var(--white-100)" }}>Default</Badge> */}
 
                 {/* counter */}
-                {/* <Counter min={-10} max={13} step={1} value={0} /> */}
+                {/* <div style={{ width: "fit-content", height: "1.6rem", background: "var(--themed-matched-color)" }}>
+                    <Counter min={-10} max={13} step={1} value={0} />
+                </div> */}
             </DottedGrid>
 
-        </main>
+        </main >
     )
 };
 

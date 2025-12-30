@@ -8,7 +8,7 @@ import { AccordionItemContext } from "./accordionItem";
 // types
 import { AccordionItemTriggerProps } from "@/types/accordion/accordion";
 
-const AccordionItemTrigger = ({ children }: AccordionItemTriggerProps) => {
+const AccordionItemTrigger = ({ children, ...props }: AccordionItemTriggerProps) => {
 
     const accordionContext = useContext(AccordionContext);
     const accordionItemContext = useContext(AccordionItemContext);
@@ -20,7 +20,7 @@ const AccordionItemTrigger = ({ children }: AccordionItemTriggerProps) => {
     const isOpen = accordionContext.openids.includes(accordionItemContext.key);
 
     return (
-        <summary tabIndex={0} className={styles.accordionItemTrigger} onClick={(e) => {
+        <summary {...props} tabIndex={0} className={styles.accordionItemTrigger} onClick={(e) => {
             e.preventDefault();
             accordionContext?.toggleAccordion(accordionContext?.allowMultiple, accordionItemContext?.key)
         }}>

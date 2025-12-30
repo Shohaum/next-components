@@ -1,0 +1,13 @@
+.tableBody:focus-within tr:not(:focus-within) {
+    filter: blur(1px) saturate(0.8);
+    opacity: 0.3;
+    user-select: none;
+}
+
+.tableBody>tr:focus-within {
+    background-color: var(--gray-200);
+}
+
+.tableBody:not(:focus-within) > tr:hover {
+    background-color: var(--gray-200);
+}
