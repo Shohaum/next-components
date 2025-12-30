@@ -1,7 +1,5 @@
-import { ReactElement } from "react";
-
 export interface AlertProps extends React.HTMLAttributes<HTMLDivElement> {
-    children: Array<ReactElement<AlertItemProps>> | ReactElement<AlertItemProps>;
+    children: React.ReactNode;
 };
 
 export interface AlertDescriptionProps extends React.HTMLAttributes<HTMLDivElement> {
