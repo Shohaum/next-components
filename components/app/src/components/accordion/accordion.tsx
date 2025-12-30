@@ -7,11 +7,11 @@ import React, {
 // CSS
 import styles from "@/components/accordion/accordion.module.css";
 // types
-import { AccrodionContextType, AccordionProps } from "@/types/accordion/accordion";
+import { AccordionContextType, AccordionProps } from "@/types/accordion/accordion";
 
-export const AccordionContext = createContext<AccrodionContextType | undefined>(undefined);
+export const AccordionContext = createContext<AccordionContextType | undefined>(undefined);
 
-const Accordion = React.forwardRef<HTMLDivElement, AccordionProps>(({ textWrap = "wrap", isMultiple = false, children, ...props }, ref) => {
+const Accordion = React.forwardRef<HTMLDivElement, AccordionProps>(({ isMultiple = false, children, ...props }, ref) => {
 
     const [openids, setOpenids] = useState<string[]>([]);
     const [allowMultiple, setAllowMultiple] = useState<boolean>(isMultiple);
@@ -43,7 +43,7 @@ const Accordion = React.forwardRef<HTMLDivElement, AccordionProps>(({ textWrap =
 
     return (
         <AccordionContext.Provider value={value}>
-            <div {...props} ref={ref} role="presentation" style={{ textWrap }} className={styles.accordion}>
+            <div {...props} ref={ref} role="presentation" className={styles.accordion}>
                 {children}
             </div >
         </AccordionContext.Provider>

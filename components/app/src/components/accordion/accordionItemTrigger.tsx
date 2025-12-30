@@ -20,16 +20,12 @@ const AccordionItemTrigger = ({ children, ...props }: AccordionItemTriggerProps)
     const isOpen = accordionContext.openids.includes(accordionItemContext.key);
 
     return (
-        <summary {...props} tabIndex={0} className={styles.accordionItemTrigger} onClick={(e) => {
+        <summary data-state={isOpen ? 'open' : 'closed'} id={`${accordionItemContext.key}-trigger`} aria-controls={`${accordionItemContext.key}-content`} aria-expanded={isOpen} {...props} tabIndex={0} className={styles.accordionItemTrigger} onClick={(e) => {
             e.preventDefault();
             accordionContext?.toggleAccordion(accordionContext?.allowMultiple, accordionItemContext?.key)
         }}>
             {children}
-            <svg style={{
-                transform: isOpen ? 'rotate(135deg)' : 'rotate(0deg)',
-                transition: 'transform 300ms ease-in-out',
-                flexShrink: '0'
-            }} width="15" height="15" strokeLinejoin="round" viewBox="0 0 16 16"><path fillRule="evenodd" clipRule="evenodd" d="M 8.75,1 H7.25 V7.25 H1.5 V8.75 H7.25 V15 H8.75 V8.75 H14.5 V7.25 H8.75 V1.75 Z" fill="currentColor"></path>
+            <svg width="15" height="15" strokeLinejoin="round" viewBox="0 0 16 16"><path fillRule="evenodd" clipRule="evenodd" d="M 8.75,1 H7.25 V7.25 H1.5 V8.75 H7.25 V15 H8.75 V8.75 H14.5 V7.25 H8.75 V1.75 Z" fill="currentColor"></path>
             </svg>
         </summary>
     );

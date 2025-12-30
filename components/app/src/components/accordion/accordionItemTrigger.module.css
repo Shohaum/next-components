@@ -10,6 +10,20 @@
     cursor: pointer;
 }
 
+.accordionItemTrigger:focus-visible {
+    text-decoration: underline;
+}
+
+.accordionItemTrigger>svg:last-of-type {
+    transform: rotate(0deg);
+    transition: transform 300ms ease-in-out;
+    flex-shrink: 0;
+}
+
+.accordionItemTrigger[data-state="open"]>svg:last-of-type {
+    transform: rotate(135deg);
+}
+
 .accordionItemTrigger>svg {
     min-width: 1rem;
 }
