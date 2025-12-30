@@ -1,14 +1,11 @@
 .alertItem {
-    max-width: min(36rem, 90vw);
-    min-width: min(25rem, 90vw);
     display: grid;
     grid-template-columns: 1rem 1fr;
     column-gap: 0.6rem;
     row-gap: 0.3rem;
-    background: var(--gray-100);
     padding-block: 0.75rem;
     padding-inline: 1rem;
-    border: 1px solid var(--gray-300);
+    outline: 1px solid;
     border-radius: 0.6rem;
 }
 

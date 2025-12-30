@@ -1,9 +1,11 @@
+// utilities
+import React from "react";
 // CSS
 import styles from "@/components/alert/alertItem.module.css";
 // types
 import { AlertItemProps } from "@/types/alert/alert";
 
-const AlertItem = ({ type, children }: AlertItemProps) => {
+const AlertItem = React.forwardRef<HTMLDivElement, AlertItemProps>(({ type, children, ...props }, ref) => {
 
     const colorMap = {
         success: "var(--green-900)",
@@ -12,11 +14,13 @@ const AlertItem = ({ type, children }: AlertItemProps) => {
         normal: "var(--text-color)",
     };
 
-    return <div style={{
-        "--alert-color": colorMap[type]
-    } as React.CSSProperties} className={styles.alertItem}>
+    return <div {...props} style={{
+        "--alert-color": colorMap[type], ...props.style
+    } as React.CSSProperties} className={styles.alertItem} ref={ref}>
         {children}
     </div>;
-};
+});
+
+AlertItem.displayName = "AlertItem";
 
 export default AlertItem;

@@ -1,18 +1,18 @@
 import { ReactElement } from "react";
 
-export type AlertProps = {
+export interface AlertProps extends React.HTMLAttributes<HTMLDivElement> {
     children: Array<ReactElement<AlertItemProps>> | ReactElement<AlertItemProps>;
 };
 
-export type AlertDescriptionProps = {
+export interface AlertDescriptionProps extends React.HTMLAttributes<HTMLDivElement> {
     children: React.ReactNode;
 };
 
-export type AlertItemProps = {
+export interface AlertItemProps extends React.HTMLAttributes<HTMLDivElement> {
     type: "success" | "warn" | "failure" | "normal",
     children: React.ReactNode;
 };
 
-export type AlertTitleProps = {
+export interface AlertTitleProps extends React.HTMLAttributes<HTMLDivElement> {
     children: React.ReactNode;
 };
