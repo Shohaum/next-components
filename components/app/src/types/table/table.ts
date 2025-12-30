@@ -24,7 +24,6 @@ export type CaptionProps = {
     children: string;
 };
 
-export type TableProps = {
-    // children: [ReactElement<TableHeadProps>, ReactElement<TableBodyProps>] | ReactElement<TableHeadProps> | ReactElement<TableBodyProps>;
+export interface TableProps extends React.HTMLAttributes<HTMLDivElement> {
     children: React.ReactNode;
 };
