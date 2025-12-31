@@ -1,3 +1,6 @@
+"use client";
+// utilities
+import React from "react";
 // CSS
 import styles from "@/components/avatar/avatarImage.module.css";
 // utilities
@@ -7,13 +10,22 @@ import { useAvatar } from "@/contexts/avatar";
 // types
 import { AvatarImageProps } from "@/types/avatar/avatar";
 
-const AvatarImage = ({
+function mergeRefs<T>(...refs: (React.Ref<T> | undefined)[]) {
+    return (node: T) => {
+        refs.forEach(ref => {
+            if (typeof ref === "function") ref(node);
+            else if (ref) (ref as React.RefObject<T | null>).current = node;
+        });
+    };
+}
+
+const AvatarImage = React.forwardRef<HTMLImageElement, AvatarImageProps>(({
     src = "",
     alt,
     grayScale = false,
     onStatusChange,
     ...props
-}: AvatarImageProps) => {
+}, ref) => {
     const { status, onLoadingStatusChange: setContextStatus } = useAvatar();
     const imgRef = useRef<HTMLImageElement | null>(null);
 
@@ -43,16 +55,18 @@ const AvatarImage = ({
 
     return (
         <img
-            ref={imgRef}
+            {...props}
+            ref={mergeRefs(imgRef, ref)}
             src={src}
             alt={alt || ""}
             className={styles.avatarImage}
             onLoad={onLoad}
             onError={onError}
-            style={{ display: status === "loaded" ? "block" : "none", filter: grayScale ? "grayscale(100%)" : "" }}
-            {...props}
+            style={{ display: status === "loaded" ? "block" : "none", filter: grayScale ? "grayscale(100%)" : "", ...props.style }}
         />
     );
-};
+});
+
+AvatarImage.displayName = "AvatarImage";
 
 export default AvatarImage;

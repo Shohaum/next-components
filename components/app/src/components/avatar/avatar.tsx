@@ -1,3 +1,6 @@
+"use client";
+// utilities
+import React from "react";
 // CSS
 import styles from "./avatar.module.css";
 // contexts
@@ -5,18 +8,24 @@ import { AvatarProvider } from "@/contexts/avatar";
 // types
 import { AvatarProps } from "@/types/avatar/avatar";
 
-const Avatar = ({
+const Avatar = React.forwardRef<HTMLDivElement, AvatarProps>(({
     children,
     width = 0,
     name,
     designation,
     showTooltip = false,
-    style,
-    ...props }: AvatarProps) => {
+    ...props }, ref) => {
 
     return (
         <AvatarProvider>
-            <span style={{ width: width, ...style }} className={styles.avatar} {...props}>
+            <span
+                {...props}
+                ref={ref}
+                style={{ width: width, ...props.style }}
+                className={styles.avatar}
+                role="img"
+                aria-label={name || "avatar"}
+            >
                 {children}
 
                 {showTooltip && (
@@ -28,6 +37,8 @@ const Avatar = ({
             </span>
         </AvatarProvider>
     )
-};
+});
+
+Avatar.displayName = "Avatar";
 
 export default Avatar;

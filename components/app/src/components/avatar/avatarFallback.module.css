@@ -4,9 +4,5 @@
     width: 100%;
     align-items: center;
     justify-content: center;
-    background-color: var(--gray-200);
     border-radius: 9999px;
-    color: var(--gray-700);
-    font-size: var(--size-sm);
-    font-weight: 500;
 }

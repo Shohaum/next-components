@@ -37,5 +37,5 @@
     text-wrap: nowrap;
     font-size: var(--size-xsm);
     color: var(--gray-900);
-    text-align: left;
+    text-align: center;
 }
