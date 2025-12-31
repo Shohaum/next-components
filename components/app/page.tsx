@@ -392,14 +392,14 @@ const App = () => {
                 </div> */}
 
                 {/* AlertDialog */}
-                {/* <div style={{ width: "100%", height: "100%", display: "flex", justifyContent: "center", alignItems: "center" }}>
+                <div style={{ width: "100%", height: "100%", display: "flex", justifyContent: "center", alignItems: "center" }}>
                     <AlertDialog>
 
                         <AlertDialogTrigger style={{ backgroundColor: "var(--matte-background)", outlineColor: "var(--border-color)" }}>
                             Show Dialog
                         </AlertDialogTrigger>
 
-                        <AlertDialogContent style={{ width: "min(32rem, 90%)" }}>
+                        <AlertDialogContent style={{ width: "min(32rem, 90%)", background: "var(--matte-background)" }}>
                             <AlertDialogHeader>
                                 <AlertDialogTitle style={{ fontSize: "var(--size-md)" } as React.CSSProperties}>Are you absolutely sure?</AlertDialogTitle>
 
@@ -411,13 +411,13 @@ const App = () => {
                             </AlertDialogHeader>
 
                             <AlertDialogFooter>
-                                <AlertDialogCancel>Cancel</AlertDialogCancel>
-                                <AlertDialogAction onClick={() => alert("Conitue clicked")}>Continue</AlertDialogAction>
+                                <AlertDialogCancel style={{ backgroundColor: "var(--gray-200)", color: "var(--themed-unmatched-color)" }}>Cancel</AlertDialogCancel>
+                                <AlertDialogAction style={{ backgroundColor: "var(--themed-unmatched-color)", color: "var(--themed-matched-color)" }} onClick={() => alert("Conitue clicked")}>Continue</AlertDialogAction>
                             </AlertDialogFooter>
                         </AlertDialogContent>
 
                     </AlertDialog>
-                </div> */}
+                </div>
 
                 {/* Alert */}
                 {/* <div style={{ maxWidth: "min(36rem, 90vw)", minWidth: "min(25rem, 90vw)" }}>

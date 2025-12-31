@@ -1,6 +1,4 @@
 .alertDialogCancel {
-    background: var(--gray-200);
-    color: var(--themed-unmatched-color);
     padding-block: 0.4rem;
     padding-inline: 1.3rem;
     outline: 1px solid var(--border-color);
