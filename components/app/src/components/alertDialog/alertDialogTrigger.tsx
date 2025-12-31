@@ -1,21 +1,23 @@
+// utilities
+import React from "react";
 // CSS
 import styles from "@/components/alertDialog/alertDialogTrigger.module.css";
 // custom hook
 import { useAlertDialog } from "@/contexts/alertDialog";
 // types
-type AlertDialogTrigger = {
-    children: React.ReactNode;
-}
+import { AlertDialogTriggerProps } from "@/types/alertDialog/alertDialog";
 
-const AlertDialogTrigger = ({ children }: AlertDialogTrigger) => {
+const AlertDialogTrigger = React.forwardRef<HTMLButtonElement, AlertDialogTriggerProps>(({ children, ...props }, ref) => {
 
     const { showAlertDialog } = useAlertDialog();
 
     return (
-        <div data-slot="alert-trigger" role="trigger" onClick={() => showAlertDialog()} className={styles.alertDialogTrigger}>
+        <button tabIndex={0} {...props} ref={ref} data-slot="alert-trigger" onClick={() => showAlertDialog()} className={styles.alertDialogTrigger}>
             {children}
-        </div>
+        </button>
     );
-};
+});
+
+AlertDialogTrigger.displayName = "AlertDialogTrigger";
 
 export default AlertDialogTrigger;

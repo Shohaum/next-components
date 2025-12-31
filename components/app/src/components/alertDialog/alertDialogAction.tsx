@@ -1,17 +1,18 @@
+// utilities
+import React from "react";
 // CSS
 import styles from "@/components/alertDialog/alertDialogAction.module.css"
 // types
-type AlertDialogAction = {
-    onClick?: () => void;
-    children: React.ReactNode;
-}
+import { AlertDialogActionProps } from "@/types/alertDialog/alertDialog";
 
-const AlertDialogAction = ({ onClick = () => { }, children }: AlertDialogAction) => {
+const AlertDialogAction = React.forwardRef<HTMLButtonElement, AlertDialogActionProps>(({ onClick = () => { }, children, ...props }, ref) => {
     return (
-        <button onClick={onClick} type="button" role="button" title="dialog button" name="dialog button" tabIndex={0} className={styles.alertDialogAction}>
+        <button {...props} onClick={onClick} type="button" title="dialog button" name="dialog button" tabIndex={0} className={styles.alertDialogAction} ref={ref}>
             {children}
         </button>
     );
-};
+});
+
+AlertDialogAction.displayName = "AlertDialogAction";
 
 export default AlertDialogAction;

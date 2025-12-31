@@ -1,20 +1,20 @@
-// CSS
-import styles from "@/components/alertDialog/alertDialog.module.css";
+// utilities
+import React from "react";
 // context
 import { AlertDialogProvider } from "@/contexts/alertDialog";
 // types
-type AlertDialog = {
-    children: React.ReactNode;
-}
+import { AlertDialogProps } from "@/types/alertDialog/alertDialog";
 
-const AlertDialog = ({ children }: AlertDialog) => {
+const AlertDialog = React.forwardRef<HTMLDivElement, AlertDialogProps>(({ children, ...props }, ref) => {
     return (
-        <div className={styles.alertDialog}>
+        <div {...props} ref={ref}>
             <AlertDialogProvider>
                 {children}
             </AlertDialogProvider>
         </div>
     );
-};
+});
+
+AlertDialog.displayName = "AlertDialog";
 
 export default AlertDialog;

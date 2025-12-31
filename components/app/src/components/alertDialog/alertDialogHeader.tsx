@@ -1,16 +1,18 @@
+// utilities
+import React from "react";
 // CSS
 import styles from "@/components/alertDialog/alertDialogHeader.module.css";
 // types
-type AlertDialogHeader = {
-    children: React.ReactNode;
-}
+import { AlertDialogHeaderProps } from "@/types/alertDialog/alertDialog";
 
-const AlertDialogHeader = ({ children }: AlertDialogHeader) => {
+const AlertDialogHeader = React.forwardRef<HTMLDivElement, AlertDialogHeaderProps>(({ children, ...props }, ref) => {
     return (
-        <div className={styles.alertDialogHeader}>
+        <div {...props} className={styles.alertDialogHeader} ref={ref}>
             {children}
         </div>
     );
-};
+});
+
+AlertDialogHeader.displayName = "AlertDialogHeader";
 
 export default AlertDialogHeader;

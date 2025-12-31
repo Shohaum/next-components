@@ -1,14 +1,10 @@
 .alertDialogContent {
-    max-width: 32rem;
-    background: var(--themed-matched-color);
-    background: var(--gray-200);
+    background: var(--matte-background);
     margin: auto;
     padding-block: 1.5rem;
     padding-inline: 1.5rem;
-    border: 1px solid var(--gray-400);
+    outline: 1px solid var(--border-color);
     border-radius: 0.8rem;
-    opacity: 0;
-    transition: opacity 300ms ease-in-out;
 }
 
 .alertDialogContent {
@@ -20,10 +16,10 @@
 
         transition:
             display 1s allow-discrete,
-            opacity 200ms allow-discrete;
+            opacity 300ms allow-discrete;
     }
 
-    &::backdrop{
+    &::backdrop {
         background: var(--vaul-overlay-background-end);
     }
 
@@ -32,7 +28,7 @@
 
         &::backdrop {
             backdrop-filter: blur(10px);
-            opacity: 0.4;
+            opacity: 0.6;
         }
     }
 

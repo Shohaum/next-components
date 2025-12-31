@@ -3,13 +3,11 @@ import React, {
     useContext,
     useState,
     useMemo,
+    useRef,
+    useId,
 } from "react";
 
-type AlertDialogContextType = {
-    isOpen: boolean;
-    showAlertDialog: () => void;
-    closeAlertDialog: () => void;
-};
+import { AlertDialogContextType } from "../types/alertDialog/alertDialog";
 
 const AlertDialogContext = createContext<AlertDialogContextType | undefined>(undefined);
 
@@ -20,16 +18,17 @@ type AlertDialogProps = {
 export const AlertDialogProvider = ({ children }: AlertDialogProps) => {
 
     const [isOpen, setIsOpen] = useState(false);
+    const dialogRef = useRef<HTMLDialogElement>(null);
+    const labelId = useId();
+    const descriptionId = useId();
 
     const showAlertDialog = () => {
-        const AlertDialog = document.querySelector<HTMLDialogElement>('[data-slot="alert-dialog"]');
-        AlertDialog?.showModal();
+        dialogRef.current?.showModal();
         setIsOpen(true);
     }
 
     const closeAlertDialog = () => {
-        const AlertDialog = document.querySelector<HTMLDialogElement>('[data-slot="alert-dialog"]');
-        AlertDialog?.close();
+        dialogRef.current?.close();
         setIsOpen(false);
     }
 
@@ -38,8 +37,11 @@ export const AlertDialogProvider = ({ children }: AlertDialogProps) => {
             isOpen,
             showAlertDialog,
             closeAlertDialog,
+            dialogRef,
+            labelId,
+            descriptionId,
         }),
-        [isOpen]
+        [isOpen, labelId, descriptionId]
     );
 
     return (
