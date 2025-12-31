@@ -1,4 +1,4 @@
 export interface AspectRatioProps extends React.HTMLAttributes<HTMLDivElement> {
-    ratio: number
+    ratio?: number
     children: React.ReactNode;
 }
