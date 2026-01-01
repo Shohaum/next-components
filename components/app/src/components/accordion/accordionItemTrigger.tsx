@@ -20,7 +20,7 @@ const AccordionItemTrigger = ({ children, ...props }: AccordionItemTriggerProps)
     const isOpen = accordionContext.openids.includes(accordionItemContext.key);
 
     return (
-        <summary data-state={isOpen ? 'open' : 'closed'} id={`${accordionItemContext.key}-trigger`} aria-controls={`${accordionItemContext.key}-content`} aria-expanded={isOpen} {...props} tabIndex={0} className={styles.accordionItemTrigger} onClick={(e) => {
+        <summary {...props} data-state={isOpen ? 'open' : 'closed'} id={`${accordionItemContext.key}-trigger`} aria-controls={`${accordionItemContext.key}-content`} aria-expanded={isOpen} tabIndex={0} className={`${styles.accordionItemTrigger} ${props.className || ""}`} onClick={(e) => {
             e.preventDefault();
             accordionContext?.toggleAccordion(accordionContext?.allowMultiple, accordionItemContext?.key)
         }}>

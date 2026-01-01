@@ -43,7 +43,7 @@ const Accordion = React.forwardRef<HTMLDivElement, AccordionProps>(({ isMultiple
 
     return (
         <AccordionContext.Provider value={value}>
-            <div {...props} ref={ref} role="presentation" className={styles.accordion}>
+            <div {...props} ref={ref} role="presentation" className={`${styles.accordion} ${props.className || ""}`}>
                 {children}
             </div >
         </AccordionContext.Provider>
