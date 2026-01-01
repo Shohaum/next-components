@@ -12,7 +12,7 @@ const AlertDialogCancel = React.forwardRef<HTMLButtonElement, AlertDialogCancelP
     const { closeAlertDialog } = useAlertDialog();
 
     return (
-        <button {...props} type="button" title="dialog button" name="dialog button" tabIndex={0} className={styles.alertDialogCancel} onClick={closeAlertDialog} ref={ref}>
+        <button {...props} type="button" title="dialog button" name="dialog button" tabIndex={0} className={`${styles.alertDialogCancel} ${props.className || ""}`} onClick={closeAlertDialog} ref={ref}>
             {children}
         </button>
     );

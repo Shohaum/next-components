@@ -7,7 +7,7 @@ import { AlertDialogFooterProps } from "@/types/alertDialog/alertDialog";
 
 const AlertDialogFooter = React.forwardRef<HTMLDivElement, AlertDialogFooterProps>(({ children, ...props }, ref) => {
     return (
-        <div {...props} className={styles.alertDialogFooter} ref={ref}>
+        <div {...props} className={`${styles.alertDialogFooter} ${props.className || ""}`} ref={ref}>
             {children}
         </div>
     );

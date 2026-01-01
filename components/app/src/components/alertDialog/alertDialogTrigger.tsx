@@ -12,7 +12,7 @@ const AlertDialogTrigger = React.forwardRef<HTMLButtonElement, AlertDialogTrigge
     const { showAlertDialog } = useAlertDialog();
 
     return (
-        <button tabIndex={0} {...props} ref={ref} data-slot="alert-trigger" onClick={() => showAlertDialog()} className={styles.alertDialogTrigger}>
+        <button {...props} tabIndex={0} ref={ref} data-slot="alert-trigger" onClick={() => showAlertDialog()} className={`${styles.alertDialogTrigger} ${props.className || ""}`}>
             {children}
         </button>
     );
