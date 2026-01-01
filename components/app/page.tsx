@@ -392,10 +392,10 @@ const App = () => {
                 </div> */}
 
                 {/* AlertDialog */}
-                {/* <div style={{ width: "100%", height: "100%", display: "flex", justifyContent: "center", alignItems: "center" }}>
-                    <AlertDialog>
+                <div style={{ width: "100%", height: "100%", display: "flex", justifyContent: "center", alignItems: "center" }}>
+                    <AlertDialog className="inline">
 
-                        <AlertDialogTrigger style={{ backgroundColor: "var(--matte-background)", outlineColor: "var(--border-color)" }}>
+                        <AlertDialogTrigger style={{ backgroundColor: "var(--matte-background)", fontSize: "var(--size-xsm)", outlineColor: "var(--border-color)" }}>
                             Show Dialog
                         </AlertDialogTrigger>
 
@@ -411,13 +411,13 @@ const App = () => {
                             </AlertDialogHeader>
 
                             <AlertDialogFooter>
-                                <AlertDialogCancel style={{ backgroundColor: "var(--gray-200)", color: "var(--themed-unmatched-color)" }}>Cancel</AlertDialogCancel>
-                                <AlertDialogAction style={{ backgroundColor: "var(--themed-unmatched-color)", color: "var(--themed-matched-color)" }} onClick={() => alert("Conitue clicked")}>Continue</AlertDialogAction>
+                                <AlertDialogCancel style={{ backgroundColor: "var(--gray-200)", fontSize: "var(--size-xsm)", color: "var(--themed-unmatched-color)" }}>Cancel</AlertDialogCancel>
+                                <AlertDialogAction style={{ backgroundColor: "var(--themed-unmatched-color)", fontSize: "var(--size-xsm)", color: "var(--themed-matched-color)" }} onClick={() => alert("Conitue clicked")}>Continue</AlertDialogAction>
                             </AlertDialogFooter>
                         </AlertDialogContent>
 
                     </AlertDialog>
-                </div> */}
+                </div>
 
                 {/* Alert */}
                 {/* <div style={{ maxWidth: "min(36rem, 90vw)", minWidth: "min(25rem, 90vw)" }}>
@@ -574,7 +574,7 @@ const App = () => {
                 </Breadcrumb> */}
 
                 {/* badge */}
-                <div style={{ width: "100%", height: "100%", display: "flex", flexWrap: "wrap", justifyContent: "center", alignItems: "center", gap: "1rem", padding: "1rem" }}>
+                {/* <div style={{ width: "100%", height: "100%", display: "flex", flexWrap: "wrap", justifyContent: "center", alignItems: "center", gap: "1rem", padding: "1rem" }}>
                     <Badge style={{ fontSize: "var(--size-xsm)", fontWeight: 300 }} variant="verified">Verified</Badge>
                     <Badge style={{ fontSize: "var(--size-xsm)", fontWeight: 300 }} variant="primary">Primary</Badge>
                     <Badge style={{ fontSize: "var(--size-xsm)", fontWeight: 300 }} variant="secondary">Secondary</Badge>
@@ -582,7 +582,7 @@ const App = () => {
                     <Badge style={{ fontSize: "var(--size-xsm)", fontWeight: 300 }} variant="danger">Danger</Badge>
                     <Badge style={{ fontSize: "var(--size-xsm)", fontWeight: 300 }} variant="warning">Warning</Badge>
                     <Badge style={{ fontSize: "var(--size-xsm)", fontWeight: 300, backgroundColor: "var(--blue-800)", color: "var(--white-100)" }}>Default</Badge>
-                </div>
+                </div> */}
 
                 {/* counter */}
                 {/* <div style={{ width: "fit-content", height: "1.6rem", background: "var(--themed-matched-color)" }}>
