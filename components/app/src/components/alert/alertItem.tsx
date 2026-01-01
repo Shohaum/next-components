@@ -30,7 +30,7 @@ const AlertItem = React.forwardRef<HTMLDivElement, AlertItemProps>(({ type = "no
 
     return <div {...props} role={roleMap[type]} aria-live={ariaLiveMap[type]} aria-atomic="true" style={{
         "--alert-color": colorMap[type], ...props.style
-    } as React.CSSProperties} className={styles.alertItem} ref={ref}>
+    } as React.CSSProperties} className={`${styles.alertItem} ${props.className || ""}`} ref={ref}>
         {children}
     </div>;
 });
