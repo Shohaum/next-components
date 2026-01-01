@@ -39,7 +39,7 @@ const AccordionItemContent = ({ children, ...props }: AccordionItemContentProps)
     }, [isOpen]);
 
     return (
-        <div id={`${accordionItemContext.key}-content`} aria-labelledby={`${accordionItemContext.key}-trigger`} {...props} ref={contentRef} className={styles.accordionItemContent}>
+        <div {...props} id={`${accordionItemContext.key}-content`} aria-labelledby={`${accordionItemContext.key}-trigger`} ref={contentRef} className={`${styles.accordionItemContent} ${props.className || ""}`}>
             {children}
         </div>
     );
