@@ -500,7 +500,7 @@ const App = () => {
                 </div> */}
 
                 {/* Avatar */}
-                <div style={{ width: "100%", height: "100%", display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '1rem', padding: '1rem' }}>
+                {/* <div style={{ width: "100%", height: "100%", display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '1rem', padding: '1rem' }}>
 
                     <Avatar width={40}>
                         <AvatarImage grayScale={true} src="https://github.com/deno.png" alt="@deno" />
@@ -534,9 +534,9 @@ const App = () => {
                             <AvatarImage src="https://github.com/openai.png" alt="@openai" />
                             <AvatarFallback style={{ backgroundColor: "var(--gray-200)", color: "var(--gray-700)", fontSize: "var(--size-sm)", fontWeight: 500 }}>OA</AvatarFallback>
                         </Avatar>
-
+                        
                     </AvatarCollapsed>
-                </div>
+                </div> */}
 
                 {/* breadcrumb */}
                 {/* <Breadcrumb>
@@ -574,13 +574,15 @@ const App = () => {
                 </Breadcrumb> */}
 
                 {/* badge */}
-                {/* <Badge variant="verified">Verified</Badge>
-                <Badge variant="primary">Primary</Badge>
-                <Badge variant="secondary">Secondary</Badge>
-                <Badge variant="success">Success</Badge>
-                <Badge variant="danger">Danger</Badge>
-                <Badge variant="warning">Warning</Badge>
-                <Badge style={{ backgroundColor: "var(--blue-800)", color: "var(--white-100)" }}>Default</Badge> */}
+                <div style={{ width: "100%", height: "100%", display: "flex", flexWrap: "wrap", justifyContent: "center", alignItems: "center", gap: "1rem", padding: "1rem" }}>
+                    <Badge style={{ fontSize: "var(--size-xsm)", fontWeight: 300 }} variant="verified">Verified</Badge>
+                    <Badge style={{ fontSize: "var(--size-xsm)", fontWeight: 300 }} variant="primary">Primary</Badge>
+                    <Badge style={{ fontSize: "var(--size-xsm)", fontWeight: 300 }} variant="secondary">Secondary</Badge>
+                    <Badge style={{ fontSize: "var(--size-xsm)", fontWeight: 300 }} variant="success">Success</Badge>
+                    <Badge style={{ fontSize: "var(--size-xsm)", fontWeight: 300 }} variant="danger">Danger</Badge>
+                    <Badge style={{ fontSize: "var(--size-xsm)", fontWeight: 300 }} variant="warning">Warning</Badge>
+                    <Badge style={{ fontSize: "var(--size-xsm)", fontWeight: 300, backgroundColor: "var(--blue-800)", color: "var(--white-100)" }}>Default</Badge>
+                </div>
 
                 {/* counter */}
                 {/* <div style={{ width: "fit-content", height: "1.6rem", background: "var(--themed-matched-color)" }}>
