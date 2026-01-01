@@ -392,7 +392,7 @@ const App = () => {
                 </div> */}
 
                 {/* AlertDialog */}
-                <div style={{ width: "100%", height: "100%", display: "flex", justifyContent: "center", alignItems: "center" }}>
+                {/* <div style={{ width: "100%", height: "100%", display: "flex", justifyContent: "center", alignItems: "center" }}>
                     <AlertDialog className="inline">
 
                         <AlertDialogTrigger style={{ backgroundColor: "var(--matte-background)", fontSize: "var(--size-xsm)", outlineColor: "var(--border-color)" }}>
@@ -417,7 +417,7 @@ const App = () => {
                         </AlertDialogContent>
 
                     </AlertDialog>
-                </div>
+                </div> */}
 
                 {/* Alert */}
                 {/* <div style={{ maxWidth: "min(36rem, 90vw)", minWidth: "min(25rem, 90vw)" }}>
@@ -472,7 +472,7 @@ const App = () => {
                 </div>
  */}
                 {/* aspect ratio */}
-                {/* <div style={{ width: "100%", height: "100%", display: "flex", justifyContent: "center", alignItems: "center", gap: "1rem" }}>
+                <div style={{ width: "100%", height: "100%", display: "flex", justifyContent: "center", alignItems: "center", gap: "1rem" }}>
                     <AspectRatio style={{ width: "min(16rem, 90%)", outline: "1px solid var(--border-color)", borderRadius: "0.5rem" }} ratio={9 / 16}>
                         <Image src="https://images.unsplash.com/photo-1588345921523-c2dcdb7f1dcd?w=800&dpr=2&q=80"
                             alt="Photo by Drew Beamer" fill />
@@ -497,7 +497,7 @@ const App = () => {
                         <Image src="https://images.unsplash.com/photo-1588345921523-c2dcdb7f1dcd?w=800&dpr=2&q=80"
                             alt="Photo by Drew Beamer" fill />
                     </AspectRatio>
-                </div> */}
+                </div>
 
                 {/* Avatar */}
                 {/* <div style={{ width: "100%", height: "100%", display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '1rem', padding: '1rem' }}>
