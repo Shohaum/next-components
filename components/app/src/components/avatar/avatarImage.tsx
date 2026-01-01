@@ -59,7 +59,7 @@ const AvatarImage = React.forwardRef<HTMLImageElement, AvatarImageProps>(({
             ref={mergeRefs(imgRef, ref)}
             src={src}
             alt={alt || ""}
-            className={styles.avatarImage}
+            className={`${styles.avatarImage} ${props.className || ""}`}
             onLoad={onLoad}
             onError={onError}
             style={{ display: status === "loaded" ? "block" : "none", filter: grayScale ? "grayscale(100%)" : "", ...props.style }}
