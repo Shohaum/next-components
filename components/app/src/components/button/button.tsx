@@ -1,48 +1,24 @@
-"use client"
+// utilities
+import React from "react";
 // CSS
 import styles from "./button.module.css";
 // types
 import { ButtonProps } from "@/types/button/button";
 
-const Button = ({
-    id = "",
-    title = "",
-    disabled = false,
-    autofocus = false,
-    name = "button",
+const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(({
+    children,
     type = "button",
-    role = "button",
-    dataValue = "",
-    onClick = () => { },
-
-    color = "",
-    background = "",
-    borderColor = "",
-    children }: ButtonProps
+    ...props
+}, ref
 ) => {
 
-    const btnStyles = {
-        ...(color ? { color } : {}),
-        "--btn-bg-color": background || undefined,
-        "--btn-border-color": borderColor || undefined
-    };
-
     return (
-        <button className={styles.button}
-            id={id}
-            title={title} disabled={disabled}
-            onClick={onClick}
-            name={name}
-            type={type}
-            role={role}
-            tabIndex={0}
-            autoFocus={autofocus}
-            data-value={dataValue}
-            style={btnStyles}>
-
+        <button {...props} type={type} ref={ref} className={`${styles.button} ${props.className || ""}`}>
             {children}
         </button>
     )
-};
+});
+
+Button.displayName = "Button";
 
 export default Button;

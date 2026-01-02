@@ -93,6 +93,22 @@ const App = () => {
             {/* line grid */}
             <DottedGrid>
 
+                {/* button  */}
+                <div style={{ width: "100%", height: "100%", display: "flex", justifyContent: "center", alignItems: "center", gap: "0.6rem", flexWrap: "wrap" }}>
+                    <Button onClick={() => alert("clicked")} style={{ background: "var(--matte-background)", fontSize: "var(--size-xsm)", fontWeight: "500" }}>
+                        Hey there
+                    </Button>
+                    <Button onClick={() => alert("clicked")} style={{ background: "var(--matte-background)", fontSize: "var(--size-xsm)", }}>
+                        Upload
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m5 12 7-7 7 7"></path><path d="M12 19V5"></path>
+                        </svg>
+                    </Button>
+                    <Button onClick={() => alert("clicked")} style={{ background: "var(--matte-background)" }}>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m9 18 6-6-6-6"></path>
+                        </svg>
+                    </Button>
+                </div>
+
                 {/* docking station */}
                 {/* <LinkDocker>
 
@@ -539,7 +555,7 @@ const App = () => {
                 </div> */}
 
                 {/* breadcrumb */}
-                <div style={{ width: "100%", height: "100%", display: "flex", justifyContent: "center", alignItems: "center" }}>
+                {/* <div style={{ width: "100%", height: "100%", display: "flex", justifyContent: "center", alignItems: "center" }}>
                     <Breadcrumb style={{ fontSize: "var(--size-xsm)", lineHeight: "1.25rem", letterSpacing: "0.5px" }}>
                         <BreadcrumbList>
                             <BreadcrumbItem>
@@ -573,7 +589,7 @@ const App = () => {
                             </BreadcrumbItem>
                         </BreadcrumbList>
                     </Breadcrumb>
-                </div>
+                </div> */}
 
                 {/* badge */}
                 {/* <div style={{ width: "100%", height: "100%", display: "flex", flexWrap: "wrap", justifyContent: "center", alignItems: "center", gap: "1rem", padding: "1rem" }}>
