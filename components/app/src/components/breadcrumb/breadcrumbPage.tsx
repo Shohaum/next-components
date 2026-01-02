@@ -7,8 +7,6 @@ const BreadcrumbPage = React.forwardRef<HTMLSpanElement, BreadcrumbPageProps>(
         <span
             {...props}
             ref={ref}
-            role="link"
-            aria-disabled="true"
             aria-current="page"
             className={`${props.className || ""}`}
         >
