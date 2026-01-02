@@ -539,8 +539,8 @@ const App = () => {
                 </div> */}
 
                 {/* breadcrumb */}
-                <div style={{width: "100%", height: "100%", display: "flex", justifyContent: "center", alignItems: "center"}}>
-                    <Breadcrumb style={{fontSize: "var(--size-xsm)", lineHeight: "1.25rem", letterSpacing: "0.5px"}}>
+                <div style={{ width: "100%", height: "100%", display: "flex", justifyContent: "center", alignItems: "center" }}>
+                    <Breadcrumb style={{ fontSize: "var(--size-xsm)", lineHeight: "1.25rem", letterSpacing: "0.5px" }}>
                         <BreadcrumbList>
                             <BreadcrumbItem>
                                 <BreadcrumbLink asChild>
