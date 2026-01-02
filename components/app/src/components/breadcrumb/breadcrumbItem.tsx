@@ -7,7 +7,7 @@ import { BreadcrumbItemProps } from "@/types/breadcrumb/breadcrumb";
 const BreadcrumbItem = React.forwardRef<HTMLLIElement, BreadcrumbItemProps>(
     ({ children, ...props }, ref) => {
         return (
-            <li ref={ref} className={styles.breadcrumbItem} {...props}>
+            <li {...props} ref={ref} className={`${styles.breadcrumbItem} ${props.className || ""}`}>
                 {children}
             </li>
         )
