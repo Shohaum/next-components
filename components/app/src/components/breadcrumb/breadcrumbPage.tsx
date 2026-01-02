@@ -1,6 +1,4 @@
 import React from "react";
-// CSS
-import styles from "./breadcrumbPage.module.css";
 // types
 import { BreadcrumbPageProps } from "@/types/breadcrumb/breadcrumb";
 
@@ -12,7 +10,7 @@ const BreadcrumbPage = React.forwardRef<HTMLSpanElement, BreadcrumbPageProps>(
             role="link"
             aria-disabled="true"
             aria-current="page"
-            className={`${styles.breadcrumbPage} ${props.className || ""}`}
+            className={`${props.className || ""}`}
         >
             {children}
         </span>
