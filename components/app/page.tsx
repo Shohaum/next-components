@@ -472,7 +472,7 @@ const App = () => {
                 </div>
  */}
                 {/* aspect ratio */}
-                <div style={{ width: "100%", height: "100%", display: "flex", justifyContent: "center", alignItems: "center", gap: "1rem" }}>
+                {/* <div style={{ width: "100%", height: "100%", display: "flex", justifyContent: "center", alignItems: "center", gap: "1rem" }}>
                     <AspectRatio style={{ width: "min(16rem, 90%)", outline: "1px solid var(--border-color)", borderRadius: "0.5rem" }} ratio={9 / 16}>
                         <Image src="https://images.unsplash.com/photo-1588345921523-c2dcdb7f1dcd?w=800&dpr=2&q=80"
                             alt="Photo by Drew Beamer" fill />
@@ -497,7 +497,7 @@ const App = () => {
                         <Image src="https://images.unsplash.com/photo-1588345921523-c2dcdb7f1dcd?w=800&dpr=2&q=80"
                             alt="Photo by Drew Beamer" fill />
                     </AspectRatio>
-                </div>
+                </div> */}
 
                 {/* Avatar */}
                 {/* <div style={{ width: "100%", height: "100%", display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '1rem', padding: '1rem' }}>
@@ -539,39 +539,41 @@ const App = () => {
                 </div> */}
 
                 {/* breadcrumb */}
-                {/* <Breadcrumb>
-                    <BreadcrumbList>
-                        <BreadcrumbItem>
-                            <BreadcrumbLink asChild>
-                                <Link href="/">Home</Link>
-                            </BreadcrumbLink>
-                        </BreadcrumbItem>
-                        <BreadcrumbSeparator />
-                        <BreadcrumbItem>
-                            <Dropdown>
-                                <DropdownTrigger>
-                                    <BreadcrumbEllipsis />
-                                    <span className="sr-only">Toggle menu</span>
-                                </DropdownTrigger>
-                                <DropdownContent>
-                                    <DropdownItem>Documentation</DropdownItem>
-                                    <DropdownItem>Themes</DropdownItem>
-                                    <DropdownItem>GitHub</DropdownItem>
-                                </DropdownContent>
-                            </Dropdown>
-                        </BreadcrumbItem>
-                        <BreadcrumbSeparator />
-                        <BreadcrumbItem>
-                            <BreadcrumbLink asChild>
-                                <Link href="/docs/components">Components</Link>
-                            </BreadcrumbLink>
-                        </BreadcrumbItem>
-                        <BreadcrumbSeparator />
-                        <BreadcrumbItem>
-                            <BreadcrumbPage>Breadcrumb</BreadcrumbPage>
-                        </BreadcrumbItem>
-                    </BreadcrumbList>
-                </Breadcrumb> */}
+                <div style={{width: "100%", height: "100%", display: "flex", justifyContent: "center", alignItems: "center"}}>
+                    <Breadcrumb style={{fontSize: "var(--size-xsm)", lineHeight: "1.25rem", letterSpacing: "0.5px"}}>
+                        <BreadcrumbList>
+                            <BreadcrumbItem>
+                                <BreadcrumbLink asChild>
+                                    <Link href="/">Home</Link>
+                                </BreadcrumbLink>
+                            </BreadcrumbItem>
+                            <BreadcrumbSeparator />
+                            <BreadcrumbItem>
+                                <Dropdown>
+                                    <DropdownTrigger>
+                                        <BreadcrumbEllipsis />
+                                        <span className="sr-only">Toggle menu</span>
+                                    </DropdownTrigger>
+                                    <DropdownContent>
+                                        <DropdownItem>Documentation</DropdownItem>
+                                        <DropdownItem>Themes</DropdownItem>
+                                        <DropdownItem>GitHub</DropdownItem>
+                                    </DropdownContent>
+                                </Dropdown>
+                            </BreadcrumbItem>
+                            <BreadcrumbSeparator />
+                            <BreadcrumbItem>
+                                <BreadcrumbLink asChild>
+                                    <Link href="/docs/components">Components</Link>
+                                </BreadcrumbLink>
+                            </BreadcrumbItem>
+                            <BreadcrumbSeparator />
+                            <BreadcrumbItem>
+                                <BreadcrumbPage>Breadcrumb</BreadcrumbPage>
+                            </BreadcrumbItem>
+                        </BreadcrumbList>
+                    </Breadcrumb>
+                </div>
 
                 {/* badge */}
                 {/* <div style={{ width: "100%", height: "100%", display: "flex", flexWrap: "wrap", justifyContent: "center", alignItems: "center", gap: "1rem", padding: "1rem" }}>

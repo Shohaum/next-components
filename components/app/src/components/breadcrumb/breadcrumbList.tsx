@@ -7,7 +7,7 @@ import { BreadcrumbListProps } from "@/types/breadcrumb/breadcrumb";
 const BreadcrumbList = React.forwardRef<HTMLOListElement, BreadcrumbListProps>(
     ({ children, ...props }, ref) => {
 
-        return (<ol ref={ref} className={styles.breadcrumbList} {...props}>{children}</ol>)
+        return (<ol {...props} ref={ref} className={`${styles.breadcrumbList} ${props.className || ""}`}>{children}</ol>)
     }
 );
 BreadcrumbList.displayName = "BreadcrumbList";
