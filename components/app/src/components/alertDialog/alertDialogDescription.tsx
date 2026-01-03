@@ -7,12 +7,12 @@ import { useAlertDialog } from "@/contexts/alertDialog";
 // types
 import { AlertDialogDescriptionProps } from "@/types/alertDialog/alertDialog";
 
-const AlertDialogDescription = React.forwardRef<HTMLParagraphElement, AlertDialogDescriptionProps>(({ children, ...props }, ref) => {
+const AlertDialogDescription = React.forwardRef<HTMLDivElement, AlertDialogDescriptionProps>(({ children, ...props }, ref) => {
     const { descriptionId } = useAlertDialog();
     return (
-        <p {...props} id={descriptionId} className={`${styles.alertDialogDescription} ${props.className || ""}`} ref={ref}>
+        <div {...props} id={descriptionId} className={`${styles.alertDialogDescription} ${props.className || ""}`} ref={ref}>
             {children}
-        </p>
+        </div>
     );
 });
 
