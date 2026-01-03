@@ -24,7 +24,7 @@ export interface AlertDialogContentProps extends React.HTMLAttributes<HTMLDialog
     children: React.ReactNode;
 };
 
-export interface AlertDialogDescriptionProps extends React.HTMLAttributes<HTMLParagraphElement> {
+export interface AlertDialogDescriptionProps extends React.HTMLAttributes<HTMLDivElement> {
     children: React.ReactNode;
 };
 

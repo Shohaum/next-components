@@ -1,4 +1,17 @@
-.alertDialogDescription{
+.alertDialogDescription>* {
     font-size: var(--size-sm);
     color: var(--gray-900);
+}
+
+.alertDialogDescription>ul,
+.alertDialogDescription>ol {
+    margin-block-start: 0.3rem;
+}
+
+.alertDialogDescription>ul>li,
+.alertDialogDescription>ol>li {
+    color: var(--gray-900);
+    list-style-position: inside;
+    list-style-type: disc;
+    line-height: 1.3rem;
 }
