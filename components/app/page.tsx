@@ -94,19 +94,25 @@ const App = () => {
             <DottedGrid>
 
                 {/* button  */}
-                <div style={{ width: "100%", height: "100%", display: "flex", justifyContent: "center", alignItems: "center", gap: "0.6rem", flexWrap: "wrap" }}>
-                    <Button onClick={() => alert("clicked")} style={{ background: "var(--matte-background)", fontSize: "var(--size-xsm)", fontWeight: "500" }}>
-                        Hey there
-                    </Button>
-                    <Button onClick={() => alert("clicked")} style={{ background: "var(--matte-background)", fontSize: "var(--size-xsm)", }}>
-                        Upload
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m5 12 7-7 7 7"></path><path d="M12 19V5"></path>
-                        </svg>
-                    </Button>
-                    <Button onClick={() => alert("clicked")} style={{ background: "var(--matte-background)" }}>
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m9 18 6-6-6-6"></path>
-                        </svg>
-                    </Button>
+                <div style={{ display: "flex", justifyContent: "center", alignItems: "center", gap: "0.6rem", flexWrap: "wrap" }}>
+                    <div style={{ width: "fit-content", height: "fit-content" }}>
+                        <Button onClick={() => alert("clicked")} style={{ background: "var(--matte-background)", fontSize: "var(--size-xsm)", fontWeight: "500" }}>
+                            Hey there
+                        </Button>
+                    </div>
+                    <div style={{ width: "fit-content", height: "fit-content" }}>
+                        <Button onClick={() => alert("clicked")} style={{ background: "var(--matte-background)", fontSize: "var(--size-xsm)", }}>
+                            Upload
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m5 12 7-7 7 7"></path><path d="M12 19V5"></path>
+                            </svg>
+                        </Button>
+                    </div>
+                    <div style={{ width: "fit-content", height: "fit-content" }}>
+                        <Button onClick={() => alert("clicked")} style={{ background: "var(--matte-background)" }}>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m9 18 6-6-6-6"></path>
+                            </svg>
+                        </Button>
+                    </div>
                 </div>
 
                 {/* docking station */}
@@ -587,7 +593,7 @@ const App = () => {
                 </div> */}
 
                 {/* breadcrumb */}
-                <div style={{ width: "fit-content", height: "fit-content", display: "flex", justifyContent: "center", alignItems: "center" }}>
+                {/* <div style={{ width: "fit-content", height: "fit-content" }}>
                     <Breadcrumb style={{ fontSize: "var(--size-xsm)", lineHeight: "1.25rem", letterSpacing: "0.5px" }}>
                         <BreadcrumbList>
                             <BreadcrumbItem>
