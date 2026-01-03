@@ -345,7 +345,7 @@ const App = () => {
 
                 {/* Accordion */}
                 {/* we might not pass an id to the accordion item but we encourage to pass an id to the accordion item */}
-                {/* <div style={{ width: "min(21.25rem, 90vw)" }}>
+                <div style={{ width: "min(21.25rem, 90vw)" }}>
                     <Accordion style={{ textWrap: "pretty" }} isMultiple={false}>
                         <AccordionItem style={{ background: "var(--matte-background)", "--borderColor": "var(--border-color)" } as React.CSSProperties}>
                             <AccordionItemTrigger style={{ textWrap: "pretty", fontSize: "var(--size-sm)" }}>
@@ -415,7 +415,7 @@ const App = () => {
                             </AccordionItemContent>
                         </AccordionItem>
                     </Accordion>
-                </div> */}
+                </div>
 
                 {/* AlertDialog */}
                 {/* <div style={{ width: "fit-content", height: "fit-content", display: "flex", justifyContent: "center", alignItems: "center", gap: "1rem" }}>
@@ -659,9 +659,9 @@ const App = () => {
                 </div> */}
 
                 {/* counter */}
-                <div style={{ width: "fit-content", height: "1.6rem", background: "var(--themed-matched-color)" }}>
+                {/* <div style={{ width: "fit-content", height: "1.6rem", background: "var(--themed-matched-color)" }}>
                     <Counter min={-10} max={10} step={1} value={counterValue} onValueChange={(value) => setCounterValue(value)} />
-                </div>
+                </div> */}
             </DottedGrid>
 
         </main >
