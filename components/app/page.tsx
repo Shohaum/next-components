@@ -51,8 +51,6 @@ import BreadcrumbList from "@/components/breadcrumb/breadcrumbList";
 import Breadcrumb from "@/components/breadcrumb/breadcrumb";
 import BreadcrumbSeparator from "@/components/breadcrumb/breadcrumbSeparator";
 
-import Badge from "@/components/badge/badge";
-
 import Counter from "@/components/counter/counter";
 
 const App = () => {
@@ -354,31 +352,6 @@ const App = () => {
                             </BreadcrumbItem>
                         </BreadcrumbList>
                     </Breadcrumb>
-                </div> */}
-
-                {/* badge */}
-                {/* <div style={{ display: "flex", justifyContent: "center", alignItems: "center", flexWrap: "wrap", gap: "1rem" }}>
-                    <div style={{ width: "fit-content", height: "fit-content" }}>
-                        <Badge style={{ fontSize: "var(--size-xsm)", fontWeight: 300 }} variant="verified">Verified</Badge>
-                    </div>
-                    <div style={{ width: "fit-content", height: "fit-content" }}>
-                        <Badge style={{ fontSize: "var(--size-xsm)", fontWeight: 300 }} variant="primary">Primary</Badge>
-                    </div>
-                    <div style={{ width: "fit-content", height: "fit-content" }}>
-                        <Badge style={{ fontSize: "var(--size-xsm)", fontWeight: 300 }} variant="secondary">Secondary</Badge>
-                    </div>
-                    <div style={{ width: "fit-content", height: "fit-content" }}>
-                        <Badge style={{ fontSize: "var(--size-xsm)", fontWeight: 300 }} variant="success">Success</Badge>
-                    </div>
-                    <div style={{ width: "fit-content", height: "fit-content" }}>
-                        <Badge style={{ fontSize: "var(--size-xsm)", fontWeight: 300 }} variant="danger">Danger</Badge>
-                    </div>
-                    <div style={{ width: "fit-content", height: "fit-content" }}>
-                        <Badge style={{ fontSize: "var(--size-xsm)", fontWeight: 300 }} variant="warning">Warning</Badge>
-                    </div>
-                    <div style={{ width: "fit-content", height: "fit-content" }}>
-                        <Badge style={{ fontSize: "var(--size-xsm)", fontWeight: 300, backgroundColor: "var(--blue-800)", color: "var(--white-100)" }}>Default</Badge>
-                    </div>
                 </div> */}
 
                 {/* counter */}
