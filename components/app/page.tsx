@@ -319,7 +319,7 @@ const App = () => {
 
                 {/* Accordion */}
                 {/* we might not pass an id to the accordion item but we encourage to pass an id to the accordion item */}
-                <div style={{ width: "min(21.25rem, 90vw)" }}>
+                {/* <div style={{ width: "min(21.25rem, 90vw)" }}>
                     <Accordion style={{ textWrap: "pretty" }} isMultiple={false}>
                         <AccordionItem style={{ background: "var(--matte-background)", "--borderColor": "var(--border-color)" } as React.CSSProperties}>
                             <AccordionItemTrigger style={{ textWrap: "pretty", fontSize: "var(--size-sm)" }}>
@@ -389,7 +389,7 @@ const App = () => {
                             </AccordionItemContent>
                         </AccordionItem>
                     </Accordion>
-                </div>
+                </div> */}
 
                 {/* AlertDialog */}
                 <div style={{ width: "fit-content", height: "fit-content", display: "flex", justifyContent: "center", alignItems: "center", gap: "1rem" }}>
@@ -445,10 +445,10 @@ const App = () => {
                         </AlertDialogContent>
 
                     </AlertDialog>
-                </div> */}
+                </div>
 
                 {/* Alert */}
-                <div style={{ maxWidth: "min(36rem, 90vw)", minWidth: "min(25rem, 90vw)" }}>
+                {/* <div style={{ maxWidth: "min(36rem, 90vw)", minWidth: "min(25rem, 90vw)" }}>
                     <Alert>
                         <AlertItem style={{ background: "var(--matte-background)", outlineColor: "var(--border-color)" } as React.CSSProperties} type="normal">
                             <svg width="16" height="16" strokeLinejoin="round" viewBox="0 0 16 16">
@@ -497,7 +497,7 @@ const App = () => {
                             </AlertDescription>
                         </AlertItem>
                     </Alert>
-                </div>
+                </div> */}
 
                 {/* aspect ratio */}
                 {/* <div style={{ width: "100%", height: "100%", display: "flex", justifyContent: "center", alignItems: "center", gap: "1rem" }}>
