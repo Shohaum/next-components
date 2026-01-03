@@ -571,7 +571,7 @@ const App = () => {
                 </div> */}
 
                 {/* breadcrumb */}
-                {/* <div style={{ width: "100%", height: "100%", display: "flex", justifyContent: "center", alignItems: "center" }}>
+                <div style={{ width: "fit-content", height: "fit-content", display: "flex", justifyContent: "center", alignItems: "center" }}>
                     <Breadcrumb style={{ fontSize: "var(--size-xsm)", lineHeight: "1.25rem", letterSpacing: "0.5px" }}>
                         <BreadcrumbList>
                             <BreadcrumbItem>
@@ -605,10 +605,10 @@ const App = () => {
                             </BreadcrumbItem>
                         </BreadcrumbList>
                     </Breadcrumb>
-                </div> */}
+                </div>
 
                 {/* badge */}
-                <div style={{ display: "flex", justifyContent: "center", alignItems: "center", flexWrap: "wrap", gap: "1rem" }}>
+                {/* <div style={{ display: "flex", justifyContent: "center", alignItems: "center", flexWrap: "wrap", gap: "1rem" }}>
                     <div style={{ width: "fit-content", height: "fit-content" }}>
                         <Badge style={{ fontSize: "var(--size-xsm)", fontWeight: 300 }} variant="verified">Verified</Badge>
                     </div>
@@ -630,7 +630,7 @@ const App = () => {
                     <div style={{ width: "fit-content", height: "fit-content" }}>
                         <Badge style={{ fontSize: "var(--size-xsm)", fontWeight: 300, backgroundColor: "var(--blue-800)", color: "var(--white-100)" }}>Default</Badge>
                     </div>
-                </div>
+                </div> */}
 
                 {/* counter */}
                 {/* <div style={{ width: "fit-content", height: "1.6rem", background: "var(--themed-matched-color)" }}>
