@@ -11,9 +11,9 @@ const BreadcrumbLink = React.forwardRef<HTMLAnchorElement, BreadcrumbLinkProps>(
 
         return (
             <Comp
-                ref={ref}
-                className={styles.breadcrumbLink}
                 {...props}
+                ref={ref}
+                className={`${styles.breadcrumbLink} ${props.className || ""}`}
             />
         );
     }

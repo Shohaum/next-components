@@ -8,7 +8,7 @@ import { useAvatar } from "@/contexts/avatar";
 // types
 import { AvatarFallbackProps } from "@/types/avatar/avatar";
 
-const AvatarFallback = React.forwardRef<HTMLDivElement, AvatarFallbackProps>(({ children, className, ...props }, ref) => {
+const AvatarFallback = React.forwardRef<HTMLDivElement, AvatarFallbackProps>(({ children, ...props }, ref) => {
     const { status } = useAvatar();
 
     if (status === 'loaded') {
@@ -16,7 +16,7 @@ const AvatarFallback = React.forwardRef<HTMLDivElement, AvatarFallbackProps>(({ 
     }
 
     return (
-        <span ref={ref} className={styles.avatarFallback} role="presentation" {...props}>
+        <span {...props} ref={ref} className={`${styles.avatarFallback} ${props.className || ""}`} role="presentation">
             {children}
         </span>
     )

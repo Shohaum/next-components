@@ -6,7 +6,7 @@ import { BreadcrumbProps } from "@/types/breadcrumb/breadcrumb";
 
 const Breadcrumb = React.forwardRef<HTMLElement, BreadcrumbProps>(({ children, ...props }, ref) => {
     return (
-        <nav {...props} ref={ref} role="navigation" aria-label="breadcrumb" className={styles.breadcrumb}>
+        <nav {...props} ref={ref} role="navigation" aria-label="breadcrumb" className={`${styles.breadcrumb} ${props.className || ""}`}>
             {children}
         </nav>
     );
