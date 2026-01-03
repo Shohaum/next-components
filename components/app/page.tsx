@@ -319,7 +319,7 @@ const App = () => {
 
                 {/* Accordion */}
                 {/* we might not pass an id to the accordion item but we encourage to pass an id to the accordion item */}
-                {/* <div style={{ width: "min(21.25rem, 90vw)" }}>
+                <div style={{ width: "min(21.25rem, 90vw)" }}>
                     <Accordion style={{ textWrap: "pretty" }} isMultiple={false}>
                         <AccordionItem style={{ background: "var(--matte-background)", "--borderColor": "var(--border-color)" } as React.CSSProperties}>
                             <AccordionItemTrigger style={{ textWrap: "pretty", fontSize: "var(--size-sm)" }}>
@@ -389,7 +389,7 @@ const App = () => {
                             </AccordionItemContent>
                         </AccordionItem>
                     </Accordion>
-                </div> */}
+                </div>
 
                 {/* AlertDialog */}
                 {/* <div style={{ width: "100%", height: "100%", display: "flex", justifyContent: "center", alignItems: "center" }}>
@@ -539,7 +539,7 @@ const App = () => {
                 </div> */}
 
                 {/* breadcrumb */}
-                <div style={{ width: "100%", height: "100%", display: "flex", justifyContent: "center", alignItems: "center" }}>
+                {/* <div style={{ width: "100%", height: "100%", display: "flex", justifyContent: "center", alignItems: "center" }}>
                     <Breadcrumb style={{ fontSize: "var(--size-xsm)", lineHeight: "1.25rem", letterSpacing: "0.5px" }}>
                         <BreadcrumbList>
                             <BreadcrumbItem>
@@ -573,7 +573,7 @@ const App = () => {
                             </BreadcrumbItem>
                         </BreadcrumbList>
                     </Breadcrumb>
-                </div>
+                </div> */}
 
                 {/* badge */}
                 {/* <div style={{ width: "100%", height: "100%", display: "flex", flexWrap: "wrap", justifyContent: "center", alignItems: "center", gap: "1rem", padding: "1rem" }}>
