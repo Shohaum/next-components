@@ -20,8 +20,13 @@ function mergeRefs<T>(...refs: (React.Ref<T> | undefined)[]) {
 const AlertDialogContent = React.forwardRef<HTMLDialogElement, AlertDialogContentProps>(({ children, ...props }, ref) => {
     const { isOpen, dialogRef, labelId, descriptionId } = useAlertDialog();
 
+    const mergedRef = React.useMemo(
+        () => mergeRefs<HTMLDialogElement>(ref, dialogRef),
+        [ref]
+    );
+
     return (
-        <dialog {...props} aria-labelledby={labelId} aria-describedby={descriptionId} role="alertdialog" open={isOpen} data-slot="alert-dialog" className={`${styles.alertDialogContent} ${props.className || ""}`} ref={mergeRefs(ref, dialogRef)}>
+        <dialog {...props} aria-labelledby={labelId} aria-describedby={descriptionId} role="alertdialog" open={isOpen} data-slot="alert-dialog" className={`${styles.alertDialogContent} ${props.className || ""}`} ref={mergedRef}>
             {children}
         </dialog>
     );
