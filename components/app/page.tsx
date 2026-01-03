@@ -574,14 +574,28 @@ const App = () => {
                 </Breadcrumb> */}
 
                 {/* badge */}
-                <div style={{ width: "100%", height: "100%", display: "flex", flexWrap: "wrap", justifyContent: "center", alignItems: "center", gap: "1rem", padding: "1rem" }}>
-                    <Badge style={{ fontSize: "var(--size-xsm)", fontWeight: 300 }} variant="verified">Verified</Badge>
-                    <Badge style={{ fontSize: "var(--size-xsm)", fontWeight: 300 }} variant="primary">Primary</Badge>
-                    <Badge style={{ fontSize: "var(--size-xsm)", fontWeight: 300 }} variant="secondary">Secondary</Badge>
-                    <Badge style={{ fontSize: "var(--size-xsm)", fontWeight: 300 }} variant="success">Success</Badge>
-                    <Badge style={{ fontSize: "var(--size-xsm)", fontWeight: 300 }} variant="danger">Danger</Badge>
-                    <Badge style={{ fontSize: "var(--size-xsm)", fontWeight: 300 }} variant="warning">Warning</Badge>
-                    <Badge style={{ fontSize: "var(--size-xsm)", fontWeight: 300, backgroundColor: "var(--blue-800)", color: "var(--white-100)" }}>Default</Badge>
+                <div style={{ display: "flex", justifyContent: "center", alignItems: "center", flexWrap: "wrap", gap: "1rem" }}>
+                    <div style={{ width: "fit-content", height: "fit-content" }}>
+                        <Badge style={{ fontSize: "var(--size-xsm)", fontWeight: 300 }} variant="verified">Verified</Badge>
+                    </div>
+                    <div style={{ width: "fit-content", height: "fit-content" }}>
+                        <Badge style={{ fontSize: "var(--size-xsm)", fontWeight: 300 }} variant="primary">Primary</Badge>
+                    </div>
+                    <div style={{ width: "fit-content", height: "fit-content" }}>
+                        <Badge style={{ fontSize: "var(--size-xsm)", fontWeight: 300 }} variant="secondary">Secondary</Badge>
+                    </div>
+                    <div style={{ width: "fit-content", height: "fit-content" }}>
+                        <Badge style={{ fontSize: "var(--size-xsm)", fontWeight: 300 }} variant="success">Success</Badge>
+                    </div>
+                    <div style={{ width: "fit-content", height: "fit-content" }}>
+                        <Badge style={{ fontSize: "var(--size-xsm)", fontWeight: 300 }} variant="danger">Danger</Badge>
+                    </div>
+                    <div style={{ width: "fit-content", height: "fit-content" }}>
+                        <Badge style={{ fontSize: "var(--size-xsm)", fontWeight: 300 }} variant="warning">Warning</Badge>
+                    </div>
+                    <div style={{ width: "fit-content", height: "fit-content" }}>
+                        <Badge style={{ fontSize: "var(--size-xsm)", fontWeight: 300, backgroundColor: "var(--blue-800)", color: "var(--white-100)" }}>Default</Badge>
+                    </div>
                 </div>
 
                 {/* counter */}
