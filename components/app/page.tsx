@@ -1,4 +1,6 @@
 "use client"
+// utilities
+import { useState } from "react";
 // CSS
 import styles from "./app.module.css";
 // Component imports
@@ -74,6 +76,8 @@ import Counter from "@/components/counter/counter";
 
 const App = () => {
 
+    const [counterValue, setCounterValue] = useState(0);
+
     const dropdownIcon =
         <svg width="13" height="13" stroke="currentColor" strokeWidth={0} fill="currentColor" strokeLinejoin="round" viewBox="0 0 16 16">
             <path fillRule="evenodd" clipRule="evenodd" d="M4.53032 2.96966L3.99999 2.43933L2.93933 3.49999L3.46966 4.03032L7.29289 7.85355C7.68341 8.24407 8.31658 8.24407 8.7071 7.85354L12.5303 4.03032L13.0607 3.49999L12 2.43933L11.4697 2.96966L7.99999 6.43933L4.53032 2.96966ZM4.53032 7.96966L3.99999 7.43933L2.93933 8.49999L3.46966 9.03032L7.29289 12.8535C7.68341 13.2441 8.31658 13.2441 8.7071 12.8535L12.5303 9.03032L13.0607 8.49999L12 7.43933L11.4697 7.96966L7.99999 11.4393L4.53032 7.96966Z" fill="currentColor">
@@ -87,6 +91,28 @@ const App = () => {
             <Theme />
             {/* line grid */}
             <DottedGrid>
+
+                {/* button  */}
+                {/* <div style={{ display: "flex", justifyContent: "center", alignItems: "center", gap: "0.6rem", flexWrap: "wrap" }}>
+                    <div style={{ width: "fit-content", height: "fit-content" }}>
+                        <Button onClick={() => alert("clicked")} style={{ background: "var(--matte-background)", fontSize: "var(--size-xsm)", fontWeight: "500" }}>
+                            Hey there
+                        </Button>
+                    </div>
+                    <div style={{ width: "fit-content", height: "fit-content" }}>
+                        <Button onClick={() => alert("clicked")} style={{ background: "var(--matte-background)", fontSize: "var(--size-xsm)", }}>
+                            Upload
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m5 12 7-7 7 7"></path><path d="M12 19V5"></path>
+                            </svg>
+                        </Button>
+                    </div>
+                    <div style={{ width: "fit-content", height: "fit-content" }}>
+                        <Button onClick={() => alert("clicked")} style={{ background: "var(--matte-background)" }}>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m9 18 6-6-6-6"></path>
+                            </svg>
+                        </Button>
+                    </div>
+                </div> */}
 
                 {/* docking station */}
                 {/* <LinkDocker>
@@ -312,86 +338,12 @@ const App = () => {
                     </Table>
                 </div> */}
 
-                {/* Accordion */}
-                {/* we might not pass an id to the accordion item but we encourage to pass an id to the accordion item */}
-                {/* <div style={{ width: "min(21.25rem, 90vw)" }}>
-                    <Accordion style={{ textWrap: "pretty" }} isMultiple={false}>
-                        <AccordionItem style={{ background: "var(--matte-background)", "--borderColor": "var(--border-color)" } as React.CSSProperties}>
-                            <AccordionItemTrigger style={{ textWrap: "pretty", fontSize: "var(--size-sm)" }}>
-                                <svg width={19} height={19} viewBox="0 0 24 24" fill="currentColor">
-                                    <path fillRule="evenodd" d="M12 6.75a5.25 5.25 0 0 1 6.775-5.025.75.75 0 0 1 .313 1.248l-3.32 3.319c.063.475.276.934.641 1.299.365.365.824.578 1.3.64l3.318-3.319a.75.75 0 0 1 1.248.313 5.25 5.25 0 0 1-5.472 6.756c-1.018-.086-1.87.1-2.309.634L7.344 21.3A3.298 3.298 0 1 1 2.7 16.657l8.684-7.151c.533-.44.72-1.291.634-2.309A5.342 5.342 0 0 1 12 6.75ZM4.117 19.125a.75.75 0 0 1 .75-.75h.008a.75.75 0 0 1 .75.75v.008a.75.75 0 0 1-.75.75h-.008a.75.75 0 0 1-.75-.75v-.008Z" clipRule="evenodd"></path>
-                                </svg>
-                                What is design engineering?
-                            </AccordionItemTrigger>
-                            <AccordionItemContent style={{ fontSize: "var(--size-xsm)", lineHeight: "1.2rem" } as React.CSSProperties}>
-                                <p>
-                                    Where design intuition meets code execution — enabling you to see UI problems and build solutions from the ground up.
-                                </p>
-                            </AccordionItemContent>
-                        </AccordionItem>
-
-                        <AccordionItem style={{ background: "var(--matte-background)", "--borderColor": "var(--border-color)" } as React.CSSProperties} id="item-2">
-                            <AccordionItemTrigger style={{ textWrap: "pretty", fontSize: "var(--size-sm)" }}>
-                                <svg width={19} height={19} viewBox="0 0 24 24" fill="currentColor">
-                                    <path d="M11.25 5.337c0-.355-.186-.676-.401-.959a1.647 1.647 0 0 1-.349-1.003c0-1.036 1.007-1.875 2.25-1.875S15 2.34 15 3.375c0 .369-.128.713-.349 1.003-.215.283-.401.604-.401.959 0 .332.278.598.61.578 1.91-.114 3.79-.342 5.632-.676a.75.75 0 0 1 .878.645 49.17 49.17 0 0 1 .376 5.452.657.657 0 0 1-.66.664c-.354 0-.675-.186-.958-.401a1.647 1.647 0 0 0-1.003-.349c-1.035 0-1.875 1.007-1.875 2.25s.84 2.25 1.875 2.25c.369 0 .713-.128 1.003-.349.283-.215.604-.401.959-.401.31 0 .557.262.534.571a48.774 48.774 0 0 1-.595 4.845.75.75 0 0 1-.61.61c-1.82.317-3.673.533-5.555.642a.58.58 0 0 1-.611-.581c0-.355.186-.676.401-.959.221-.29.349-.634.349-1.003 0-1.035-1.007-1.875-2.25-1.875s-2.25.84-2.25 1.875c0 .369.128.713.349 1.003.215.283.401.604.401.959a.641.641 0 0 1-.658.643 49.118 49.118 0 0 1-4.708-.36.75.75 0 0 1-.645-.878c.293-1.614.504-3.257.629-4.924A.53.53 0 0 0 5.337 15c-.355 0-.676.186-.959.401-.29.221-.634.349-1.003.349-1.036 0-1.875-1.007-1.875-2.25s.84-2.25 1.875-2.25c.369 0 .713.128 1.003.349.283.215.604.401.959.401a.656.656 0 0 0 .659-.663 47.703 47.703 0 0 0-.31-4.82.75.75 0 0 1 .83-.832c1.343.155 2.703.254 4.077.294a.64.64 0 0 0 .657-.642Z"></path>
-                                </svg>
-                                What is the craft of UI?
-                            </AccordionItemTrigger>
-                            <AccordionItemContent style={{ fontSize: "var(--size-xsm)", lineHeight: "1.2rem" }}>
-                                <p>
-                                    A course about building things *well* — mastering the web platform so you’re not limited by tools or libraries.
-                                </p>
-                            </AccordionItemContent>
-                        </AccordionItem>
-
-                        <AccordionItem style={{ background: "var(--matte-background)", "--borderColor": "var(--border-color)" } as React.CSSProperties} id="item-3">
-                            <AccordionItemTrigger style={{ textWrap: "pretty", fontSize: "var(--size-sm)" }}>
-                                <svg width={19} height={19} viewBox="0 0 24 24" fill="currentColor" >
-                                    <path fillRule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25ZM6.262 6.072a8.25 8.25 0 1 0 10.562-.766 4.5 4.5 0 0 1-1.318 1.357L14.25 7.5l.165.33a.809.809 0 0 1-1.086 1.085l-.604-.302a1.125 1.125 0 0 0-1.298.21l-.132.131c-.439.44-.439 1.152 0 1.591l.296.296c.256.257.622.374.98.314l1.17-.195c.323-.054.654.036.905.245l1.33 1.108c.32.267.46.694.358 1.1a8.7 8.7 0 0 1-2.288 4.04l-.723.724a1.125 1.125 0 0 1-1.298.21l-.153-.076a1.125 1.125 0 0 1-.622-1.006v-1.089c0-.298-.119-.585-.33-.796l-1.347-1.347a1.125 1.125 0 0 1-.21-1.298L9.75 12l-1.64-1.64a6 6 0 0 1-1.676-3.257l-.172-1.03Z" clipRule="evenodd"></path>
-                                </svg>
-                                Why focus on the web platform?
-                            </AccordionItemTrigger>
-                            <AccordionItemContent style={{ fontSize: "var(--size-xsm)", lineHeight: "1.2rem" }}>
-                                <p>
-                                    Because when you work *with* the web — not fight it — you unlock performance, accessibility, and durability that last.
-                                </p>
-                            </AccordionItemContent>
-                        </AccordionItem>
-                        <AccordionItem style={{ background: "var(--matte-background)", "--borderColor": "var(--border-color)" } as React.CSSProperties} id="item-4">
-                            <AccordionItemTrigger style={{ textWrap: "pretty", fontSize: "var(--size-sm)" }}>
-                                <svg width={19} height={19} viewBox="0 0 24 24" fill="currentColor">
-                                    <path fillRule="evenodd" d="M9 4.5a.75.75 0 0 1 .721.544l.813 2.846a3.75 3.75 0 0 0 2.576 2.576l2.846.813a.75.75 0 0 1 0 1.442l-2.846.813a3.75 3.75 0 0 0-2.576 2.576l-.813 2.846a.75.75 0 0 1-1.442 0l-.813-2.846a3.75 3.75 0 0 0-2.576-2.576l-2.846-.813a.75.75 0 0 1 0-1.442l2.846-.813A3.75 3.75 0 0 0 7.466 7.89l.813-2.846A.75.75 0 0 1 9 4.5ZM18 1.5a.75.75 0 0 1 .728.568l.258 1.036c.236.94.97 1.674 1.91 1.91l1.036.258a.75.75 0 0 1 0 1.456l-1.036.258c-.94.236-1.674.97-1.91 1.91l-.258 1.036a.75.75 0 0 1-1.456 0l-.258-1.036a2.625 2.625 0 0 0-1.91-1.91l-1.036-.258a.75.75 0 0 1 0-1.456l1.036-.258a2.625 2.625 0 0 0 1.91-1.91l.258-1.036A.75.75 0 0 1 18 1.5ZM16.5 15a.75.75 0 0 1 .712.513l.394 1.183c.15.447.5.799.948.948l1.183.395a.75.75 0 0 1 0 1.422l-1.183.395c-.447.15-.799.5-.948.948l-.395 1.183a.75.75 0 0 1-1.422 0l-.395-1.183a1.5 1.5 0 0 0-.948-.948l-1.183-.395a.75.75 0 0 1 0-1.422l1.183-.395c.447-.15.799-.5.948-.948l.395-1.183A.75.75 0 0 1 16.5 15Z" clipRule="evenodd"></path>
-                                </svg>
-                                Why does craft matter?
-                            </AccordionItemTrigger>
-                            <AccordionItemContent style={{ fontSize: "var(--size-xsm)", lineHeight: "1.2rem" }}>
-                                <p>
-                                    Because it’s more than making something work — it’s making something feel right: inclusive, resilient, and scalable.
-                                </p>
-                            </AccordionItemContent>
-                        </AccordionItem>
-                        <AccordionItem style={{ background: "var(--matte-background)", "--borderColor": "var(--border-color)" } as React.CSSProperties} id="item-5">
-                            <AccordionItemTrigger style={{ textWrap: "pretty", fontSize: "var(--size-sm)" }}>
-                                <svg width={19} height={19} viewBox="0 0 24 24" fill="currentColor">
-                                    <path d="M4.5 6.375a4.125 4.125 0 1 1 8.25 0 4.125 4.125 0 0 1-8.25 0ZM14.25 8.625a3.375 3.375 0 1 1 6.75 0 3.375 3.375 0 0 1-6.75 0ZM1.5 19.125a7.125 7.125 0 0 1 14.25 0v.003l-.001.119a.75.75 0 0 1-.363.63 13.067 13.067 0 0 1-6.761 1.873c-2.472 0-4.786-.684-6.76-1.873a.75.75 0 0 1-.364-.63l-.001-.122ZM17.25 19.128l-.001.144a2.25 2.25 0 0 1-.233.96 10.088 10.088 0 0 0 5.06-1.01.75.75 0 0 0 .42-.643 4.875 4.875 0 0 0-6.957-4.611 8.586 8.586 0 0 1 1.71 5.157v.003Z"></path>
-                                </svg>
-                                Why does craft matter?
-                            </AccordionItemTrigger>
-                            <AccordionItemContent style={{ fontSize: "var(--size-xsm)", lineHeight: "1.2rem" }}>
-                                <p>
-                                    Because it’s more than making something work — it’s making something feel right: inclusive, resilient, and scalable.
-                                </p>
-                            </AccordionItemContent>
-                        </AccordionItem>
-                    </Accordion>
-                </div> */}
-
                 {/* AlertDialog */}
-                {/* <div style={{ width: "100%", height: "100%", display: "flex", justifyContent: "center", alignItems: "center" }}>
+                {/* <div style={{ width: "fit-content", height: "fit-content", display: "flex", justifyContent: "center", alignItems: "center", gap: "1rem" }}>
                     <AlertDialog>
 
-                        <AlertDialogTrigger style={{ backgroundColor: "var(--matte-background)", outlineColor: "var(--border-color)" }}>
-                            Show Dialog
+                        <AlertDialogTrigger style={{ backgroundColor: "var(--matte-background)", fontSize: "var(--size-xsm)", outlineColor: "var(--border-color)" }}>
+                            Dialog 1
                         </AlertDialogTrigger>
 
                         <AlertDialogContent style={{ width: "min(32rem, 90%)", background: "var(--matte-background)" }}>
@@ -399,15 +351,43 @@ const App = () => {
                                 <AlertDialogTitle style={{ fontSize: "var(--size-md)" } as React.CSSProperties}>Are you absolutely sure?</AlertDialogTitle>
 
                                 <AlertDialogDescription>
-                                    This action cannot be undone. This will permanently delete your
-                                    account and remove your data from our servers.
+                                    <p>Please verify your billing information</p>
+                                    <ul>
+                                        <li>Check your card details</li>
+                                        <li>Ensure sufficient funds</li>
+                                        <li>Verify billing address</li>
+                                    </ul>
                                 </AlertDialogDescription>
 
                             </AlertDialogHeader>
 
                             <AlertDialogFooter>
-                                <AlertDialogCancel style={{ backgroundColor: "var(--gray-200)", color: "var(--themed-unmatched-color)" }}>Cancel</AlertDialogCancel>
-                                <AlertDialogAction style={{ backgroundColor: "var(--themed-unmatched-color)", color: "var(--themed-matched-color)" }} onClick={() => alert("Conitue clicked")}>Continue</AlertDialogAction>
+                                <AlertDialogCancel style={{ backgroundColor: "var(--gray-200)", fontSize: "var(--size-xsm)", color: "var(--themed-unmatched-color)" }}>Cancel</AlertDialogCancel>
+                                <AlertDialogAction style={{ backgroundColor: "var(--themed-unmatched-color)", fontSize: "var(--size-xsm)", color: "var(--themed-matched-color)" }} onClick={() => alert("Conitue clicked")}>Continue</AlertDialogAction>
+                            </AlertDialogFooter>
+                        </AlertDialogContent>
+
+                    </AlertDialog>
+
+                    <AlertDialog>
+
+                        <AlertDialogTrigger style={{ backgroundColor: "var(--matte-background)", fontSize: "var(--size-xsm)", outlineColor: "var(--border-color)" }}>
+                            Dialog 2
+                        </AlertDialogTrigger>
+
+                        <AlertDialogContent style={{ width: "min(32rem, 90%)", background: "var(--matte-background)" }}>
+                            <AlertDialogHeader>
+                                <AlertDialogTitle style={{ fontSize: "var(--size-md)" } as React.CSSProperties}>Are you absolutely sure?</AlertDialogTitle>
+
+                                <AlertDialogDescription>
+                                    <p>This action cannot be undone. This will permanently delete your account and remove your data from our servers.</p>
+                                </AlertDialogDescription>
+
+                            </AlertDialogHeader>
+
+                            <AlertDialogFooter>
+                                <AlertDialogCancel style={{ backgroundColor: "var(--gray-200)", fontSize: "var(--size-xsm)", color: "var(--themed-unmatched-color)" }}>Cancel</AlertDialogCancel>
+                                <AlertDialogAction style={{ backgroundColor: "var(--themed-unmatched-color)", fontSize: "var(--size-xsm)", color: "var(--themed-matched-color)" }} onClick={() => alert("Conitue clicked")}>Continue</AlertDialogAction>
                             </AlertDialogFooter>
                         </AlertDialogContent>
 
@@ -443,93 +423,113 @@ const App = () => {
                 </div> */}
 
                 {/* Avatar */}
-                {/* <div style={{ width: "100%", height: "100%", display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '1rem', padding: '1rem' }}>
+                {/* <div style={{ width: "fit-content", height: "fit-content", display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '1rem' }}>
 
-                    <Avatar width={40}>
-                        <AvatarImage grayScale={true} src="https://github.com/deno.png" alt="@deno" />
-                        <AvatarFallback style={{ backgroundColor: "var(--gray-200)", color: "var(--gray-700)", fontSize: "var(--size-sm)", fontWeight: 500 }}>DN</AvatarFallback>
-                    </Avatar>
+                    <div style={{ display: 'flex', gap: '0.5rem' }}>
+                        <Avatar width={36}>
+                            <AvatarImage grayScale={true} src="https://github.com/deno.png" alt="@deno" />
+                            <AvatarFallback style={{ backgroundColor: "var(--gray-200)", color: "var(--gray-700)", fontSize: "var(--size-sm)", fontWeight: 500 }}>DN</AvatarFallback>
+                        </Avatar>
 
-                    <Avatar showTooltip={true} name="Vercel" designation="SDE - Vercel" width={50}>
-                        <AvatarImage src="https://github.com/vercel.png" alt="@vercel" />
-                        <AvatarFallback style={{ backgroundColor: "var(--gray-200)", color: "var(--gray-700)", fontSize: "var(--size-sm)", fontWeight: 500 }}>MB</AvatarFallback>
-                    </Avatar>
+                        <Avatar showTooltip={true} name="Vercel" designation="SDE - Vercel" width={36}>
+                            <AvatarImage src="https://github.com/vercel.png" alt="@vercel" />
+                            <AvatarFallback style={{ backgroundColor: "var(--gray-200)", color: "var(--gray-700)", fontSize: "var(--size-sm)", fontWeight: 500 }}>MB</AvatarFallback>
+                        </Avatar>
+                    </div>
 
-                    <AvatarCollapsed>
+                    <div>
+                        <AvatarCollapsed>
 
-                        <Avatar showTooltip={true} name="Shohaum" designation="Founder - Shohaum" width={40}>
-                            <AvatarImage src="https://github.com/shohaum.png" alt="@shohaum" />
-                            <AvatarFallback style={{ backgroundColor: "var(--gray-200)", color: "var(--gray-700)", fontSize: "var(--size-sm)", fontWeight: 500 }}>SS</AvatarFallback>
-                        </Avatar>
-                        <Avatar showTooltip={true} name="Redis" designation="Redis Developer" width={40}>
-                            <AvatarImage src="https://github.com/redis.png" alt="@redis" />
-                            <AvatarFallback style={{ backgroundColor: "var(--gray-200)", color: "var(--gray-700)", fontSize: "var(--size-sm)", fontWeight: 500 }}>RR</AvatarFallback>
-                        </Avatar>
-                        <Avatar showTooltip={true} name="Excalidraw" designation="Product Lead - Excalidraw" width={40}>
-                            <AvatarImage src="https://github.com/excalidraw.png" alt="@excalidraw" />
-                            <AvatarFallback style={{ backgroundColor: "var(--gray-200)", color: "var(--gray-700)", fontSize: "var(--size-sm)", fontWeight: 500 }}>ER</AvatarFallback>
-                        </Avatar>
-                        <Avatar showTooltip={true} name="Evil Rabbit" designation="Product Designer" width={40}>
-                            <AvatarImage src="https://github.com/evilrabbit.png" alt="@evilrabbit" />
-                            <AvatarFallback style={{ backgroundColor: "var(--gray-200)", color: "var(--gray-700)", fontSize: "var(--size-sm)", fontWeight: 500 }}>ER</AvatarFallback>
-                        </Avatar>
-                        <Avatar showTooltip={true} name="OpenAI" designation="Founder - OpenAI" width={40}>
-                            <AvatarImage src="https://github.com/openai.png" alt="@openai" />
-                            <AvatarFallback style={{ backgroundColor: "var(--gray-200)", color: "var(--gray-700)", fontSize: "var(--size-sm)", fontWeight: 500 }}>OA</AvatarFallback>
-                        </Avatar>
-                        
-                    </AvatarCollapsed>
+                            <Avatar showTooltip={true} name="Shohaum" designation="Founder - Shohaum" width={36}>
+                                <AvatarImage src="https://github.com/shohaum.png" alt="@shohaum" />
+                                <AvatarFallback style={{ backgroundColor: "var(--gray-200)", color: "var(--gray-700)", fontSize: "var(--size-sm)", fontWeight: 500 }}>SS</AvatarFallback>
+                            </Avatar>
+                            <Avatar showTooltip={true} name="Redis" designation="Redis Developer" width={36}>
+                                <AvatarImage src="https://github.com/redis.png" alt="@redis" />
+                                <AvatarFallback style={{ backgroundColor: "var(--gray-200)", color: "var(--gray-700)", fontSize: "var(--size-sm)", fontWeight: 500 }}>RR</AvatarFallback>
+                            </Avatar>
+                            <Avatar showTooltip={true} name="Excalidraw" designation="Product Lead - Excalidraw" width={36}>
+                                <AvatarImage src="https://github.com/excalidraw.png" alt="@excalidraw" />
+                                <AvatarFallback style={{ backgroundColor: "var(--gray-200)", color: "var(--gray-700)", fontSize: "var(--size-sm)", fontWeight: 500 }}>ER</AvatarFallback>
+                            </Avatar>
+                            <Avatar showTooltip={true} name="Evil Rabbit" designation="Product Designer" width={36}>
+                                <AvatarImage src="https://github.com/evilrabbit.png" alt="@evilrabbit" />
+                                <AvatarFallback style={{ backgroundColor: "var(--gray-200)", color: "var(--gray-700)", fontSize: "var(--size-sm)", fontWeight: 500 }}>ER</AvatarFallback>
+                            </Avatar>
+                            <Avatar showTooltip={true} name="OpenAI" designation="Founder - OpenAI" width={36}>
+                                <AvatarImage src="https://github.com/openai.png" alt="@openai" />
+                                <AvatarFallback style={{ backgroundColor: "var(--gray-200)", color: "var(--gray-700)", fontSize: "var(--size-sm)", fontWeight: 500 }}>OA</AvatarFallback>
+                            </Avatar>
+
+                        </AvatarCollapsed>
+                    </div>
                 </div> */}
 
                 {/* breadcrumb */}
-                {/* <Breadcrumb>
-                    <BreadcrumbList>
-                        <BreadcrumbItem>
-                            <BreadcrumbLink asChild>
-                                <Link href="/">Home</Link>
-                            </BreadcrumbLink>
-                        </BreadcrumbItem>
-                        <BreadcrumbSeparator />
-                        <BreadcrumbItem>
-                            <Dropdown>
-                                <DropdownTrigger>
-                                    <BreadcrumbEllipsis />
-                                    <span className="sr-only">Toggle menu</span>
-                                </DropdownTrigger>
-                                <DropdownContent>
-                                    <DropdownItem>Documentation</DropdownItem>
-                                    <DropdownItem>Themes</DropdownItem>
-                                    <DropdownItem>GitHub</DropdownItem>
-                                </DropdownContent>
-                            </Dropdown>
-                        </BreadcrumbItem>
-                        <BreadcrumbSeparator />
-                        <BreadcrumbItem>
-                            <BreadcrumbLink asChild>
-                                <Link href="/docs/components">Components</Link>
-                            </BreadcrumbLink>
-                        </BreadcrumbItem>
-                        <BreadcrumbSeparator />
-                        <BreadcrumbItem>
-                            <BreadcrumbPage>Breadcrumb</BreadcrumbPage>
-                        </BreadcrumbItem>
-                    </BreadcrumbList>
-                </Breadcrumb> */}
+                {/* <div style={{ width: "fit-content", height: "fit-content" }}>
+                    <Breadcrumb style={{ fontSize: "var(--size-xsm)", lineHeight: "1.25rem", letterSpacing: "0.5px" }}>
+                        <BreadcrumbList>
+                            <BreadcrumbItem>
+                                <BreadcrumbLink asChild>
+                                    <Link href="/">Home</Link>
+                                </BreadcrumbLink>
+                            </BreadcrumbItem>
+                            <BreadcrumbSeparator />
+                            <BreadcrumbItem>
+                                <Dropdown>
+                                    <DropdownTrigger>
+                                        <BreadcrumbEllipsis />
+                                        <span className="sr-only">Toggle menu</span>
+                                    </DropdownTrigger>
+                                    <DropdownContent>
+                                        <DropdownItem>Documentation</DropdownItem>
+                                        <DropdownItem>Themes</DropdownItem>
+                                        <DropdownItem>GitHub</DropdownItem>
+                                    </DropdownContent>
+                                </Dropdown>
+                            </BreadcrumbItem>
+                            <BreadcrumbSeparator />
+                            <BreadcrumbItem>
+                                <BreadcrumbLink asChild>
+                                    <Link href="/docs/components">Components</Link>
+                                </BreadcrumbLink>
+                            </BreadcrumbItem>
+                            <BreadcrumbSeparator />
+                            <BreadcrumbItem>
+                                <BreadcrumbPage>Breadcrumb</BreadcrumbPage>
+                            </BreadcrumbItem>
+                        </BreadcrumbList>
+                    </Breadcrumb>
+                </div> */}
 
                 {/* badge */}
-                {/* <div style={{ width: "100%", height: "100%", display: "flex", flexWrap: "wrap", justifyContent: "center", alignItems: "center", gap: "1rem", padding: "1rem" }}>
-                    <Badge style={{ fontSize: "var(--size-xsm)", fontWeight: 300 }} variant="verified">Verified</Badge>
-                    <Badge style={{ fontSize: "var(--size-xsm)", fontWeight: 300 }} variant="primary">Primary</Badge>
-                    <Badge style={{ fontSize: "var(--size-xsm)", fontWeight: 300 }} variant="secondary">Secondary</Badge>
-                    <Badge style={{ fontSize: "var(--size-xsm)", fontWeight: 300 }} variant="success">Success</Badge>
-                    <Badge style={{ fontSize: "var(--size-xsm)", fontWeight: 300 }} variant="danger">Danger</Badge>
-                    <Badge style={{ fontSize: "var(--size-xsm)", fontWeight: 300 }} variant="warning">Warning</Badge>
-                    <Badge style={{ fontSize: "var(--size-xsm)", fontWeight: 300, backgroundColor: "var(--blue-800)", color: "var(--white-100)" }}>Default</Badge>
+                {/* <div style={{ display: "flex", justifyContent: "center", alignItems: "center", flexWrap: "wrap", gap: "1rem" }}>
+                    <div style={{ width: "fit-content", height: "fit-content" }}>
+                        <Badge style={{ fontSize: "var(--size-xsm)", fontWeight: 300 }} variant="verified">Verified</Badge>
+                    </div>
+                    <div style={{ width: "fit-content", height: "fit-content" }}>
+                        <Badge style={{ fontSize: "var(--size-xsm)", fontWeight: 300 }} variant="primary">Primary</Badge>
+                    </div>
+                    <div style={{ width: "fit-content", height: "fit-content" }}>
+                        <Badge style={{ fontSize: "var(--size-xsm)", fontWeight: 300 }} variant="secondary">Secondary</Badge>
+                    </div>
+                    <div style={{ width: "fit-content", height: "fit-content" }}>
+                        <Badge style={{ fontSize: "var(--size-xsm)", fontWeight: 300 }} variant="success">Success</Badge>
+                    </div>
+                    <div style={{ width: "fit-content", height: "fit-content" }}>
+                        <Badge style={{ fontSize: "var(--size-xsm)", fontWeight: 300 }} variant="danger">Danger</Badge>
+                    </div>
+                    <div style={{ width: "fit-content", height: "fit-content" }}>
+                        <Badge style={{ fontSize: "var(--size-xsm)", fontWeight: 300 }} variant="warning">Warning</Badge>
+                    </div>
+                    <div style={{ width: "fit-content", height: "fit-content" }}>
+                        <Badge style={{ fontSize: "var(--size-xsm)", fontWeight: 300, backgroundColor: "var(--blue-800)", color: "var(--white-100)" }}>Default</Badge>
+                    </div>
                 </div> */}
 
                 {/* counter */}
                 {/* <div style={{ width: "fit-content", height: "1.6rem", background: "var(--themed-matched-color)" }}>
-                    <Counter min={-10} max={13} step={1} value={0} />
+                    <Counter min={-10} max={10} step={1} value={counterValue} onValueChange={(value) => setCounterValue(value)} />
                 </div> */}
             </DottedGrid>
 

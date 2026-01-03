@@ -22,7 +22,7 @@ const Avatar = React.forwardRef<HTMLDivElement, AvatarProps>(({
                 {...props}
                 ref={ref}
                 style={{ width: width, ...props.style }}
-                className={styles.avatar}
+                className={`${styles.avatar} ${props.className || ""}`}
                 role="img"
                 aria-label={name || "avatar"}
             >
