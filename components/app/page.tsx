@@ -1,6 +1,4 @@
 "use client"
-// utilities
-import { useState } from "react";
 // CSS
 import styles from "./app.module.css";
 // Component imports
@@ -19,7 +17,6 @@ import DropdownSubTrigger from "@/components/dropdown/dropdownSubTrigger";
 import DropdownPortal from "@/components/dropdown/dropdownPortal";
 import DropdownSubContent from "@/components/dropdown/dropdownSubContent";
 
-import Button from "@/components/button/button";
 import LinkDocker from "@/components/dockingStation/linkDocker";
 import DockItem from "@/components/dockingStation/dockItem";
 import Link from "next/link";
@@ -43,11 +40,7 @@ import AccordionItemContent from "@/components/accordion/accordionItemContent";
 
 import { data } from "@/data/data";
 
-import Counter from "@/components/counter/counter";
-
 const App = () => {
-
-    const [counterValue, setCounterValue] = useState(0);
 
     const dropdownIcon =
         <svg width="13" height="13" stroke="currentColor" strokeWidth={0} fill="currentColor" strokeLinejoin="round" viewBox="0 0 16 16">
@@ -309,10 +302,6 @@ const App = () => {
                     </Table>
                 </div> */}
 
-                {/* counter */}
-                {/* <div style={{ width: "fit-content", height: "1.6rem", background: "var(--themed-matched-color)" }}>
-                    <Counter min={-10} max={10} step={1} value={counterValue} onValueChange={(value) => setCounterValue(value)} />
-                </div> */}
             </DottedGrid>
 
         </main >
