@@ -420,7 +420,7 @@ const App = () => {
                 </div> */}
 
                 {/* Alert */}
-                {/* <div style={{ maxWidth: "min(36rem, 90vw)", minWidth: "min(25rem, 90vw)" }}>
+                <div style={{ maxWidth: "min(36rem, 90vw)", minWidth: "min(25rem, 90vw)" }}>
                     <Alert>
                         <AlertItem style={{ background: "var(--matte-background)", outlineColor: "var(--border-color)" } as React.CSSProperties} type="normal">
                             <svg width="16" height="16" strokeLinejoin="round" viewBox="0 0 16 16">
@@ -470,7 +470,7 @@ const App = () => {
                         </AlertItem>
                     </Alert>
                 </div>
- */}
+
                 {/* aspect ratio */}
                 {/* <div style={{ width: "100%", height: "100%", display: "flex", justifyContent: "center", alignItems: "center", gap: "1rem" }}>
                     <AspectRatio style={{ width: "min(16rem, 90%)", outline: "1px solid var(--border-color)", borderRadius: "0.5rem" }} ratio={9 / 16}>
