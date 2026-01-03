@@ -1,3 +1,4 @@
+"use client"
 // utilities
 import { useContext, useRef, useLayoutEffect } from "react";
 // CSS
