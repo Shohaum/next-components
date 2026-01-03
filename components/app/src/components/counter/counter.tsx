@@ -102,7 +102,7 @@ const Counter = React.forwardRef<HTMLDivElement, CounterProps>(({ min = 0, max =
             aria-valuemin={min}
             aria-valuemax={max}
             aria-valuenow={clampedValue}
-            className={styles.counter}>
+            className={`${styles.counter} ${props.className || ""}`}>
             <button disabled={clampedValue === min} onClick={handleDecrement} type="button" aria-label="decrement value">
                 <svg width="12" height="12" strokeLinejoin="round" viewBox="0 0 16 16"><path fillRule="evenodd" clipRule="evenodd" d="M2 7.25H2.75H13.25H14V8.75H13.25H2.75H2V7.25Z" fill="currentColor"></path>
                 </svg>
