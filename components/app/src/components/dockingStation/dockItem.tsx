@@ -2,31 +2,29 @@
 // CSS
 import styles from "./dockItem.module.css";
 // utilities
-import { useCallback } from "react";
+import React, { useCallback } from "react";
 // contexts
-import { useDockingStation } from "@/contexts/docking-station";
+import { useDockingStation } from "@/contexts/dockingStation";
 // types
-import { DockItemProps } from "@/types/docking-station/dockingStation";
+import { DockItemProps } from "@/types/dockingStation/dockingStation";
 
-const DockItem = ({ slug, children }: DockItemProps
+const DockItem = React.forwardRef<HTMLLIElement, DockItemProps>(({ slug, children, ...props }, ref
 ) => {
 
     const { setMagnetStyles } = useDockingStation();
 
     const onMouseEnter = useCallback(
-        (e: MouseEvent) => {
+        (e: React.MouseEvent<HTMLLIElement>) => {
             if (window.innerWidth >= 768) {
 
-                const targetElement = e?.target as HTMLElement;
+                const targetElement = e?.currentTarget;
 
                 const { width, height } = targetElement.getBoundingClientRect();
 
                 setMagnetStyles((prev) => ({
                     ...prev,
-                    // do not use the height, as it will not always interpret the height of the element properly
-                    // better to use a fixed height in the magnet component, which is height 100%
                     width: `${width}px`,
-                    // height: `${height}px`,
+                    height: `${height}px`,
                     transform: `translate(${targetElement.offsetLeft}px, ${targetElement.offsetTop}px)`,
                     opacity: 1,
                 }));
@@ -36,10 +34,12 @@ const DockItem = ({ slug, children }: DockItemProps
     );
 
     return (
-        <li data-slot={slug} onMouseEnter={onMouseEnter} className={`${styles.dockItem}`}>
+        <li {...props} ref={ref} data-slot={slug} onMouseEnter={onMouseEnter} className={`${styles.dockItem} ${props.className || ""}`}>
             {children}
         </li>
     );
-};
+});
+
+DockItem.displayName = "DockItem";
 
 export default DockItem;
