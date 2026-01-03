@@ -1,3 +1,4 @@
+"use client"
 // utilities
 import React from "react";
 // CSS
