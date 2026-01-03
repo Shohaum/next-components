@@ -1,3 +1,4 @@
+"use client"
 import React, {
     createContext,
     useContext,
@@ -5,9 +6,16 @@ import React, {
     useMemo,
 } from "react";
 
+type MagnetStyles = {
+    width?: string;
+    height?: string;
+    opacity?: number | string;
+    transform?: string;
+};
+
 type DockingStationContextType = {
-    magnetStyles: {};
-    setMagnetStyles: React.Dispatch<React.SetStateAction<{}>>;
+    magnetStyles: MagnetStyles;
+    setMagnetStyles: React.Dispatch<React.SetStateAction<MagnetStyles>>;
 };
 
 const DockingStationContext = createContext<DockingStationContextType | undefined>(undefined);
@@ -18,7 +26,7 @@ type DockingStationProps = {
 
 export const DockingStationProvider = ({ children }: DockingStationProps) => {
 
-    const [magnetStyles, setMagnetStyles] = useState<{}>({ width: String, opacity: String, transform: String });
+    const [magnetStyles, setMagnetStyles] = useState<MagnetStyles>({ width: "0px", opacity: 0, transform: "translate(0px, 0px)" });
 
     const value = useMemo(
         () => ({

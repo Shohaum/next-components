@@ -2,14 +2,23 @@
 // CSS
 import styles from "./dockList.module.css";
 // utilities
-import { useEffect, useCallback, useRef } from "react";
+import React, { useEffect, useCallback, useRef } from "react";
 import { usePathname } from "next/navigation";
 // contexts
-import { useDockingStation } from "@/contexts/docking-station";
+import { useDockingStation } from "@/contexts/dockingStation";
 // types
-import { DockListProps } from "@/types/docking-station/dockingStation";
+import { DockListProps } from "@/types/dockingStation/dockingStation";
 
-const DockList = ({ children }: DockListProps
+function mergeRefs<T>(...refs: (React.Ref<T> | undefined)[]) {
+    return (node: T) => {
+        refs.forEach(ref => {
+            if (typeof ref === "function") ref(node);
+            else if (ref) (ref as React.RefObject<T | null>).current = node;
+        });
+    };
+}
+
+const DockList = React.forwardRef<HTMLUListElement, DockListProps>(({ children, ...props }, ref
 ) => {
     const pathname = usePathname();
 
@@ -18,6 +27,11 @@ const DockList = ({ children }: DockListProps
     const dockerListRef = useRef<HTMLUListElement | null>(null);
 
     const { setMagnetStyles } = useDockingStation();
+
+    const mergedRef = React.useMemo(
+        () => mergeRefs<HTMLUListElement>(ref, dockerListRef),
+        [ref]
+    );
 
     const syncMagnetToActive = useCallback(() => {
         if (dockerListRef.current) {
@@ -60,11 +74,13 @@ const DockList = ({ children }: DockListProps
     }, []);
 
     return (
-        <ul ref={dockerListRef} onMouseMove={onMouseMove} onMouseLeave={onMouseLeaveParent} className={styles.dockerList}>
+        <ul {...props} ref={mergedRef} onMouseMove={onMouseMove} onMouseLeave={onMouseLeaveParent} className={`${styles.dockerList} ${props.className || ""}`}>
             {children}
         </ul>
 
     );
-};
+});
+
+DockList.displayName = "DockList";
 
 export default DockList;
