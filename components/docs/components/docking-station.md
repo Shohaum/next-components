@@ -98,4 +98,4 @@ export default function Navigate() {
 
 -   **Path Matching**: The `DockList` matches the `slug` prop of a `DockItem` against `pathname.split("/").pop()`. Ensure your slugs match exactly with the last segment of your URLs.
 -   **Z-Indexing**: The `Magnet` component has a `z-index: -9999` to ensure it stays behind the text/icons of the `DockItem`s.
--   **Dimensions**: The `DockItem` calculates width dynamically, but the `Magnet` relies on `height: 100%` from CSS. Ensure the parent container has a defined height if you encounter layout issues.
+-   **Dimensions**: The `DockItem` calculates width dynamically.
