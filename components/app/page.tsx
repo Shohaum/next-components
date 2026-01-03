@@ -420,7 +420,7 @@ const App = () => {
                 </div> */}
 
                 {/* Alert */}
-                {/* <div style={{ maxWidth: "min(36rem, 90vw)", minWidth: "min(25rem, 90vw)" }}>
+                <div style={{ maxWidth: "min(36rem, 90vw)", minWidth: "min(25rem, 90vw)" }}>
                     <Alert>
                         <AlertItem style={{ background: "var(--matte-background)", outlineColor: "var(--border-color)" } as React.CSSProperties} type="normal">
                             <svg width="16" height="16" strokeLinejoin="round" viewBox="0 0 16 16">
@@ -470,7 +470,7 @@ const App = () => {
                         </AlertItem>
                     </Alert>
                 </div>
- */}
+
                 {/* aspect ratio */}
                 {/* <div style={{ width: "100%", height: "100%", display: "flex", justifyContent: "center", alignItems: "center", gap: "1rem" }}>
                     <AspectRatio style={{ width: "min(16rem, 90%)", outline: "1px solid var(--border-color)", borderRadius: "0.5rem" }} ratio={9 / 16}>
@@ -574,7 +574,7 @@ const App = () => {
                 </Breadcrumb> */}
 
                 {/* badge */}
-                <div style={{ width: "100%", height: "100%", display: "flex", flexWrap: "wrap", justifyContent: "center", alignItems: "center", gap: "1rem", padding: "1rem" }}>
+                {/* <div style={{ width: "100%", height: "100%", display: "flex", flexWrap: "wrap", justifyContent: "center", alignItems: "center", gap: "1rem", padding: "1rem" }}>
                     <Badge style={{ fontSize: "var(--size-xsm)", fontWeight: 300 }} variant="verified">Verified</Badge>
                     <Badge style={{ fontSize: "var(--size-xsm)", fontWeight: 300 }} variant="primary">Primary</Badge>
                     <Badge style={{ fontSize: "var(--size-xsm)", fontWeight: 300 }} variant="secondary">Secondary</Badge>
@@ -582,7 +582,7 @@ const App = () => {
                     <Badge style={{ fontSize: "var(--size-xsm)", fontWeight: 300 }} variant="danger">Danger</Badge>
                     <Badge style={{ fontSize: "var(--size-xsm)", fontWeight: 300 }} variant="warning">Warning</Badge>
                     <Badge style={{ fontSize: "var(--size-xsm)", fontWeight: 300, backgroundColor: "var(--blue-800)", color: "var(--white-100)" }}>Default</Badge>
-                </div>
+                </div> */}
 
                 {/* counter */}
                 {/* <div style={{ width: "fit-content", height: "1.6rem", background: "var(--themed-matched-color)" }}>
