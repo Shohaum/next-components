@@ -25,7 +25,6 @@ html:has(dialog[open]) {
 }
 
 body {
-    height: 200vh;
     background: var(--background-200);
     scroll-behavior: smooth;
     transition: background-color 0.1s, color 0.1s;

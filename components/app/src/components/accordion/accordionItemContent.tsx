@@ -1,3 +1,4 @@
+"use client"
 // utilities
 import { useContext, useRef, useLayoutEffect } from "react";
 // CSS
@@ -31,10 +32,10 @@ const AccordionItemContent = ({ children, ...props }: AccordionItemContentProps)
 
         if (isOpen) {
             element.style.setProperty("--content-height", `${element.scrollHeight}px`);
-            element.style.filter = "blur(0px)";
+            element.style.setProperty("--blur-radius", "0px");
         } else {
             element.style.setProperty("--content-height", "0px");
-            element.style.filter = "blur(3px)";
+            element.style.setProperty("--blur-radius", "3px");
         }
     }, [isOpen]);
 

@@ -5,4 +5,5 @@
     padding-block-end: 1rem;
     padding-inline: 1rem;
     overflow-y: hidden;
+    filter: blur(var(--blur-radius));
 }
