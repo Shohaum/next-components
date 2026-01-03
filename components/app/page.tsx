@@ -380,11 +380,11 @@ const App = () => {
                                 <svg width={19} height={19} viewBox="0 0 24 24" fill="currentColor">
                                     <path d="M4.5 6.375a4.125 4.125 0 1 1 8.25 0 4.125 4.125 0 0 1-8.25 0ZM14.25 8.625a3.375 3.375 0 1 1 6.75 0 3.375 3.375 0 0 1-6.75 0ZM1.5 19.125a7.125 7.125 0 0 1 14.25 0v.003l-.001.119a.75.75 0 0 1-.363.63 13.067 13.067 0 0 1-6.761 1.873c-2.472 0-4.786-.684-6.76-1.873a.75.75 0 0 1-.364-.63l-.001-.122ZM17.25 19.128l-.001.144a2.25 2.25 0 0 1-.233.96 10.088 10.088 0 0 0 5.06-1.01.75.75 0 0 0 .42-.643 4.875 4.875 0 0 0-6.957-4.611 8.586 8.586 0 0 1 1.71 5.157v.003Z"></path>
                                 </svg>
-                                Why does craft matter?
+                                Who is this for?
                             </AccordionItemTrigger>
                             <AccordionItemContent style={{ fontSize: "var(--size-xsm)", lineHeight: "1.2rem" }}>
                                 <p>
-                                    Because it’s more than making something work — it’s making something feel right: inclusive, resilient, and scalable.
+                                    Designers who code, developers who design — anyone ready to stop chasing snippets and become the person who *can build anything*.
                                 </p>
                             </AccordionItemContent>
                         </AccordionItem>
@@ -392,11 +392,11 @@ const App = () => {
                 </div> */}
 
                 {/* AlertDialog */}
-                {/* <div style={{ width: "100%", height: "100%", display: "flex", justifyContent: "center", alignItems: "center" }}>
+                {/* <div style={{ width: "fit-content", height: "fit-content", display: "flex", justifyContent: "center", alignItems: "center", gap: "1rem" }}>
                     <AlertDialog>
 
-                        <AlertDialogTrigger style={{ backgroundColor: "var(--matte-background)", outlineColor: "var(--border-color)" }}>
-                            Show Dialog
+                        <AlertDialogTrigger style={{ backgroundColor: "var(--matte-background)", fontSize: "var(--size-xsm)", outlineColor: "var(--border-color)" }}>
+                            Dialog 1
                         </AlertDialogTrigger>
 
                         <AlertDialogContent style={{ width: "min(32rem, 90%)", background: "var(--matte-background)" }}>
@@ -404,15 +404,43 @@ const App = () => {
                                 <AlertDialogTitle style={{ fontSize: "var(--size-md)" } as React.CSSProperties}>Are you absolutely sure?</AlertDialogTitle>
 
                                 <AlertDialogDescription>
-                                    This action cannot be undone. This will permanently delete your
-                                    account and remove your data from our servers.
+                                    <p>Please verify your billing information</p>
+                                    <ul>
+                                        <li>Check your card details</li>
+                                        <li>Ensure sufficient funds</li>
+                                        <li>Verify billing address</li>
+                                    </ul>
                                 </AlertDialogDescription>
 
                             </AlertDialogHeader>
 
                             <AlertDialogFooter>
-                                <AlertDialogCancel style={{ backgroundColor: "var(--gray-200)", color: "var(--themed-unmatched-color)" }}>Cancel</AlertDialogCancel>
-                                <AlertDialogAction style={{ backgroundColor: "var(--themed-unmatched-color)", color: "var(--themed-matched-color)" }} onClick={() => alert("Conitue clicked")}>Continue</AlertDialogAction>
+                                <AlertDialogCancel style={{ backgroundColor: "var(--gray-200)", fontSize: "var(--size-xsm)", color: "var(--themed-unmatched-color)" }}>Cancel</AlertDialogCancel>
+                                <AlertDialogAction style={{ backgroundColor: "var(--themed-unmatched-color)", fontSize: "var(--size-xsm)", color: "var(--themed-matched-color)" }} onClick={() => alert("Conitue clicked")}>Continue</AlertDialogAction>
+                            </AlertDialogFooter>
+                        </AlertDialogContent>
+
+                    </AlertDialog>
+
+                    <AlertDialog>
+
+                        <AlertDialogTrigger style={{ backgroundColor: "var(--matte-background)", fontSize: "var(--size-xsm)", outlineColor: "var(--border-color)" }}>
+                            Dialog 2
+                        </AlertDialogTrigger>
+
+                        <AlertDialogContent style={{ width: "min(32rem, 90%)", background: "var(--matte-background)" }}>
+                            <AlertDialogHeader>
+                                <AlertDialogTitle style={{ fontSize: "var(--size-md)" } as React.CSSProperties}>Are you absolutely sure?</AlertDialogTitle>
+
+                                <AlertDialogDescription>
+                                    <p>This action cannot be undone. This will permanently delete your account and remove your data from our servers.</p>
+                                </AlertDialogDescription>
+
+                            </AlertDialogHeader>
+
+                            <AlertDialogFooter>
+                                <AlertDialogCancel style={{ backgroundColor: "var(--gray-200)", fontSize: "var(--size-xsm)", color: "var(--themed-unmatched-color)" }}>Cancel</AlertDialogCancel>
+                                <AlertDialogAction style={{ backgroundColor: "var(--themed-unmatched-color)", fontSize: "var(--size-xsm)", color: "var(--themed-matched-color)" }} onClick={() => alert("Conitue clicked")}>Continue</AlertDialogAction>
                             </AlertDialogFooter>
                         </AlertDialogContent>
 
@@ -469,8 +497,8 @@ const App = () => {
                             </AlertDescription>
                         </AlertItem>
                     </Alert>
-                </div>
- */}
+                </div> */}
+
                 {/* aspect ratio */}
                 {/* <div style={{ width: "100%", height: "100%", display: "flex", justifyContent: "center", alignItems: "center", gap: "1rem" }}>
                     <AspectRatio style={{ width: "min(16rem, 90%)", outline: "1px solid var(--border-color)", borderRadius: "0.5rem" }} ratio={9 / 16}>
@@ -500,78 +528,84 @@ const App = () => {
                 </div> */}
 
                 {/* Avatar */}
-                {/* <div style={{ width: "100%", height: "100%", display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '1rem', padding: '1rem' }}>
+                {/* <div style={{ width: "fit-content", height: "fit-content", display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '1rem' }}>
 
-                    <Avatar width={40}>
-                        <AvatarImage grayScale={true} src="https://github.com/deno.png" alt="@deno" />
-                        <AvatarFallback style={{ backgroundColor: "var(--gray-200)", color: "var(--gray-700)", fontSize: "var(--size-sm)", fontWeight: 500 }}>DN</AvatarFallback>
-                    </Avatar>
+                    <div style={{ display: 'flex', gap: '0.5rem' }}>
+                        <Avatar width={36}>
+                            <AvatarImage grayScale={true} src="https://github.com/deno.png" alt="@deno" />
+                            <AvatarFallback style={{ backgroundColor: "var(--gray-200)", color: "var(--gray-700)", fontSize: "var(--size-sm)", fontWeight: 500 }}>DN</AvatarFallback>
+                        </Avatar>
 
-                    <Avatar showTooltip={true} name="Vercel" designation="SDE - Vercel" width={50}>
-                        <AvatarImage src="https://github.com/vercel.png" alt="@vercel" />
-                        <AvatarFallback style={{ backgroundColor: "var(--gray-200)", color: "var(--gray-700)", fontSize: "var(--size-sm)", fontWeight: 500 }}>MB</AvatarFallback>
-                    </Avatar>
+                        <Avatar showTooltip={true} name="Vercel" designation="SDE - Vercel" width={36}>
+                            <AvatarImage src="https://github.com/vercel.png" alt="@vercel" />
+                            <AvatarFallback style={{ backgroundColor: "var(--gray-200)", color: "var(--gray-700)", fontSize: "var(--size-sm)", fontWeight: 500 }}>MB</AvatarFallback>
+                        </Avatar>
+                    </div>
 
-                    <AvatarCollapsed>
+                    <div>
+                        <AvatarCollapsed>
 
-                        <Avatar showTooltip={true} name="Shohaum" designation="Founder - Shohaum" width={40}>
-                            <AvatarImage src="https://github.com/shohaum.png" alt="@shohaum" />
-                            <AvatarFallback style={{ backgroundColor: "var(--gray-200)", color: "var(--gray-700)", fontSize: "var(--size-sm)", fontWeight: 500 }}>SS</AvatarFallback>
-                        </Avatar>
-                        <Avatar showTooltip={true} name="Redis" designation="Redis Developer" width={40}>
-                            <AvatarImage src="https://github.com/redis.png" alt="@redis" />
-                            <AvatarFallback style={{ backgroundColor: "var(--gray-200)", color: "var(--gray-700)", fontSize: "var(--size-sm)", fontWeight: 500 }}>RR</AvatarFallback>
-                        </Avatar>
-                        <Avatar showTooltip={true} name="Excalidraw" designation="Product Lead - Excalidraw" width={40}>
-                            <AvatarImage src="https://github.com/excalidraw.png" alt="@excalidraw" />
-                            <AvatarFallback style={{ backgroundColor: "var(--gray-200)", color: "var(--gray-700)", fontSize: "var(--size-sm)", fontWeight: 500 }}>ER</AvatarFallback>
-                        </Avatar>
-                        <Avatar showTooltip={true} name="Evil Rabbit" designation="Product Designer" width={40}>
-                            <AvatarImage src="https://github.com/evilrabbit.png" alt="@evilrabbit" />
-                            <AvatarFallback style={{ backgroundColor: "var(--gray-200)", color: "var(--gray-700)", fontSize: "var(--size-sm)", fontWeight: 500 }}>ER</AvatarFallback>
-                        </Avatar>
-                        <Avatar showTooltip={true} name="OpenAI" designation="Founder - OpenAI" width={40}>
-                            <AvatarImage src="https://github.com/openai.png" alt="@openai" />
-                            <AvatarFallback style={{ backgroundColor: "var(--gray-200)", color: "var(--gray-700)", fontSize: "var(--size-sm)", fontWeight: 500 }}>OA</AvatarFallback>
-                        </Avatar>
-                        
-                    </AvatarCollapsed>
+                            <Avatar showTooltip={true} name="Shohaum" designation="Founder - Shohaum" width={36}>
+                                <AvatarImage src="https://github.com/shohaum.png" alt="@shohaum" />
+                                <AvatarFallback style={{ backgroundColor: "var(--gray-200)", color: "var(--gray-700)", fontSize: "var(--size-sm)", fontWeight: 500 }}>SS</AvatarFallback>
+                            </Avatar>
+                            <Avatar showTooltip={true} name="Redis" designation="Redis Developer" width={36}>
+                                <AvatarImage src="https://github.com/redis.png" alt="@redis" />
+                                <AvatarFallback style={{ backgroundColor: "var(--gray-200)", color: "var(--gray-700)", fontSize: "var(--size-sm)", fontWeight: 500 }}>RR</AvatarFallback>
+                            </Avatar>
+                            <Avatar showTooltip={true} name="Excalidraw" designation="Product Lead - Excalidraw" width={36}>
+                                <AvatarImage src="https://github.com/excalidraw.png" alt="@excalidraw" />
+                                <AvatarFallback style={{ backgroundColor: "var(--gray-200)", color: "var(--gray-700)", fontSize: "var(--size-sm)", fontWeight: 500 }}>ER</AvatarFallback>
+                            </Avatar>
+                            <Avatar showTooltip={true} name="Evil Rabbit" designation="Product Designer" width={36}>
+                                <AvatarImage src="https://github.com/evilrabbit.png" alt="@evilrabbit" />
+                                <AvatarFallback style={{ backgroundColor: "var(--gray-200)", color: "var(--gray-700)", fontSize: "var(--size-sm)", fontWeight: 500 }}>ER</AvatarFallback>
+                            </Avatar>
+                            <Avatar showTooltip={true} name="OpenAI" designation="Founder - OpenAI" width={36}>
+                                <AvatarImage src="https://github.com/openai.png" alt="@openai" />
+                                <AvatarFallback style={{ backgroundColor: "var(--gray-200)", color: "var(--gray-700)", fontSize: "var(--size-sm)", fontWeight: 500 }}>OA</AvatarFallback>
+                            </Avatar>
+
+                        </AvatarCollapsed>
+                    </div>
                 </div> */}
 
                 {/* breadcrumb */}
-                {/* <Breadcrumb>
-                    <BreadcrumbList>
-                        <BreadcrumbItem>
-                            <BreadcrumbLink asChild>
-                                <Link href="/">Home</Link>
-                            </BreadcrumbLink>
-                        </BreadcrumbItem>
-                        <BreadcrumbSeparator />
-                        <BreadcrumbItem>
-                            <Dropdown>
-                                <DropdownTrigger>
-                                    <BreadcrumbEllipsis />
-                                    <span className="sr-only">Toggle menu</span>
-                                </DropdownTrigger>
-                                <DropdownContent>
-                                    <DropdownItem>Documentation</DropdownItem>
-                                    <DropdownItem>Themes</DropdownItem>
-                                    <DropdownItem>GitHub</DropdownItem>
-                                </DropdownContent>
-                            </Dropdown>
-                        </BreadcrumbItem>
-                        <BreadcrumbSeparator />
-                        <BreadcrumbItem>
-                            <BreadcrumbLink asChild>
-                                <Link href="/docs/components">Components</Link>
-                            </BreadcrumbLink>
-                        </BreadcrumbItem>
-                        <BreadcrumbSeparator />
-                        <BreadcrumbItem>
-                            <BreadcrumbPage>Breadcrumb</BreadcrumbPage>
-                        </BreadcrumbItem>
-                    </BreadcrumbList>
-                </Breadcrumb> */}
+                {/* <div style={{ width: "100%", height: "100%", display: "flex", justifyContent: "center", alignItems: "center" }}>
+                    <Breadcrumb style={{ fontSize: "var(--size-xsm)", lineHeight: "1.25rem", letterSpacing: "0.5px" }}>
+                        <BreadcrumbList>
+                            <BreadcrumbItem>
+                                <BreadcrumbLink asChild>
+                                    <Link href="/">Home</Link>
+                                </BreadcrumbLink>
+                            </BreadcrumbItem>
+                            <BreadcrumbSeparator />
+                            <BreadcrumbItem>
+                                <Dropdown>
+                                    <DropdownTrigger>
+                                        <BreadcrumbEllipsis />
+                                        <span className="sr-only">Toggle menu</span>
+                                    </DropdownTrigger>
+                                    <DropdownContent>
+                                        <DropdownItem>Documentation</DropdownItem>
+                                        <DropdownItem>Themes</DropdownItem>
+                                        <DropdownItem>GitHub</DropdownItem>
+                                    </DropdownContent>
+                                </Dropdown>
+                            </BreadcrumbItem>
+                            <BreadcrumbSeparator />
+                            <BreadcrumbItem>
+                                <BreadcrumbLink asChild>
+                                    <Link href="/docs/components">Components</Link>
+                                </BreadcrumbLink>
+                            </BreadcrumbItem>
+                            <BreadcrumbSeparator />
+                            <BreadcrumbItem>
+                                <BreadcrumbPage>Breadcrumb</BreadcrumbPage>
+                            </BreadcrumbItem>
+                        </BreadcrumbList>
+                    </Breadcrumb>
+                </div> */}
 
                 {/* badge */}
                 <div style={{ display: "flex", justifyContent: "center", alignItems: "center", flexWrap: "wrap", gap: "1rem" }}>

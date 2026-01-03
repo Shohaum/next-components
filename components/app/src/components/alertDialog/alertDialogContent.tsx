@@ -20,7 +20,7 @@ const AlertDialogContent = React.forwardRef<HTMLDialogElement, AlertDialogConten
     const { isOpen, dialogRef, labelId, descriptionId } = useAlertDialog();
 
     return (
-        <dialog {...props} aria-labelledby={labelId} aria-describedby={descriptionId} role="alertdialog" open={isOpen} data-slot="alert-dialog" className={`${styles.alertDialogContent}`} ref={mergeRefs(ref, dialogRef)}>
+        <dialog {...props} aria-labelledby={labelId} aria-describedby={descriptionId} role="alertdialog" open={isOpen} data-slot="alert-dialog" className={`${styles.alertDialogContent} ${props.className || ""}`} ref={mergeRefs(ref, dialogRef)}>
             {children}
         </dialog>
     );

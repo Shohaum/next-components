@@ -32,7 +32,7 @@ const AccordionItem = React.forwardRef<HTMLDetailsElement, AccordionItemProps>((
 
     return (
         <AccordionItemContext.Provider value={value}>
-            <details ref={ref} {...props} className={styles.accordionItem} id={key} aria-expanded={isOpen} open={isOpen}>
+            <details {...props} ref={ref} className={`${styles.accordionItem} ${props.className || ""}`} id={key} aria-expanded={isOpen} open={isOpen}>
                 {children}
             </details>
         </AccordionItemContext.Provider>

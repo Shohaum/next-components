@@ -6,7 +6,7 @@ import styles from "@/components/alert/alertTitle.module.css";
 import { AlertTitleProps } from "@/types/alert/alert";
 
 const AlertTitle = React.forwardRef<HTMLDivElement, AlertTitleProps>(({ children, ...props }, ref) => {
-    return <h4 {...props} ref={ref} className={styles.alertTitle}>
+    return <h4 {...props} ref={ref} className={`${styles.alertTitle} ${props.className || ""}`}>
         {children}
     </h4>;
 });
