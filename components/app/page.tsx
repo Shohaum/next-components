@@ -1,4 +1,6 @@
 "use client"
+// utilities
+import { useState } from "react";
 // CSS
 import styles from "./app.module.css";
 // Component imports
@@ -79,6 +81,8 @@ import Counter from "@/components/counter/counter";
 
 const App = () => {
 
+    const [counterValue, setCounterValue] = useState(0);
+
     const dropdownIcon =
         <svg width="13" height="13" stroke="currentColor" strokeWidth={0} fill="currentColor" strokeLinejoin="round" viewBox="0 0 16 16">
             <path fillRule="evenodd" clipRule="evenodd" d="M4.53032 2.96966L3.99999 2.43933L2.93933 3.49999L3.46966 4.03032L7.29289 7.85355C7.68341 8.24407 8.31658 8.24407 8.7071 7.85354L12.5303 4.03032L13.0607 3.49999L12 2.43933L11.4697 2.96966L7.99999 6.43933L4.53032 2.96966ZM4.53032 7.96966L3.99999 7.43933L2.93933 8.49999L3.46966 9.03032L7.29289 12.8535C7.68341 13.2441 8.31658 13.2441 8.7071 12.8535L12.5303 9.03032L13.0607 8.49999L12 7.43933L11.4697 7.96966L7.99999 11.4393L4.53032 7.96966Z" fill="currentColor">
@@ -94,7 +98,7 @@ const App = () => {
             <DottedGrid>
 
                 {/* button  */}
-                <div style={{ display: "flex", justifyContent: "center", alignItems: "center", gap: "0.6rem", flexWrap: "wrap" }}>
+                {/* <div style={{ display: "flex", justifyContent: "center", alignItems: "center", gap: "0.6rem", flexWrap: "wrap" }}>
                     <div style={{ width: "fit-content", height: "fit-content" }}>
                         <Button onClick={() => alert("clicked")} style={{ background: "var(--matte-background)", fontSize: "var(--size-xsm)", fontWeight: "500" }}>
                             Hey there
@@ -113,7 +117,7 @@ const App = () => {
                             </svg>
                         </Button>
                     </div>
-                </div>
+                </div> */}
 
                 {/* docking station */}
                 {/* <LinkDocker>
@@ -655,9 +659,9 @@ const App = () => {
                 </div> */}
 
                 {/* counter */}
-                {/* <div style={{ width: "fit-content", height: "1.6rem", background: "var(--themed-matched-color)" }}>
-                    <Counter min={-10} max={13} step={1} value={0} />
-                </div> */}
+                <div style={{ width: "fit-content", height: "1.6rem", background: "var(--themed-matched-color)" }}>
+                    <Counter min={-10} max={10} step={1} value={counterValue} onValueChange={(value) => setCounterValue(value)} />
+                </div>
             </DottedGrid>
 
         </main >
