@@ -392,7 +392,7 @@ const App = () => {
                 </div> */}
 
                 {/* AlertDialog */}
-                <div style={{ width: "fit-content", height: "fit-content", display: "flex", justifyContent: "center", alignItems: "center", gap: "1rem" }}>
+                {/* <div style={{ width: "fit-content", height: "fit-content", display: "flex", justifyContent: "center", alignItems: "center", gap: "1rem" }}>
                     <AlertDialog>
 
                         <AlertDialogTrigger style={{ backgroundColor: "var(--matte-background)", fontSize: "var(--size-xsm)", outlineColor: "var(--border-color)" }}>
@@ -445,7 +445,7 @@ const App = () => {
                         </AlertDialogContent>
 
                     </AlertDialog>
-                </div>
+                </div> */}
 
                 {/* Alert */}
                 {/* <div style={{ maxWidth: "min(36rem, 90vw)", minWidth: "min(25rem, 90vw)" }}>
@@ -528,7 +528,7 @@ const App = () => {
                 </div> */}
 
                 {/* Avatar */}
-                <div style={{ width: "fit-content", height: "fit-content", display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '1rem' }}>
+                {/* <div style={{ width: "fit-content", height: "fit-content", display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '1rem' }}>
 
                     <div style={{ display: 'flex', gap: '0.5rem' }}>
                         <Avatar width={36}>
@@ -568,7 +568,7 @@ const App = () => {
 
                         </AvatarCollapsed>
                     </div>
-                </div>
+                </div> */}
 
                 {/* breadcrumb */}
                 {/* <div style={{ width: "100%", height: "100%", display: "flex", justifyContent: "center", alignItems: "center" }}>
