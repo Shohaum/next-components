@@ -29,6 +29,11 @@ const AvatarImage = React.forwardRef<HTMLImageElement, AvatarImageProps>(({
     const { status, onLoadingStatusChange: setContextStatus } = useAvatar();
     const imgRef = useRef<HTMLImageElement | null>(null);
 
+    const mergedRef = React.useMemo(
+        () => mergeRefs<HTMLImageElement>(ref, imgRef),
+        [ref]
+    );
+
     const onLoad = useCallback(() => {
         setContextStatus("loaded");
         onStatusChange?.("loaded");
@@ -56,7 +61,7 @@ const AvatarImage = React.forwardRef<HTMLImageElement, AvatarImageProps>(({
     return (
         <img
             {...props}
-            ref={mergeRefs(imgRef, ref)}
+            ref={mergedRef}
             src={src}
             alt={alt || ""}
             className={`${styles.avatarImage} ${props.className || ""}`}
