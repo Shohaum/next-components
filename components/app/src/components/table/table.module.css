@@ -1,11 +1,4 @@
-.tableContainer{
-    /* display: inline-block; */
-    outline: 1px solid var(--gray-300);
-    border-radius: 0.5em;
-    overflow: hidden;
-}
-
-.table{
+.table {
     width: 100%;
     border-collapse: collapse;
 }
