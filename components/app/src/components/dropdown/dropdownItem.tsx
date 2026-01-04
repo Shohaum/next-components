@@ -1,42 +1,31 @@
 "use client"
 // CSS
 import styles from "@/components/dropdown/dropdownItem.module.css";
+// utilities
+import React from "react";
 // types
 import { DropdownItemProps } from "@/types/dropdown/dropdown";
 
-const DropdownItem = ({
-    id = "",
-    title = "",
-    disabled = false,
-    autofocus = false,
-    name = "button",
-    type = "button",
-    role = "button",
-    dataValue = "",
+const DropdownItem = React.forwardRef<HTMLButtonElement, DropdownItemProps>(({
     onClick = () => { },
-
-    children
-}:
-    DropdownItemProps) => {
+    children,
+    ...props
+}, ref) => {
 
 
     return (
         <button
-            className={styles.dropdownItem}
-            id={id}
-            title={title} disabled={disabled}
+            {...props}
+            ref={ref}
+            className={`${styles.dropdownItem} ${props.className || ""}`}
             onClick={onClick}
-            name={name}
-            type={type}
-            role={role}
-            tabIndex={0}
-            autoFocus={autofocus}
-            data-value={dataValue}
             data-slot="dropdown-item"
         >
             {children}
         </button>
     )
-};
+});
+
+DropdownItem.displayName = "DropdownItem";
 
 export default DropdownItem;
