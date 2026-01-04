@@ -49,7 +49,7 @@ const MyTable = () => (
 ## API Reference
 
 ### TableContainer
-A wrapper `div` that handles overflow and scrolling. It automatically includes `role="region"` and `tabIndex={0}` when scrollable to ensure keyboard users can access the table content.
+A wrapper `div` that handles overflow and scrolling. It automatically includes `role="region"` for accessibility.
 - **Props**: `TableContainerProps` (extends `React.HTMLAttributes<HTMLDivElement>`)
     - `children`: ReactNode
 
@@ -69,7 +69,7 @@ Renders a `<tbody>` element.
     - `children`: ReactNode (Array of `TableRow`)
 
 ### TableRow
-Renders a `<tr>` element.
+Renders a `<tr>` element. It includes `tabIndex={0}` by default, making rows focusable.
 - **Props**: `TableRowProps` (extends `React.HTMLAttributes<HTMLTableRowElement>`)
     - `children`: ReactNode
 
