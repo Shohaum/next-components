@@ -1,79 +1,48 @@
 import { ReactElement } from "react";
 
-export type DropdownProps = {
-    children: [ReactElement<DropDownTriggerProps>, ReactElement<DropdownContentProps>];
+export interface DropdownProps extends React.HTMLAttributes<HTMLDivElement> {
+    children: React.ReactNode;
 };
 
-export type DropdownContentProps = {
-    children:
-    ReactElement<DropdownLabelProps> |
-    Array<ReactElement<DropdownLabelProps>> |
-    ReactElement<DropdownItemProps> |
-    Array<ReactElement<DropdownItemProps>> |
-    ReactElement<DropdownGroupProps> |
-    Array<ReactElement<DropdownGroupProps>> |
-    ReactElement<DropdownSubProps> |
-    Array<ReactElement<DropdownSubProps>> |
-    ReactElement<DropdownGroupSeparatorProps> |
-    Array<ReactElement<DropdownGroupSeparatorProps>>;
-    width?: string;
-    minWidth?: string;
-    maxWidth?: string;
+export interface DropdownContentProps extends React.HTMLAttributes<HTMLDivElement> {
+    children: React.ReactNode;
 };
 
-export type DropdownGroupProps = {
+export interface DropdownGroupProps extends React.HTMLAttributes<HTMLDivElement> {
     children: Array<ReactElement<DropdownItemProps>> | ReactElement<DropdownItemProps>;
 };
 
-export type DropdownItemProps = {
-    id?: string,
-    title?: string,
-    disabled?: boolean,
-    autofocus?: boolean,
-    name?: string,
-    type?: "button" | "reset" | "submit",
-    role?: string,
-    dataValue?: string,
+export interface DropdownItemProps extends React.ComponentProps<"button"> {
     onClick?: () => void,
     children?: React.ReactNode;
 };
 
-export type DropdownItemShortcutProps = {
+export interface DropdownItemShortcutProps extends React.HTMLAttributes<HTMLSpanElement> {
     children: React.ReactNode;
 };
 
-export type DropdownLabelProps = {
+export interface DropdownLabelProps extends React.HTMLAttributes<HTMLSpanElement> {
     label: string;
 };
 
-export type DropdownPortalProps = {
+export interface DropdownPortalProps extends React.HTMLAttributes<HTMLDivElement> {
     children: React.ReactNode;
 };
 
-export type DropdownSubProps = {
+export interface DropdownSubProps extends React.HTMLAttributes<HTMLDivElement> {
     children: [ReactElement<DropdownSubTriggerProps>, ReactElement<DropdownSubContentProps>];
 };
 
-export type DropdownSubContentProps = {
-    children:
-    ReactElement<DropdownLabelProps> |
-    Array<ReactElement<DropdownLabelProps>> |
-    ReactElement<DropdownItemProps> |
-    Array<ReactElement<DropdownItemProps>> |
-    ReactElement<DropdownGroupProps> |
-    Array<ReactElement<DropdownGroupProps>> |
-    ReactElement<DropdownSubProps> |
-    Array<ReactElement<DropdownSubProps>> |
-    ReactElement<DropdownGroupSeparatorProps> |
-    Array<ReactElement<DropdownGroupSeparatorProps>>;;
-};
-
-export type DropdownSubTriggerProps = {
+export interface DropdownSubContentProps extends React.HTMLAttributes<HTMLDivElement> {
     children: React.ReactNode;
 };
 
-export type DropDownTriggerProps = {
+export interface DropdownSubTriggerProps extends React.HTMLAttributes<HTMLDivElement> {
     children: React.ReactNode;
 };
 
-export type DropdownGroupSeparatorProps = Record<string, never>;
+export interface DropDownTriggerProps extends React.HTMLAttributes<HTMLDivElement> {
+    children: React.ReactNode;
+};
+
+export interface DropdownGroupSeparatorProps extends React.HTMLAttributes<HTMLDivElement> { }

@@ -1,13 +1,18 @@
 // CSS
 import styles from "@/components/dropdown/dropdownItemShortcut.module.css";
+// utilities
+import React from "react";
 // types
 import { DropdownItemShortcutProps } from "@/types/dropdown/dropdown";
-const DropdownItemShortcut = ({ children }: DropdownItemShortcutProps) => {
+const DropdownItemShortcut = React.forwardRef<HTMLSpanElement, DropdownItemShortcutProps>((
+    { children, ...props }, ref) => {
     return (
-        <span className={styles.dropdownItemShortcut}>
+        <span {...props} ref={ref} className={`${styles.dropdownItemShortcut} ${props.className || ""}`}>
             {children}
         </span>
     )
-}
+});
+
+DropdownItemShortcut.displayName = "DropdownItemShortcut";
 
 export default DropdownItemShortcut;

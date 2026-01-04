@@ -2,10 +2,13 @@ import React, {
     createContext,
     useContext,
     useMemo,
+    useId,
+    useRef
 } from "react";
 
 type DropdownContextType = {
-    toggleDropdown: () => void;
+    contentId: string;
+    dropdownRef: React.RefObject<HTMLDivElement | null>;
 };
 
 const DropdownContext = createContext<DropdownContextType | undefined>(undefined);
@@ -16,16 +19,17 @@ type DropDownProps = {
 
 export const DropdownProvider = ({ children }: DropDownProps) => {
 
-    const toggleDropdown = () => {
-        const dropdown = document.querySelector<HTMLDivElement>('[data-slot="dropdown"]');
-        dropdown?.togglePopover();
-    }
+    const uniqueId = useId();
+    const contentId = `dropdown-${uniqueId}`;
+
+    const dropdownRef = useRef<HTMLDivElement | null>(null);
 
     const value = useMemo(
         () => ({
-            toggleDropdown,
+            contentId,
+            dropdownRef
         }),
-        []
+        [contentId]
     );
 
     return (
@@ -44,7 +48,8 @@ export const useDropdown = () => {
 };
 
 type DropdownSubContextType = {
-    toggleDropdownSub: () => void;
+    contentId: string;
+    dropdownSubRef: React.RefObject<HTMLDivElement | null>;
 }
 
 const DropdownSubContext = createContext<DropdownSubContextType | undefined>(undefined);
@@ -55,16 +60,17 @@ type DropdownSubProps = {
 
 export const DropdownSubProvider = ({ children }: DropdownSubProps) => {
 
-    const toggleDropdownSub = () => {
-        const dropdownSub = document.querySelector<HTMLDivElement>('[data-slot="dropdown-sub"]');
-        dropdownSub?.togglePopover();
-    }
+    const uniqueId = useId();
+    const contentId = `dropdown-${uniqueId}`;
+
+    const dropdownSubRef = useRef<HTMLDivElement | null>(null);
 
     const value = useMemo(
         () => ({
-            toggleDropdownSub
+            contentId,
+            dropdownSubRef
         }),
-        []
+        [contentId]
     );
 
     return (
