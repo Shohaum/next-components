@@ -4,24 +4,24 @@ export interface BreadcrumbProps extends React.ComponentPropsWithoutRef<"nav"> {
     children: React.ReactNode;
 }
 
-export interface BreadcrumbListProps extends React.ComponentPropsWithoutRef<"ol"> {
+export interface BreadcrumbListProps extends React.HTMLAttributes<HTMLOListElement> {
     children: React.ReactNode;
 }
 
-export interface BreadcrumbItemProps extends React.ComponentPropsWithoutRef<"li"> { }
+export interface BreadcrumbItemProps extends React.HTMLAttributes<HTMLLIElement> { }
 
-export interface BreadcrumbLinkProps extends React.ComponentPropsWithoutRef<"a"> {
+export interface BreadcrumbLinkProps extends React.HTMLAttributes<HTMLAnchorElement> {
     asChild?: boolean;
     children: React.ReactNode;
 }
 
-export interface BreadcrumbPageProps extends React.ComponentPropsWithoutRef<"span"> {
+export interface BreadcrumbPageProps extends React.HTMLAttributes<HTMLSpanElement> {
     children: React.ReactNode;
 }
 
-export interface BreadcrumbSeparatorProps extends React.ComponentPropsWithoutRef<"li"> { }
+export interface BreadcrumbSeparatorProps extends React.HTMLAttributes<HTMLLIElement> { }
 
-export interface BreadcrumbEllipsisProps extends React.ComponentPropsWithoutRef<"span"> { }
+export interface BreadcrumbEllipsisProps extends React.HTMLAttributes<HTMLSpanElement> { }
 
 export interface SlotProps extends React.HTMLAttributes<HTMLElement> {
     children: React.ReactNode;
