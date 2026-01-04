@@ -1,6 +1,4 @@
-.tableData{
-    font-size: var(--size-sm);
-    text-align: left;
+.tableData {
     padding-block: 0.6rem;
     padding-inline: 0.5rem;
 }

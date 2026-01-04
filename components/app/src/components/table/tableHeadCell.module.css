@@ -1,6 +1,4 @@
-.tableHeadCell{
-    font-size: var(--size-sm);
-    text-align: left;
+.tableHeadCell {
     padding-block: 0.6rem;
     padding-inline: 0.5rem;
 }

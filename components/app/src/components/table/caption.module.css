@@ -1,6 +1,4 @@
 .caption {
-    font-size: var(--size-xsm);
-    color: var(--gray-600);
     caption-side: bottom;
     margin-block: 0.5rem;
 }
