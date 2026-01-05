@@ -4,7 +4,7 @@
     top: 1rem;
     right: 1rem;
     z-index: 999999;
-    outline: 1px solid var(--gray-200);
+    outline: 1px solid var(--border-color);
     border-radius: 1rem;
 }
 
@@ -13,4 +13,12 @@
     padding-inline: 0.4rem;
     border-radius: 50%;
     cursor: pointer;
+}
+
+:global([data-theme='light']) button[data-slot='light'] {
+    outline: 1px solid var(--gray-300);
+}
+
+:global([data-theme='dark']) button[data-slot='dark'] {
+    outline: 1px solid var(--gray-300);
 }

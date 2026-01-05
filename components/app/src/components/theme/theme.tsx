@@ -1,59 +1,15 @@
 "use client"
 // CSS
 import styles from "./theme.module.css";
-// utilities
-import { useEffect } from "react";
 
 const Theme = () => {
 
-    const toggleThemeToLight = () => {
+    const toggleTheme = (theme: string) => {
         const root = document.documentElement;
-        root.setAttribute("data-theme", "light");
+        root.setAttribute("data-theme", theme);
 
-        localStorage.setItem("theme", "light");
-
-        // set the style for the light button
-        const lightButton = document.querySelector("button[data-slot='light']");
-        if (lightButton instanceof HTMLElement) {
-            lightButton.style.outline = "1px solid var(--gray-300)";
-        }
-
-        // set the style for the dark button
-        const darkButton = document.querySelector("button[data-slot='dark']");
-        if (darkButton instanceof HTMLElement) {
-            darkButton.style.outline = "none";
-        }
-
+        localStorage.setItem("theme", theme);
     }
-
-    const toggleThemeToDark = () => {
-        const root = document.documentElement;
-        root.setAttribute("data-theme", "dark");
-
-        localStorage.setItem("theme", "dark");
-
-        // set the style for the light button
-        const lightButton = document.querySelector("button[data-slot='light']");
-        if (lightButton instanceof HTMLElement) {
-            lightButton.style.outline = "none";
-        }
-
-        // set the style for the dark button
-        const darkButton = document.querySelector("button[data-slot='dark']");
-        if (darkButton instanceof HTMLElement) {
-            darkButton.style.outline = "1px solid var(--gray-300)";
-        }
-    }
-
-    // get the theme from the local storage
-    useEffect(() => {
-        const theme = localStorage.getItem("theme");
-        if (theme === "dark") {
-            toggleThemeToDark();
-        } else {
-            toggleThemeToLight();
-        }
-    }, []);
 
     const lightIcon =
         <svg width="14" height="14" stroke="currentColor" fill="currentColor" strokeWidth={0} strokeLinejoin="round" viewBox="0 0 16 16">
@@ -69,10 +25,10 @@ const Theme = () => {
 
     return (
         <div className={styles.theme}>
-            <button aria-label="Light" data-slot="light" type="button" role="button" name="light" title="Light" onClick={() => toggleThemeToLight()}>
+            <button aria-label="Light" data-slot="light" type="button" role="button" name="light" title="Light" onClick={() => toggleTheme("light")}>
                 {lightIcon}
             </button>
-            <button aria-label="Dark" data-slot="dark" type="button" role="button" name="dark" title="Dark" onClick={() => toggleThemeToDark()}>
+            <button aria-label="Dark" data-slot="dark" type="button" role="button" name="dark" title="Dark" onClick={() => toggleTheme("dark")}>
                 {darkIcon}
             </button>
         </div>

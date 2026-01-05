@@ -15,8 +15,20 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning={true}>
       <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+      (function() {
+        const savedTheme = localStorage.getItem('theme');
+        const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        const theme = savedTheme || systemTheme;
+        document.documentElement.setAttribute('data-theme', theme);
+      })();
+    `,
+          }}
+        />
         <style>
           @import url('https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap');
         </style>
