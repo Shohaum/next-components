@@ -17,23 +17,38 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning={true}>
       <head>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-      (function() {
-        const savedTheme = localStorage.getItem('theme');
-        const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-        const theme = savedTheme || systemTheme;
-        document.documentElement.setAttribute('data-theme', theme);
-      })();
-    `,
-          }}
-        />
         <style>
           @import url('https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap');
         </style>
       </head>
       <body>
+        <script
+          id="theme-script"
+          dangerouslySetInnerHTML={{
+            __html: `
+      (function() {
+        const savedTheme = localStorage.getItem('theme') ?? 'system';
+        const root = document.documentElement;
+    try {
+        if (savedTheme === "system") {
+            const darkThemeMq = window.matchMedia("(prefers-color-scheme: dark)");
+            if (darkThemeMq.matches) {
+                root.setAttribute("data-theme", "dark");
+            } else {
+                root.setAttribute("data-theme", "light");
+            }
+        }
+        else {
+            root.setAttribute("data-theme", savedTheme);
+        }
+    }
+    catch (error) {
+        console.error("Error setting theme:", error);
+    }
+      })();
+    `,
+          }}
+        />
         {children}
       </body>
     </html>
