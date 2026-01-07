@@ -7,22 +7,3 @@
     outline: 1px solid var(--border-color);
     border-radius: 1rem;
 }
-
-.theme>button {
-    padding-block: 0.4rem;
-    padding-inline: 0.4rem;
-    border-radius: 50%;
-    cursor: pointer;
-}
-
-:global([data-theme='light']) button[data-slot='light'] {
-    outline: 1px solid var(--border-color);
-}
-
-:global([data-theme='sytem']) button[data-slot='system'] {
-    outline: 1px solid var(--border-color);
-}
-
-:global([data-theme='dark']) button[data-slot='dark'] {
-    outline: 1px solid var(--border-color);
-}

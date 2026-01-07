@@ -26,26 +26,19 @@ export default function RootLayout({
           id="theme-script"
           dangerouslySetInnerHTML={{
             __html: `
-      (function() {
-        const savedTheme = localStorage.getItem('theme') ?? 'system';
-        const root = document.documentElement;
-    try {
-        if (savedTheme === "system") {
-            const darkThemeMq = window.matchMedia("(prefers-color-scheme: dark)");
-            if (darkThemeMq.matches) {
-                root.setAttribute("data-theme", "dark");
-            } else {
-                root.setAttribute("data-theme", "light");
-            }
-        }
-        else {
-            root.setAttribute("data-theme", savedTheme);
-        }
+      (function () {
+  try {
+    const theme = localStorage.getItem("theme") || "system";
+    const root = document.documentElement;
+
+    if (theme === "system") {
+      const isDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+      root.dataset.theme = isDark ? "dark" : "light";
+    } else {
+      root.dataset.theme = theme;
     }
-    catch (error) {
-        console.error("Error setting theme:", error);
-    }
-      })();
+  } catch {}
+})();
     `,
           }}
         />
