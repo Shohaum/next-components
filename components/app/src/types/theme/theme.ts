@@ -5,3 +5,5 @@ export interface ThemeProps extends React.HTMLAttributes<HTMLDivElement> {
 export interface ThemeButtonProps extends React.ComponentProps<"button"> {
     children: React.ReactNode;
 }
+
+export type ThemeMode = "light" | "dark" | "system";

@@ -3,15 +3,17 @@
 import styles from "./theme.module.css";
 // components
 import ThemeButton from "@/components/theme/themeButton";
+// types
+import { ThemeMode } from "@/types/theme/theme";
 // utilities
 import { useState, useEffect } from "react";
 
 const Theme = () => {
 
     const [mounted, setMounted] = useState(false);
-    const [theme, setTheme] = useState("system");
+    const [theme, setTheme] = useState<ThemeMode>("system");
 
-    const toggleTheme = (theme: string) => {
+    const toggleTheme = (theme: ThemeMode) => {
         const root = document.documentElement;
 
         if (theme === "system") {
@@ -49,7 +51,7 @@ const Theme = () => {
 
     useEffect(() => {
         setMounted(true);
-        localStorage.getItem("theme") && setTheme(localStorage.getItem("theme") || "system");
+        localStorage.getItem("theme") && setTheme(localStorage.getItem("theme") as ThemeMode || "system");
     }, []);
 
     if (!mounted) {
