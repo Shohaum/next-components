@@ -46,7 +46,7 @@ const Theme = () => {
             </path>
         </svg>
 
-    useEffect(() => { }, [])
+    useEffect(() => { }, []);
 
     return (
         <div className={styles.theme}>
