@@ -1,10 +1,15 @@
 "use client"
 // CSS
 import styles from "./theme.module.css";
+// components
+import ThemeButton from "@/components/theme/themeButton";
 // utilities
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 
 const Theme = () => {
+
+    const [mounted, setMounted] = useState(false);
+    const [theme, setTheme] = useState("system");
 
     const toggleTheme = (theme: string) => {
         const root = document.documentElement;
@@ -14,17 +19,41 @@ const Theme = () => {
             if (darkThemeMq.matches) {
                 // Theme set to dark.
                 root.setAttribute("data-theme", "dark");
-                localStorage.setItem("theme", "dark");
             } else {
                 // Theme set to light.
                 root.setAttribute("data-theme", "light");
-                localStorage.setItem("theme", "light");
             }
         }
         else {
             root.setAttribute("data-theme", theme);
-            localStorage.setItem("theme", theme);
         }
+        localStorage.setItem("theme", theme);
+        setTheme(theme);
+    }
+
+    useEffect(() => {
+        // Listen for System Theme changes
+        const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
+
+        const handleChange = () => {
+            // Only re-apply if the user is currently on "system" mode
+            const currentPref = localStorage.getItem("theme") || "system";
+            if (currentPref === "system") {
+                toggleTheme("system");
+            }
+        };
+
+        mediaQuery.addEventListener("change", handleChange);
+        return () => mediaQuery.removeEventListener("change", handleChange);
+    }, []);
+
+    useEffect(() => {
+        setMounted(true);
+        localStorage.getItem("theme") && setTheme(localStorage.getItem("theme") || "system");
+    }, []);
+
+    if (!mounted) {
+        return null;
     }
 
     const lightIcon =
@@ -40,27 +69,23 @@ const Theme = () => {
         </svg>
 
     const systemIcon =
-        <svg width="14" height="14" strokeLinejoin="round" viewBox="0 0 16 16">
-            <path fillRule="evenodd" clipRule="evenodd" d="M0 2C0 1.44772 0.447715 1 1 1H15C15.5523 1 16 1.44772 16 2V10.5C16 11.0523 15.5523 11.5 15 11.5H8.75V14.5H9.75H10.5V16H9.75H6.25H5.5V14.5H6.25H7.25V11.5H1C0.447714 11.5 0 11.0523 0 10.5V2ZM1.5 2.5V10H14.5V2.5H1.5Z" fill="currentColor">
-
+        <svg width="16" height="16" strokeLinejoin="round" viewBox="0 0 16 16">
+            <path fillRule="evenodd" clipRule="evenodd" d="M1 3.25C1 1.45507 2.45507 0 4.25 0H11.75C13.5449 0 15 1.45507 15 3.25V15.25V16H14.25H1.75H1V15.25V3.25ZM4.25 1.5C3.2835 1.5 2.5 2.2835 2.5 3.25V14.5H13.5V3.25C13.5 2.2835 12.7165 1.5 11.75 1.5H4.25ZM4 4C4 3.44772 4.44772 3 5 3H11C11.5523 3 12 3.44772 12 4V10H4V4ZM9 13H12V11.5H9V13Z" fill="currentColor">
             </path>
         </svg>
 
-    useEffect(() => { }, []);
-
     return (
         <div className={styles.theme}>
-            <button aria-label="System" data-slot="system" type="button" role="button" name="system" title="System" onClick={() => toggleTheme("system")}>
-                {systemIcon}
-            </button>
-            <button aria-label="Light" data-slot="light" type="button" role="button" name="light" title="Light" onClick={() => toggleTheme("light")}>
+            <ThemeButton onClick={() => toggleTheme("light")} aria-label="Light Theme" aria-selected={theme === "light"}>
                 {lightIcon}
-            </button>
-            <button aria-label="Dark" data-slot="dark" type="button" role="button" name="dark" title="Dark" onClick={() => toggleTheme("dark")}>
+            </ThemeButton>
+            <ThemeButton onClick={() => toggleTheme("system")} aria-label="System Theme" aria-selected={theme === "system"}>
+                {systemIcon}
+            </ThemeButton>
+            <ThemeButton onClick={() => toggleTheme("dark")} aria-label="Dark Theme" aria-selected={theme === "dark"}>
                 {darkIcon}
-            </button>
+            </ThemeButton>
         </div>
-
     )
 };
 
