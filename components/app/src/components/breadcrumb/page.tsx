@@ -32,7 +32,7 @@ const App = () => {
                                     <BreadcrumbEllipsis />
                                     <span className="sr-only">Toggle menu</span>
                                 </DropdownTrigger>
-                                <DropdownContent>
+                                <DropdownContent style={{ background: "var(--matte-background)", scrollbarColor: "var(--gray-500) transparent", outlineColor: "var(--border-color)" }}>
                                     <DropdownItem>Documentation</DropdownItem>
                                     <DropdownItem>Themes</DropdownItem>
                                     <DropdownItem>GitHub</DropdownItem>
