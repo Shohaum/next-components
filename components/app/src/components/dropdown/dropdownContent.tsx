@@ -1,3 +1,4 @@
+"use client"
 // CSS
 import styles from "@/components/dropdown/dropdownContent.module.css";
 // utilities
