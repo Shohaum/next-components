@@ -28,8 +28,8 @@ const App = () => {
             <path fillRule="evenodd" clipRule="evenodd" d="M4 8C4 8.82843 3.32843 9.5 2.5 9.5C1.67157 9.5 1 8.82843 1 8C1 7.17157 1.67157 6.5 2.5 6.5C3.32843 6.5 4 7.17157 4 8ZM9.5 8C9.5 8.82843 8.82843 9.5 8 9.5C7.17157 9.5 6.5 8.82843 6.5 8C6.5 7.17157 7.17157 6.5 8 6.5C8.82843 6.5 9.5 7.17157 9.5 8ZM13.5 9.5C14.3284 9.5 15 8.82843 15 8C15 7.17157 14.3284 6.5 13.5 6.5C12.6716 6.5 12 7.17157 12 8C12 8.82843 12.6716 9.5 13.5 9.5Z" fill="currentColor">
             </path>
         </svg>
-    
-    const readIcon = 
+
+    const readIcon =
         <svg width="16" height="16" strokeLinejoin="round" viewBox="0 0 16 16">
             <path fillRule="evenodd" clipRule="evenodd" d="M11.5015 3.85991L11.0459 4.45567L7.70569 8.82361L7.29118 8.4091L6.63564 7.75356L9.85434 3.5445L10.3099 2.94873L11.5015 3.85991ZM4.1092 11.5911L4.9023 12.3842C4.2256 12.8947 3.24471 12.8554 2.61219 12.223L0.669181 10.2804L0.138794 9.75014L1.19934 8.68937L1.72973 9.21964L3.67274 11.1622C3.68536 11.1748 3.69895 11.1858 3.71326 11.1951L4.1092 11.5911ZM15.296 4.45568L15.7515 3.85991L14.56 2.94874L14.1044 3.54451L8.29816 11.1373C8.20632 11.2574 8.02973 11.2691 7.92281 11.1623L5.97971 9.21964L5.44932 8.68937L4.38879 9.75017L4.91918 10.2804L6.86228 12.223C7.6107 12.9713 8.84683 12.8892 9.48969 12.0485L15.296 4.45568Z" fill="currentColor">
             </path>
@@ -68,16 +68,17 @@ const App = () => {
             alignItems: "center"
         }}>
             <div style={{ display: "flex", gap: "1rem" }}>
-                <ButtonGroup>
+                <ButtonGroup style={{ background: "var(--matte-background)" }}>
                     <Button aria-label="Go Back">
                         {backIcon}
                     </Button>
                 </ButtonGroup>
-                <ButtonGroup>
+                <ButtonGroup style={{ background: "var(--matte-background)" }}>
                     <Button style={{ fontSize: "var(--size-xsm)" }}>Archive</Button>
+                    <Button style={{ fontSize: "var(--size-xsm)" }}>Message</Button>
                     <Button style={{ fontSize: "var(--size-xsm)" }}>Report</Button>
                 </ButtonGroup>
-                <ButtonGroup>
+                <ButtonGroup style={{ background: "var(--matte-background)" }}>
                     <Button style={{ fontSize: "var(--size-xsm)" }}>Snooze</Button>
                     <Dropdown>
                         <DropdownTrigger>
