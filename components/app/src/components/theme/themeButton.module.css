@@ -9,10 +9,10 @@
     fill: var(--gray-900);
 }
 
-.themeButton[data-active="true"] {
+.themeButton[aria-selected="true"] {
     outline: 1px solid var(--border-color);
 }
 
-.themeButton[data-active="true"]>svg>path {
+.themeButton[aria-selected="true"]>svg>path {
     fill: currentColor;
 }

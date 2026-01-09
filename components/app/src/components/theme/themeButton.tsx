@@ -5,22 +5,18 @@ import React from "react";
 // types
 import { ThemeButtonProps } from "@/types/theme/theme";
 
-const ThemeButton = React.forwardRef<HTMLButtonElement, ThemeButtonProps>(({ onClick, children, label, active, ...props }, ref) => (
-    <button
-        {...props}
-        ref={ref}
-        className={`${styles.themeButton} ${props.className || ""}`}
-        aria-checked={active}
-        aria-label={label}
-        title={label}
-        data-active={active}
-        type="button"
-        role="radio"
-        onClick={onClick}
-    >
-        {children}
-    </button>
-));
+const ThemeButton = React.forwardRef<HTMLButtonElement, ThemeButtonProps>(({
+    children,
+    ...props
+}, ref
+) => {
+
+    return (
+        <button {...props} ref={ref} type={"button"} className={`${styles.themeButton} ${props.className || ""}`}>
+            {children}
+        </button>
+    )
+});
 
 ThemeButton.displayName = "ThemeButton";
 

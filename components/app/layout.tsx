@@ -17,11 +17,6 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning={true}>
       <head>
-        <style>
-          @import url('https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap');
-        </style>
-      </head>
-      <body>
         <script
           id="theme-script"
           dangerouslySetInnerHTML={{
@@ -44,6 +39,11 @@ export default function RootLayout({
     `,
           }}
         />
+        <style>
+          @import url('https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap');
+        </style>
+      </head>
+      <body>
         {children}
       </body>
     </html>

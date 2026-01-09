@@ -1,51 +1,62 @@
 "use client"
 // CSS
 import styles from "./theme.module.css";
-// utilities
-import { useState, useCallback, useEffect } from "react";
-// types
-import { AllowedTheme } from "@/types/theme/theme";
 // components
-import ThemeButton from "./themeButton";
+import ThemeButton from "@/components/theme/themeButton";
+// types
+import { ThemeMode } from "@/types/theme/theme";
+// utilities
+import { useState, useEffect } from "react";
 
 const Theme = () => {
 
     const [mounted, setMounted] = useState(false);
+    const [theme, setTheme] = useState<ThemeMode>("system");
 
-    const [theme, setTheme] = useState<AllowedTheme>(() => {
-        if (typeof window === "undefined") return "system";
-        return (localStorage.getItem("theme") as AllowedTheme) || "system";
-    });
-
-    const applyTheme = useCallback((value: AllowedTheme) => {
+    const toggleTheme = (theme: ThemeMode) => {
         const root = document.documentElement;
 
-        if (value === "system") {
-            const isDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-            root.setAttribute("data-theme", isDark ? "dark" : "light");
-        } else {
-            root.setAttribute("data-theme", value);
+        if (theme === "system") {
+            const darkThemeMq = window.matchMedia("(prefers-color-scheme: dark)");
+            if (darkThemeMq.matches) {
+                // Theme set to dark.
+                root.setAttribute("data-theme", "dark");
+            } else {
+                // Theme set to light.
+                root.setAttribute("data-theme", "light");
+            }
         }
-        setTheme(value);
-        localStorage.setItem("theme", value);
+        else {
+            root.setAttribute("data-theme", theme);
+        }
+        localStorage.setItem("theme", theme);
+        setTheme(theme);
+    }
+
+    useEffect(() => {
+        // Listen for System Theme changes
+        const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
+
+        const handleChange = () => {
+            // Only re-apply if the user is currently on "system" mode
+            const currentPref = localStorage.getItem("theme") || "system";
+            if (currentPref === "system") {
+                toggleTheme("system");
+            }
+        };
+
+        mediaQuery.addEventListener("change", handleChange);
+        return () => mediaQuery.removeEventListener("change", handleChange);
     }, []);
 
     useEffect(() => {
-        applyTheme(theme);
         setMounted(true);
+        localStorage.getItem("theme") && setTheme(localStorage.getItem("theme") as ThemeMode || "system");
     }, []);
 
-    useEffect(() => {
-        if (theme !== "system") return;
-
-        const media = window.matchMedia("(prefers-color-scheme: dark)");
-        const handler = () => applyTheme("system");
-
-        media.addEventListener("change", handler);
-        return () => media.removeEventListener("change", handler);
-    }, [theme]);
-
-    if (!mounted) return null;
+    if (!mounted) {
+        return null;
+    }
 
     const lightIcon =
         <svg width="14" height="14" stroke="currentColor" fill="currentColor" strokeWidth={0} strokeLinejoin="round" viewBox="0 0 16 16">
@@ -60,33 +71,23 @@ const Theme = () => {
         </svg>
 
     const systemIcon =
-        <svg width="14" height="14" strokeLinejoin="round" viewBox="0 0 16 16">
+        <svg width="16" height="16" strokeLinejoin="round" viewBox="0 0 16 16">
             <path fillRule="evenodd" clipRule="evenodd" d="M1 3.25C1 1.45507 2.45507 0 4.25 0H11.75C13.5449 0 15 1.45507 15 3.25V15.25V16H14.25H1.75H1V15.25V3.25ZM4.25 1.5C3.2835 1.5 2.5 2.2835 2.5 3.25V14.5H13.5V3.25C13.5 2.2835 12.7165 1.5 11.75 1.5H4.25ZM4 4C4 3.44772 4.44772 3 5 3H11C11.5523 3 12 3.44772 12 4V10H4V4ZM9 13H12V11.5H9V13Z" fill="currentColor">
             </path>
         </svg>
 
     return (
         <div className={styles.theme}>
-            <ThemeButton
-                label="System"
-                active={theme === "system"}
-                onClick={() => applyTheme("system")}>
-                {systemIcon}
-            </ThemeButton>
-            <ThemeButton
-                label="Light"
-                active={theme === "light"}
-                onClick={() => applyTheme("light")}>
+            <ThemeButton onClick={() => toggleTheme("light")} aria-label="Light Theme" aria-selected={theme === "light"}>
                 {lightIcon}
             </ThemeButton>
-            <ThemeButton
-                label="Dark"
-                active={theme === "dark"}
-                onClick={() => applyTheme("dark")}>
+            <ThemeButton onClick={() => toggleTheme("system")} aria-label="System Theme" aria-selected={theme === "system"}>
+                {systemIcon}
+            </ThemeButton>
+            <ThemeButton onClick={() => toggleTheme("dark")} aria-label="Dark Theme" aria-selected={theme === "dark"}>
                 {darkIcon}
             </ThemeButton>
         </div>
-
     )
 };
 
