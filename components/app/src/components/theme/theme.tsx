@@ -10,7 +10,12 @@ import ThemeButton from "./themeButton";
 
 const Theme = () => {
 
-    const [theme, setTheme] = useState<AllowedTheme>(localStorage.getItem("theme") as AllowedTheme || "system");
+    const [mounted, setMounted] = useState(false);
+
+    const [theme, setTheme] = useState<AllowedTheme>(() => {
+        if (typeof window === "undefined") return "system";
+        return (localStorage.getItem("theme") as AllowedTheme) || "system";
+    });
 
     const applyTheme = useCallback((value: AllowedTheme) => {
         const root = document.documentElement;
@@ -18,20 +23,17 @@ const Theme = () => {
         if (value === "system") {
             const isDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
             root.setAttribute("data-theme", isDark ? "dark" : "light");
-
-            if (isDark) {
-                setTheme("dark");
-            } else {
-                setTheme("light");
-            }
         } else {
             root.setAttribute("data-theme", value);
-            setTheme(value);
         }
-
+        setTheme(value);
         localStorage.setItem("theme", value);
     }, []);
 
+    useEffect(() => {
+        applyTheme(theme);
+        setMounted(true);
+    }, []);
 
     useEffect(() => {
         if (theme !== "system") return;
@@ -42,6 +44,8 @@ const Theme = () => {
         media.addEventListener("change", handler);
         return () => media.removeEventListener("change", handler);
     }, [theme]);
+
+    if (!mounted) return null;
 
     const lightIcon =
         <svg width="14" height="14" stroke="currentColor" fill="currentColor" strokeWidth={0} strokeLinejoin="round" viewBox="0 0 16 16">

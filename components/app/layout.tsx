@@ -37,7 +37,9 @@ export default function RootLayout({
     } else {
       root.dataset.theme = theme;
     }
-  } catch {}
+  } catch(error) {
+      console.error("Error setting theme:", error);
+   }
 })();
     `,
           }}
