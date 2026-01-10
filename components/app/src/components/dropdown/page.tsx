@@ -121,8 +121,8 @@ const App = () => {
 
                         <DropdownGroupSeparator />
 
-                        <DropdownItem style={{ fontSize: "var(--size-xsm)" }} role="dropdown-item" data-value="dropdown-item" id="logout" disabled={false} onClick={() => alert("logout selected")}>
-                            logout
+                        <DropdownItem style={{ fontSize: "var(--size-xsm)" }} variant="destructive" role="dropdown-item" data-value="dropdown-item" id="logout" disabled={false} onClick={() => alert("logout selected")}>
+                            Trash
                             <DropdownItemShortcut style={{ color: "var(--gray-900)" }}>
                                 ⌘Q
                             </DropdownItemShortcut>

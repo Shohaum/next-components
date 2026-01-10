@@ -15,6 +15,7 @@ export interface DropdownGroupProps extends React.HTMLAttributes<HTMLDivElement>
 export interface DropdownItemProps extends React.ComponentProps<"button"> {
     onClick?: () => void,
     children?: React.ReactNode;
+    variant?: "default" | "destructive";
 };
 
 export interface DropdownItemShortcutProps extends React.HTMLAttributes<HTMLSpanElement> {
