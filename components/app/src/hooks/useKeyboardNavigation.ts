@@ -24,8 +24,6 @@ export const useKeyboardNavigation = (
                     el.offsetParent !== null
             ) as HTMLElement[];
 
-            console.log(items);
-
             if (!items.length) return;
 
             const activeElement = document.activeElement as HTMLElement;
