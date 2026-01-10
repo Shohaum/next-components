@@ -26,5 +26,3 @@ export interface BreadcrumbEllipsisProps extends React.ComponentPropsWithoutRef<
 export interface SlotProps extends React.HTMLAttributes<HTMLElement> {
     children: React.ReactNode;
 }
-
-

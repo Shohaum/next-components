@@ -8,21 +8,14 @@ import { useDropdownSub } from "@/contexts/dropdown";
 // types
 import { DropdownSubTriggerProps } from "@/types/dropdown/dropdown";
 
-const DropdownSubTrigger = React.forwardRef<HTMLDivElement, DropdownSubTriggerProps>(({ children, ...props }, ref) => {
+const DropdownSubTrigger = React.forwardRef<HTMLButtonElement, DropdownSubTriggerProps>(({ children, ...props }, ref) => {
 
-    const { contentId, dropdownSubRef } = useDropdownSub();
-
-    const toggleDropdownSub = () => {
-
-        if (!dropdownSubRef?.current) return;
-
-        dropdownSubRef.current.togglePopover();
-    };
+    const { contentId } = useDropdownSub();
 
     return (
-        <div {...props} ref={ref} className={`${styles.dropdownSubTrigger} ${props.className || ""}`} popoverTarget={contentId} onClick={toggleDropdownSub}>
+        <button {...props} ref={ref} className={`${styles.dropdownSubTrigger} ${props.className || ""}`} popoverTarget={contentId}>
             {children}
-        </div>
+        </button>
     )
 });
 

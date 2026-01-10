@@ -1,21 +1,16 @@
-// utilities
-import React from "react";
 // contexts
 import { DropdownSubProvider } from "@/contexts/dropdown";
 // types
 import { DropdownSubProps } from "@/types/dropdown/dropdown";
 
-const DropdownSub = React.forwardRef<HTMLDivElement, DropdownSubProps>(
-    ({ children, ...props }, ref) => {
+const DropdownSub = ({ children }: DropdownSubProps) => {
 
-        return (
-            <div {...props} ref={ref}>
-                <DropdownSubProvider>
-                    {children}
-                </DropdownSubProvider>
-            </div>
-        )
-    });
+    return (
+        <DropdownSubProvider>
+            {children}
+        </DropdownSubProvider>
+    )
+};
 
 DropdownSub.displayName = "DropdownSub";
 

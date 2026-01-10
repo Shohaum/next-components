@@ -37,11 +37,12 @@ export interface DropdownSubContentProps extends React.HTMLAttributes<HTMLDivEle
     children: React.ReactNode;
 };
 
-export interface DropdownSubTriggerProps extends React.HTMLAttributes<HTMLDivElement> {
+export interface DropdownSubTriggerProps extends React.ComponentProps<"button"> {
     children: React.ReactNode;
 };
 
-export interface DropDownTriggerProps extends React.HTMLAttributes<HTMLDivElement> {
+export interface DropDownTriggerProps extends React.ComponentProps<"button"> {
+    asChild?: boolean;
     children: React.ReactNode;
 };
 

@@ -10,3 +10,12 @@
 
     anchor-name: --anchor-dropdownSub;
 }
+
+.dropdownSubTrigger:hover {
+    background-color: var(--gray-400);
+}
+
+.dropdownSubTrigger:focus-visible {
+    background-color: var(--gray-500);
+    outline: 1px solid var(--gray-1000);
+}
