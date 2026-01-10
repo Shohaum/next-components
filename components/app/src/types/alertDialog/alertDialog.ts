@@ -11,12 +11,12 @@ export interface AlertDialogProps extends React.HTMLAttributes<HTMLDivElement> {
     children: React.ReactNode;
 };
 
-export interface AlertDialogActionProps extends React.HTMLAttributes<HTMLButtonElement> {
+export interface AlertDialogActionProps extends React.ComponentProps<"button"> {
     onClick?: () => void;
     children: React.ReactNode;
 };
 
-export interface AlertDialogCancelProps extends React.HTMLAttributes<HTMLButtonElement> {
+export interface AlertDialogCancelProps extends React.ComponentProps<"button"> {
     children: React.ReactNode;
 };
 
@@ -40,6 +40,7 @@ export interface AlertDialogTitleProps extends React.HTMLAttributes<HTMLHeadingE
     children: React.ReactNode;
 };
 
-export interface AlertDialogTriggerProps extends React.HTMLAttributes<HTMLButtonElement> {
+export interface AlertDialogTriggerProps extends React.ComponentProps<"button"> {
+    asChild?: boolean;
     children: React.ReactNode;
 };
