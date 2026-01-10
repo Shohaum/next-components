@@ -157,7 +157,7 @@ const App = () => {
                             </DropdownGroup>
                             <DropdownGroupSeparator />
                             <DropdownGroup>
-                                <DropdownItem style={{ fontSize: "var(--size-xsm)" }}>
+                                <DropdownItem style={{ fontSize: "var(--size-xsm)" }} variant="destructive">
                                     {trashIcon}
                                     Trash
                                 </DropdownItem>
