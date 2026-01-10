@@ -34,3 +34,7 @@
     background-color: var(--red-300);
     outline: 1px solid var(--red-900);
 }
+
+.dropdownItem[variant="destructive"]>svg>path {
+    fill: var(--red-900);
+}
