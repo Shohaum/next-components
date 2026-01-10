@@ -13,7 +13,7 @@ export const useKeyboardNavigation = (
             event.stopPropagation();
 
             const focusableSelectors =
-                'button:not([disabled]), [href], input, select, textarea, [tabindex]:not([tabindex="-1"])';
+                'button:not([disabled]), [href], input, select, textarea, [tabindex]:not([tabindex="-1"]), [tabindex="0"]';
 
             const items = Array.from(
                 container.querySelectorAll(focusableSelectors)
@@ -23,6 +23,8 @@ export const useKeyboardNavigation = (
                     el.tabIndex !== -1 &&
                     el.offsetParent !== null
             ) as HTMLElement[];
+
+            console.log(items);
 
             if (!items.length) return;
 
