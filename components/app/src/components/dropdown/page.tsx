@@ -68,9 +68,6 @@ const App = () => {
                         <DropdownSub>
                             <DropdownSubTrigger style={{ fontSize: "var(--size-xsm)" }}>
                                 Settings
-                                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m9 18 6-6-6-6">
-                                </path>
-                                </svg>
                             </DropdownSubTrigger>
 
                             <DropdownSubContent style={{ width: "min(11rem, 50vw)", minWidth: "8rem", maxWidth: "17.93rem", maxHeight: "20rem", background: "var(--matte-background)", scrollbarColor: "var(--gray-500) transparent", outlineColor: "var(--border-color)" }}>
