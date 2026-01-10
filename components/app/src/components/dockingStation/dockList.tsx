@@ -36,14 +36,15 @@ const DockList = React.forwardRef<HTMLUListElement, DockListProps>(({ children, 
     const syncMagnetToActive = useCallback(() => {
         if (dockerListRef.current) {
             const activeElement = dockerListRef.current.querySelector<HTMLElement>(
-                `[data-slot="${currentPath}"]`
+                `[aria-selected="true"]`
             );
 
             if (activeElement) {
-                const { width } = activeElement.getBoundingClientRect();
+                const { width, height } = activeElement.getBoundingClientRect();
                 setMagnetStyles((prev) => ({
                     ...prev,
                     width: `${width}px`,
+                    height: `${height}px`,
                     transform: `translate(${activeElement.offsetLeft}px, ${activeElement.offsetTop}px)`,
                     opacity: 1,
                 }));

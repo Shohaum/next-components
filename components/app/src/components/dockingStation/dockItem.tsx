@@ -7,11 +7,15 @@ import React, { useCallback } from "react";
 import { useDockingStation } from "@/contexts/dockingStation";
 // types
 import { DockItemProps } from "@/types/dockingStation/dockingStation";
+import { usePathname } from "next/navigation";
 
 const DockItem = React.forwardRef<HTMLLIElement, DockItemProps>(({ slug, children, ...props }, ref
 ) => {
 
     const { setMagnetStyles } = useDockingStation();
+
+    const pathname = usePathname();
+    const currentPath = pathname.split("/").pop();
 
     const onMouseEnter = useCallback(
         (e: React.MouseEvent<HTMLLIElement>) => {
@@ -34,7 +38,7 @@ const DockItem = React.forwardRef<HTMLLIElement, DockItemProps>(({ slug, childre
     );
 
     return (
-        <li {...props} ref={ref} data-slot={slug} onMouseEnter={onMouseEnter} className={`${styles.dockItem} ${props.className || ""}`}>
+        <li {...props} ref={ref} aria-label={slug} aria-selected={currentPath === slug} onMouseEnter={onMouseEnter} className={`${styles.dockItem} ${props.className || ""}`}>
             {children}
         </li>
     );
