@@ -5,18 +5,8 @@ import React, {
     useState,
     useMemo,
 } from "react";
-
-type MagnetStyles = {
-    width?: string;
-    height?: string;
-    opacity?: number | string;
-    transform?: string;
-};
-
-type DockingStationContextType = {
-    magnetStyles: MagnetStyles;
-    setMagnetStyles: React.Dispatch<React.SetStateAction<MagnetStyles>>;
-};
+// types
+import { DockingStationContextType, MagnetStyles } from "@/types/dockingStation/dockingStation";
 
 const DockingStationContext = createContext<DockingStationContextType | undefined>(undefined);
 

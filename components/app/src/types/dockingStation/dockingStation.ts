@@ -15,3 +15,15 @@ export interface DockerLinkProps extends React.HTMLAttributes<HTMLDivElement> {
 
 export interface MagnetProps extends React.HTMLAttributes<HTMLSpanElement> {
 };
+
+export type MagnetStyles = {
+    width?: string;
+    height?: string;
+    opacity?: number | string;
+    transform?: string;
+};
+
+export interface DockingStationContextType {
+    magnetStyles: MagnetStyles;
+    setMagnetStyles: React.Dispatch<React.SetStateAction<MagnetStyles>>;
+};
