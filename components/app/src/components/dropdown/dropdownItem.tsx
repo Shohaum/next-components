@@ -5,24 +5,26 @@ import styles from "@/components/dropdown/dropdownItem.module.css";
 import React from "react";
 // types
 import { DropdownItemProps } from "@/types/dropdown/dropdown";
+// slots
+import { Slot } from "@/slots/slot";
 
 const DropdownItem = React.forwardRef<HTMLButtonElement, DropdownItemProps>(({
     onClick = () => { },
-    children,
+    asChild,
     ...props
 }, ref) => {
 
+    const Comp = asChild ? Slot : "button";
 
     return (
-        <button
+        <Comp
             {...props}
             ref={ref}
+            role="menuitem"
             className={`${styles.dropdownItem} ${props.className || ""}`}
             onClick={onClick}
             data-slot="dropdown-item"
-        >
-            {children}
-        </button>
+        />
     )
 });
 

@@ -16,7 +16,7 @@ const AlertDialogTrigger = React.forwardRef<HTMLButtonElement, AlertDialogTrigge
     const { showAlertDialog } = useAlertDialog();
 
     return (
-        <Comp {...props} ref={ref} data-slot="alert-trigger" onClick={() => showAlertDialog()} className={`${styles.alertDialogTrigger} ${props.className || ""}`} />
+        <Comp {...props} ref={ref} data-slot="alert-trigger" onClick={() => showAlertDialog()} className={`${styles.alertDialogTrigger} ${props.className || ""}`} role="button" />
     );
 });
 
