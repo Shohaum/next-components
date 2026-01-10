@@ -79,19 +79,19 @@ const App = () => {
             justifyContent: "center",
             alignItems: "center"
         }}>
-            <div style={{ display: "flex", gap: "1rem" }}>
+            <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap", justifyContent: "center" }}>
                 <ButtonGroup style={{ background: "var(--matte-background)" }}>
                     <Button aria-label="Go Back">
                         {backIcon}
                     </Button>
                 </ButtonGroup>
                 <ButtonGroup style={{ background: "var(--matte-background)" }}>
-                    <Button style={{ fontSize: "var(--size-xsm)" }}>Archive</Button>
-                    <Button style={{ fontSize: "var(--size-xsm)" }}>Message</Button>
-                    <Button style={{ fontSize: "var(--size-xsm)" }}>Report</Button>
+                    <Button style={{ fontSize: "var(--size-xsm)" }} onClick={() => alert("Archive")}>Archive</Button>
+                    <Button style={{ fontSize: "var(--size-xsm)" }} onClick={() => alert("Message")}>Message</Button>
+                    <Button style={{ fontSize: "var(--size-xsm)" }} onClick={() => alert("Report")}>Report</Button>
                 </ButtonGroup>
                 <ButtonGroup style={{ background: "var(--matte-background)" }}>
-                    <Button style={{ fontSize: "var(--size-xsm)" }}>Snooze</Button>
+                    <Button style={{ fontSize: "var(--size-xsm)" }} onClick={() => alert("Snooze")}>Snooze</Button>
                     <Dropdown>
                         <DropdownTrigger asChild>
                             <Button aria-label="More Options">
@@ -100,26 +100,26 @@ const App = () => {
                         </DropdownTrigger>
                         <DropdownContent style={{ width: "min(11rem, 50vw)", minWidth: "8rem", maxWidth: "17.93rem", maxHeight: "20rem", background: "var(--matte-background)", scrollbarColor: "var(--gray-500) transparent", outlineColor: "var(--border-color)" }}>
                             <DropdownGroup>
-                                <DropdownItem style={{ fontSize: "var(--size-xsm)" }}>
+                                <DropdownItem style={{ fontSize: "var(--size-xsm)" }} onClick={() => alert("mark as read")}>
                                     {readIcon}
                                     Mark as Read
                                 </DropdownItem>
-                                <DropdownItem style={{ fontSize: "var(--size-xsm)" }}>
+                                <DropdownItem style={{ fontSize: "var(--size-xsm)" }} onClick={() => alert("archive")}>
                                     {archiveIcon}
                                     Archive
                                 </DropdownItem>
                             </DropdownGroup>
                             <DropdownGroupSeparator />
                             <DropdownGroup>
-                                <DropdownItem style={{ fontSize: "var(--size-xsm)" }}>
+                                <DropdownItem style={{ fontSize: "var(--size-xsm)" }} onClick={() => alert("snooze")}>
                                     {timeIcon}
                                     Snooze
                                 </DropdownItem>
-                                <DropdownItem style={{ fontSize: "var(--size-xsm)" }}>
+                                <DropdownItem style={{ fontSize: "var(--size-xsm)" }} onClick={() => alert("add to calendar")}>
                                     {calendarIcon}
                                     Add to Calendar
                                 </DropdownItem>
-                                <DropdownItem style={{ fontSize: "var(--size-xsm)" }}>
+                                <DropdownItem style={{ fontSize: "var(--size-xsm)" }} onClick={() => alert("add to list")}>
                                     {filterIcon}
                                     Add to List
                                 </DropdownItem>
@@ -133,13 +133,13 @@ const App = () => {
                                         <DropdownLabel style={{ fontSize: "var(--size-xsm)" }} label="Settings" />
 
                                         <DropdownGroup>
-                                            <DropdownItem style={{ fontSize: "var(--size-xsm)" }} role="dropdown-sub-item" data-value="dropdown-sub-item" name="storage" id="storage" onClick={() => alert("storage selected")}>
+                                            <DropdownItem style={{ fontSize: "var(--size-xsm)" }} role="dropdown-sub-item" data-value="dropdown-sub-item" name="storage" id="storage" onClick={() => alert("storage")}>
                                                 Storage
                                                 <DropdownItemShortcut style={{ color: "var(--gray-900)" }}>
                                                     ⌘S
                                                 </DropdownItemShortcut>
                                             </DropdownItem>
-                                            <DropdownItem style={{ fontSize: "var(--size-xsm)" }} role="dropdown-sub-item" data-value="dropdown-sub-item" name="module" id="module" onClick={() => alert("module selected")}>
+                                            <DropdownItem style={{ fontSize: "var(--size-xsm)" }} role="dropdown-sub-item" data-value="dropdown-sub-item" name="module" id="module" onClick={() => alert("module")}>
                                                 Module
                                                 <DropdownItemShortcut style={{ color: "var(--gray-900)" }}>
                                                     ⌘M
@@ -149,7 +149,7 @@ const App = () => {
 
                                         <DropdownGroupSeparator />
 
-                                        <DropdownItem style={{ fontSize: "var(--size-xsm)" }} role="dropdown-sub-item" data-value="dropdown-sub-item" name="more" id="more" onClick={() => alert("more selected")}>
+                                        <DropdownItem style={{ fontSize: "var(--size-xsm)" }} role="dropdown-sub-item" data-value="dropdown-sub-item" name="more" id="more" onClick={() => alert("more")}>
                                             More...
                                         </DropdownItem>
                                     </DropdownSubContent>
@@ -157,7 +157,7 @@ const App = () => {
                             </DropdownGroup>
                             <DropdownGroupSeparator />
                             <DropdownGroup>
-                                <DropdownItem style={{ fontSize: "var(--size-xsm)" }} variant="destructive">
+                                <DropdownItem style={{ fontSize: "var(--size-xsm)" }} variant="destructive" onClick={() => alert("trash")}>
                                     {trashIcon}
                                     Trash
                                 </DropdownItem>
