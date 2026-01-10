@@ -7,15 +7,16 @@ import styles from "@/components/alertDialog/alertDialogTrigger.module.css";
 import { useAlertDialog } from "@/contexts/alertDialog";
 // types
 import { AlertDialogTriggerProps } from "@/types/alertDialog/alertDialog";
+// slots
+import { Slot } from "@/slots/slot";
 
-const AlertDialogTrigger = React.forwardRef<HTMLButtonElement, AlertDialogTriggerProps>(({ children, ...props }, ref) => {
+const AlertDialogTrigger = React.forwardRef<HTMLButtonElement, AlertDialogTriggerProps>(({ asChild, ...props }, ref) => {
 
+    const Comp = asChild ? Slot : "button";
     const { showAlertDialog } = useAlertDialog();
 
     return (
-        <button {...props} tabIndex={0} ref={ref} data-slot="alert-trigger" onClick={() => showAlertDialog()} className={`${styles.alertDialogTrigger} ${props.className || ""}`}>
-            {children}
-        </button>
+        <Comp {...props} ref={ref} data-slot="alert-trigger" onClick={() => showAlertDialog()} className={`${styles.alertDialogTrigger} ${props.className || ""}`} />
     );
 });
 

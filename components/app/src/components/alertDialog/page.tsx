@@ -9,6 +9,7 @@ import AlertDialogTitle from "@/components/alertDialog/alertDialogTitle";
 import AlertDialogDescription from "@/components/alertDialog/alertDialogDescription";
 import AlertDialogAction from "@/components/alertDialog/alertDialogAction";
 import AlertDialogCancel from "@/components/alertDialog/alertDialogCancel";
+import Button from "../button/button";
 
 const App = () => {
     return (
@@ -17,8 +18,8 @@ const App = () => {
             <div style={{ width: "fit-content", height: "fit-content", display: "flex", justifyContent: "center", alignItems: "center", gap: "1rem" }}>
                 <AlertDialog>
 
-                    <AlertDialogTrigger style={{ backgroundColor: "var(--matte-background)", fontSize: "var(--size-xsm)", outlineColor: "var(--border-color)" }}>
-                        Dialog 1
+                    <AlertDialogTrigger style={{ backgroundColor: "var(--matte-background)", fontSize: "var(--size-xsm)", outlineColor: "var(--border-color)" }} asChild>
+                        <Button>Dialog 1</Button>
                     </AlertDialogTrigger>
 
                     <AlertDialogContent style={{ width: "min(32rem, 90%)", background: "var(--matte-background)" }}>
@@ -46,8 +47,8 @@ const App = () => {
 
                 <AlertDialog>
 
-                    <AlertDialogTrigger style={{ backgroundColor: "var(--matte-background)", fontSize: "var(--size-xsm)", outlineColor: "var(--border-color)" }}>
-                        Dialog 2
+                    <AlertDialogTrigger style={{ backgroundColor: "var(--matte-background)", fontSize: "var(--size-xsm)", outlineColor: "var(--border-color)" }} asChild>
+                        <Button>Dialog 2</Button>
                     </AlertDialogTrigger>
 
                     <AlertDialogContent style={{ width: "min(32rem, 90%)", background: "var(--matte-background)" }}>
