@@ -1,7 +1,14 @@
-.buttonGroup{
+.buttonGroup {
     display: flex;
+    border-radius: 0.5rem;
+    outline: 1px solid var(--border-color);
 }
 
-.buttonGroup > *:not(:first-child) {
+.buttonGroup>button {
     border-radius: 0;
+    outline: none;
+}
+
+.buttonGroup>button:not(:first-child) {
+    border-left: 1px solid var(--border-color);
 }

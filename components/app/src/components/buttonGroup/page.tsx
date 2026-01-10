@@ -28,8 +28,8 @@ const App = () => {
             <path fillRule="evenodd" clipRule="evenodd" d="M4 8C4 8.82843 3.32843 9.5 2.5 9.5C1.67157 9.5 1 8.82843 1 8C1 7.17157 1.67157 6.5 2.5 6.5C3.32843 6.5 4 7.17157 4 8ZM9.5 8C9.5 8.82843 8.82843 9.5 8 9.5C7.17157 9.5 6.5 8.82843 6.5 8C6.5 7.17157 7.17157 6.5 8 6.5C8.82843 6.5 9.5 7.17157 9.5 8ZM13.5 9.5C14.3284 9.5 15 8.82843 15 8C15 7.17157 14.3284 6.5 13.5 6.5C12.6716 6.5 12 7.17157 12 8C12 8.82843 12.6716 9.5 13.5 9.5Z" fill="currentColor">
             </path>
         </svg>
-    
-    const readIcon = 
+
+    const readIcon =
         <svg width="16" height="16" strokeLinejoin="round" viewBox="0 0 16 16">
             <path fillRule="evenodd" clipRule="evenodd" d="M11.5015 3.85991L11.0459 4.45567L7.70569 8.82361L7.29118 8.4091L6.63564 7.75356L9.85434 3.5445L10.3099 2.94873L11.5015 3.85991ZM4.1092 11.5911L4.9023 12.3842C4.2256 12.8947 3.24471 12.8554 2.61219 12.223L0.669181 10.2804L0.138794 9.75014L1.19934 8.68937L1.72973 9.21964L3.67274 11.1622C3.68536 11.1748 3.69895 11.1858 3.71326 11.1951L4.1092 11.5911ZM15.296 4.45568L15.7515 3.85991L14.56 2.94874L14.1044 3.54451L8.29816 11.1373C8.20632 11.2574 8.02973 11.2691 7.92281 11.1623L5.97971 9.21964L5.44932 8.68937L4.38879 9.75017L4.91918 10.2804L6.86228 12.223C7.6107 12.9713 8.84683 12.8892 9.48969 12.0485L15.296 4.45568Z" fill="currentColor">
             </path>
@@ -59,6 +59,18 @@ const App = () => {
             </path>
         </svg>
 
+    const timeIcon =
+        <svg width="13" height="13" strokeLinejoin="round" viewBox="0 0 16 16">
+            <path fillRule="evenodd" clipRule="evenodd" d="M7.25 1.25V2.03971C5.87928 2.18571 4.62678 2.72736 3.6089 3.54824L3.03033 2.96967L2.5 2.43934L1.43934 3.5L1.96967 4.03033L2.54824 4.6089C1.57979 5.80976 1 7.33717 1 9C1 12.866 4.13401 16 8 16C11.866 16 15 12.866 15 9C15 7.33717 14.4202 5.80976 13.4518 4.6089L14.0303 4.03033L14.5607 3.5L13.5 2.43934L12.9697 2.96967L12.3911 3.54824C11.3732 2.72736 10.1207 2.18571 8.75 2.03971V1.25H9.25H10V-0.25H9.25H8.75H7.25H6.75H6V1.25H6.75H7.25ZM2.5 9C2.5 5.96243 4.96243 3.5 8 3.5C11.0376 3.5 13.5 5.96243 13.5 9C13.5 12.0376 11.0376 14.5 8 14.5C4.96243 14.5 2.5 12.0376 2.5 9ZM8.75 6.75V6H7.25V6.75V9V9.75H8.75V9V6.75Z" fill="currentColor">
+            </path>
+        </svg>
+
+    const archiveIcon =
+        <svg width="13" height="13" strokeLinejoin="round" viewBox="0 0 16 16">
+            <path fillRule="evenodd" clipRule="evenodd" d="M1.5 3.5H14.5V5.5H13.5H2.5H1.5V3.5ZM1 7H0V5.5V3.5V2H1.5H14.5H16V3.5V5.5V7H15V12.5C15 13.8807 13.8807 15 12.5 15H3.5C2.11929 15 1 13.8807 1 12.5V7ZM2.5 7V12.5C2.5 13.0523 2.94772 13.5 3.5 13.5H12.5C13.0523 13.5 13.5 13.0523 13.5 12.5V7H2.5ZM6 9.5H6.75H9.25H10V11H9.25H6.75H6V9.5Z" fill="currentColor">
+            </path>
+        </svg>
+
     return (
         <div style={{
             width: "100%",
@@ -67,44 +79,47 @@ const App = () => {
             justifyContent: "center",
             alignItems: "center"
         }}>
-            <div style={{ display: "flex", gap: "1rem" }}>
-                <ButtonGroup>
+            <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap", justifyContent: "center" }}>
+                <ButtonGroup style={{ background: "var(--matte-background)" }}>
                     <Button aria-label="Go Back">
                         {backIcon}
                     </Button>
                 </ButtonGroup>
-                <ButtonGroup>
-                    <Button style={{ fontSize: "var(--size-xsm)" }}>Archive</Button>
-                    <Button style={{ fontSize: "var(--size-xsm)" }}>Report</Button>
+                <ButtonGroup style={{ background: "var(--matte-background)" }}>
+                    <Button style={{ fontSize: "var(--size-xsm)" }} onClick={() => alert("Archive")}>Archive</Button>
+                    <Button style={{ fontSize: "var(--size-xsm)" }} onClick={() => alert("Message")}>Message</Button>
+                    <Button style={{ fontSize: "var(--size-xsm)" }} onClick={() => alert("Report")}>Report</Button>
                 </ButtonGroup>
-                <ButtonGroup>
-                    <Button style={{ fontSize: "var(--size-xsm)" }}>Snooze</Button>
+                <ButtonGroup style={{ background: "var(--matte-background)" }}>
+                    <Button style={{ fontSize: "var(--size-xsm)" }} onClick={() => alert("Snooze")}>Snooze</Button>
                     <Dropdown>
-                        <DropdownTrigger>
+                        <DropdownTrigger asChild>
                             <Button aria-label="More Options">
                                 {moreIcon}
                             </Button>
                         </DropdownTrigger>
                         <DropdownContent style={{ width: "min(11rem, 50vw)", minWidth: "8rem", maxWidth: "17.93rem", maxHeight: "20rem", background: "var(--matte-background)", scrollbarColor: "var(--gray-500) transparent", outlineColor: "var(--border-color)" }}>
                             <DropdownGroup>
-                                <DropdownItem style={{ fontSize: "var(--size-xsm)" }}>
+                                <DropdownItem style={{ fontSize: "var(--size-xsm)" }} onClick={() => alert("mark as read")}>
                                     {readIcon}
                                     Mark as Read
                                 </DropdownItem>
-                                <DropdownItem style={{ fontSize: "var(--size-xsm)" }}>
+                                <DropdownItem style={{ fontSize: "var(--size-xsm)" }} onClick={() => alert("archive")}>
+                                    {archiveIcon}
                                     Archive
                                 </DropdownItem>
                             </DropdownGroup>
                             <DropdownGroupSeparator />
                             <DropdownGroup>
-                                <DropdownItem style={{ fontSize: "var(--size-xsm)" }}>
+                                <DropdownItem style={{ fontSize: "var(--size-xsm)" }} onClick={() => alert("snooze")}>
+                                    {timeIcon}
                                     Snooze
                                 </DropdownItem>
-                                <DropdownItem style={{ fontSize: "var(--size-xsm)" }}>
+                                <DropdownItem style={{ fontSize: "var(--size-xsm)" }} onClick={() => alert("add to calendar")}>
                                     {calendarIcon}
                                     Add to Calendar
                                 </DropdownItem>
-                                <DropdownItem style={{ fontSize: "var(--size-xsm)" }}>
+                                <DropdownItem style={{ fontSize: "var(--size-xsm)" }} onClick={() => alert("add to list")}>
                                     {filterIcon}
                                     Add to List
                                 </DropdownItem>
@@ -118,13 +133,13 @@ const App = () => {
                                         <DropdownLabel style={{ fontSize: "var(--size-xsm)" }} label="Settings" />
 
                                         <DropdownGroup>
-                                            <DropdownItem style={{ fontSize: "var(--size-xsm)" }} role="dropdown-sub-item" data-value="dropdown-sub-item" name="storage" id="storage" onClick={() => alert("storage selected")}>
+                                            <DropdownItem style={{ fontSize: "var(--size-xsm)" }} role="dropdown-sub-item" data-value="dropdown-sub-item" name="storage" id="storage" onClick={() => alert("storage")}>
                                                 Storage
                                                 <DropdownItemShortcut style={{ color: "var(--gray-900)" }}>
                                                     ⌘S
                                                 </DropdownItemShortcut>
                                             </DropdownItem>
-                                            <DropdownItem style={{ fontSize: "var(--size-xsm)" }} role="dropdown-sub-item" data-value="dropdown-sub-item" name="module" id="module" onClick={() => alert("module selected")}>
+                                            <DropdownItem style={{ fontSize: "var(--size-xsm)" }} role="dropdown-sub-item" data-value="dropdown-sub-item" name="module" id="module" onClick={() => alert("module")}>
                                                 Module
                                                 <DropdownItemShortcut style={{ color: "var(--gray-900)" }}>
                                                     ⌘M
@@ -134,7 +149,7 @@ const App = () => {
 
                                         <DropdownGroupSeparator />
 
-                                        <DropdownItem style={{ fontSize: "var(--size-xsm)" }} role="dropdown-sub-item" data-value="dropdown-sub-item" name="more" id="more" onClick={() => alert("more selected")}>
+                                        <DropdownItem style={{ fontSize: "var(--size-xsm)" }} role="dropdown-sub-item" data-value="dropdown-sub-item" name="more" id="more" onClick={() => alert("more")}>
                                             More...
                                         </DropdownItem>
                                     </DropdownSubContent>
@@ -142,7 +157,7 @@ const App = () => {
                             </DropdownGroup>
                             <DropdownGroupSeparator />
                             <DropdownGroup>
-                                <DropdownItem style={{ fontSize: "var(--size-xsm)" }}>
+                                <DropdownItem style={{ fontSize: "var(--size-xsm)" }} variant="destructive" onClick={() => alert("trash")}>
                                     {trashIcon}
                                     Trash
                                 </DropdownItem>
