@@ -18,7 +18,7 @@
     cursor: not-allowed;
 }
 
-.dropdownItem:focus {
+.dropdownItem:focus-visible {
     background-color: var(--gray-500);
     outline: 1px solid var(--gray-1000);
 }

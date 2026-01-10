@@ -10,7 +10,6 @@ import DropdownItemShortcut from "@/components/dropdown/dropdownItemShortcut";
 import DropdownGroupSeparator from "@/components/dropdown/dropdownGroupSeparator";
 import DropdownSub from "@/components/dropdown/dropdownSub";
 import DropdownSubTrigger from "@/components/dropdown/dropdownSubTrigger";
-import DropdownPortal from "@/components/dropdown/dropdownPortal";
 import DropdownSubContent from "@/components/dropdown/dropdownSubContent";
 import Button from "@/components/button/button";
 
@@ -24,120 +23,122 @@ const App = () => {
         </svg>
 
     return (
-        <main style={{ width: "100%", height: "50dvh", display: "flex", justifyContent: "center", alignItems: "center" }}>
-            {/* dropdown */}
-            <Dropdown>
+        <main style={{ width: "100%", height: "100dvh", display: "flex", justifyContent: "center", alignItems: "center" }}>
+            <div>
+                {/* dropdown */}
+                <Dropdown>
 
-                <DropdownTrigger>
-                    <Button style={{ background: "var(--matte-background)", fontSize: "var(--size-xsm)" }} title="dropdown" name="dropdown" type="button">
-                        <span>Dropdown</span>
-                        <span>{dropdownIcon}</span>
-                    </Button>
-                </DropdownTrigger>
+                    <DropdownTrigger asChild>
+                        <Button style={{ background: "var(--matte-background)", fontSize: "var(--size-xsm)" }} title="dropdown" name="dropdown" type="button">
+                            <span>Dropdown</span>
+                            <span>{dropdownIcon}</span>
+                        </Button>
+                    </DropdownTrigger>
 
-                <DropdownContent style={{ width: "min(11rem, 50vw)", minWidth: "8rem", maxWidth: "17.93rem", maxHeight: "20rem", background: "var(--matte-background)", scrollbarColor: "var(--gray-500) transparent", outlineColor: "var(--border-color)" }}>
+                    <DropdownContent style={{ width: "min(11rem, 50vw)", minWidth: "8rem", maxWidth: "17.93rem", maxHeight: "20rem", background: "var(--matte-background)", scrollbarColor: "var(--gray-500) transparent", outlineColor: "var(--border-color)" }}>
 
-                    <DropdownLabel style={{ fontSize: "var(--size-xsm)" }} label="Dropdown" />
-                    <DropdownGroup>
+                        <DropdownLabel style={{ fontSize: "var(--size-xsm)" }} label="Dropdown" />
+                        <DropdownGroup>
 
-                        <DropdownItem style={{ fontSize: "var(--size-xsm)" }} name="chevron" title="chevron" role="dropdown-item" data-value="dropdown-item" id="chevron" disabled={false} onClick={() => alert("chevron selected")}>
-                            Chevron
-                            <DropdownItemShortcut style={{ color: "var(--gray-900)" }}>
-                                ⌘C
-                            </DropdownItemShortcut>
-                        </DropdownItem>
-
-                        <DropdownItem style={{ fontSize: "var(--size-xsm)" }} role="dropdown-item" data-value="dropdown-item" id="profile" disabled={false} onClick={() => alert("profile selected")}>
-                            Profile
-                            <DropdownItemShortcut style={{ color: "var(--gray-900)" }}>
-                                ⌘P
-                            </DropdownItemShortcut>
-                        </DropdownItem>
-
-                        <DropdownItem style={{ fontSize: "var(--size-xsm)" }} role="dropdown-item" data-value="dropdown-item" id="command" disabled={false} onClick={() => alert("command selected")}>
-                            Command
-                            <DropdownItemShortcut style={{ color: "var(--gray-900)" }}>
-                                ⇧⌘K
-                            </DropdownItemShortcut>
-                        </DropdownItem>
-
-                    </DropdownGroup>
-
-                    <DropdownGroupSeparator />
-
-                    <DropdownSub>
-                        <DropdownSubTrigger style={{ fontSize: "var(--size-xsm)" }}>
-                            Settings
-                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m9 18 6-6-6-6">
-                            </path>
-                            </svg>
-                        </DropdownSubTrigger>
-
-                        <DropdownSubContent style={{ width: "min(11rem, 50vw)", minWidth: "8rem", maxWidth: "17.93rem", maxHeight: "20rem", background: "var(--matte-background)", scrollbarColor: "var(--gray-500) transparent", outlineColor: "var(--border-color)" }}>
-
-                            <DropdownLabel style={{ fontSize: "var(--size-xsm)" }} label="Settings" />
-
-                            <DropdownGroup>
-                                <DropdownItem style={{ fontSize: "var(--size-xsm)" }} role="dropdown-sub-item" data-value="dropdown-sub-item" name="storage" id="storage" onClick={() => alert("storage selected")}>
-                                    Storage
-                                    <DropdownItemShortcut style={{ color: "var(--gray-900)" }}>
-                                        ⌘S
-                                    </DropdownItemShortcut>
-                                </DropdownItem>
-                                <DropdownItem style={{ fontSize: "var(--size-xsm)" }} role="dropdown-sub-item" data-value="dropdown-sub-item" name="module" id="module" onClick={() => alert("module selected")}>
-                                    Module
-                                    <DropdownItemShortcut style={{ color: "var(--gray-900)" }}>
-                                        ⌘M
-                                    </DropdownItemShortcut>
-                                </DropdownItem>
-                            </DropdownGroup>
-
-                            <DropdownGroupSeparator />
-
-                            <DropdownItem style={{ fontSize: "var(--size-xsm)" }} role="dropdown-sub-item" data-value="dropdown-sub-item" name="more" id="more" onClick={() => alert("more selected")}>
-                                More...
+                            <DropdownItem style={{ fontSize: "var(--size-xsm)" }} name="chevron" title="chevron" role="dropdown-item" data-value="dropdown-item" id="chevron" disabled={false} onClick={() => alert("chevron selected")}>
+                                Chevron
+                                <DropdownItemShortcut style={{ color: "var(--gray-900)" }}>
+                                    ⌘C
+                                </DropdownItemShortcut>
                             </DropdownItem>
-                        </DropdownSubContent>
 
-                    </DropdownSub>
+                            <DropdownItem style={{ fontSize: "var(--size-xsm)" }} role="dropdown-item" data-value="dropdown-item" id="profile" disabled={false} onClick={() => alert("profile selected")}>
+                                Profile
+                                <DropdownItemShortcut style={{ color: "var(--gray-900)" }}>
+                                    ⌘P
+                                </DropdownItemShortcut>
+                            </DropdownItem>
 
-                    <DropdownGroupSeparator />
+                            <DropdownItem style={{ fontSize: "var(--size-xsm)" }} role="dropdown-item" data-value="dropdown-item" id="command" disabled={false} onClick={() => alert("command selected")}>
+                                Command
+                                <DropdownItemShortcut style={{ color: "var(--gray-900)" }}>
+                                    ⇧⌘K
+                                </DropdownItemShortcut>
+                            </DropdownItem>
 
-                    <DropdownItem style={{ fontSize: "var(--size-xsm)" }} role="dropdown-item" data-value="dropdown-item" id="slack" disabled={true} onClick={() => alert("slack selected")}>
-                        Slack
-                    </ DropdownItem>
+                        </DropdownGroup>
 
-                    <DropdownGroup>
+                        <DropdownGroupSeparator />
 
-                        <DropdownItem style={{ fontSize: "var(--size-xsm)" }} role="dropdown-item" data-value="dropdown-item" id="github" disabled={false} onClick={() => alert("github selected")}>
-                            Github
+                        <DropdownSub>
+                            <DropdownSubTrigger style={{ fontSize: "var(--size-xsm)" }}>
+                                Settings
+                                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m9 18 6-6-6-6">
+                                </path>
+                                </svg>
+                            </DropdownSubTrigger>
+
+                            <DropdownSubContent style={{ width: "min(11rem, 50vw)", minWidth: "8rem", maxWidth: "17.93rem", maxHeight: "20rem", background: "var(--matte-background)", scrollbarColor: "var(--gray-500) transparent", outlineColor: "var(--border-color)" }}>
+
+                                <DropdownLabel style={{ fontSize: "var(--size-xsm)" }} label="Settings" />
+
+                                <DropdownGroup>
+                                    <DropdownItem style={{ fontSize: "var(--size-xsm)" }} role="dropdown-sub-item" data-value="dropdown-sub-item" name="storage" id="storage" onClick={() => alert("storage selected")}>
+                                        Storage
+                                        <DropdownItemShortcut style={{ color: "var(--gray-900)" }}>
+                                            ⌘S
+                                        </DropdownItemShortcut>
+                                    </DropdownItem>
+                                    <DropdownItem style={{ fontSize: "var(--size-xsm)" }} role="dropdown-sub-item" data-value="dropdown-sub-item" name="module" id="module" onClick={() => alert("module selected")}>
+                                        Module
+                                        <DropdownItemShortcut style={{ color: "var(--gray-900)" }}>
+                                            ⌘M
+                                        </DropdownItemShortcut>
+                                    </DropdownItem>
+                                </DropdownGroup>
+
+                                <DropdownGroupSeparator />
+
+                                <DropdownItem style={{ fontSize: "var(--size-xsm)" }} role="dropdown-sub-item" data-value="dropdown-sub-item" name="more" id="more" onClick={() => alert("more selected")}>
+                                    More...
+                                </DropdownItem>
+                            </DropdownSubContent>
+
+                        </DropdownSub>
+
+                        <DropdownGroupSeparator />
+
+                        <DropdownItem style={{ fontSize: "var(--size-xsm)" }} role="dropdown-item" data-value="dropdown-item" id="slack" disabled={true} onClick={() => alert("slack selected")}>
+                            Slack
+                        </ DropdownItem>
+
+                        <DropdownGroup>
+
+                            <DropdownItem style={{ fontSize: "var(--size-xsm)" }} role="dropdown-item" data-value="dropdown-item" id="github" disabled={false} onClick={() => alert("github selected")}>
+                                Github
+                            </DropdownItem>
+
+                            <DropdownItem style={{ fontSize: "var(--size-xsm)" }} role="dropdown-item" data-value="dropdown-item" id="vercel" disabled={false} onClick={() => alert("vercel selected")}>
+                                Vercel
+                            </DropdownItem>
+
+                        </DropdownGroup>
+
+                        <DropdownGroupSeparator />
+
+                        <DropdownItem style={{ fontSize: "var(--size-xsm)" }} role="dropdown-item" data-value="dropdown-item" id="logout" disabled={false} onClick={() => alert("logout selected")}>
+                            logout
+                            <DropdownItemShortcut style={{ color: "var(--gray-900)" }}>
+                                ⌘Q
+                            </DropdownItemShortcut>
                         </DropdownItem>
 
-                        <DropdownItem style={{ fontSize: "var(--size-xsm)" }} role="dropdown-item" data-value="dropdown-item" id="vercel" disabled={false} onClick={() => alert("vercel selected")}>
-                            Vercel
+                        <DropdownItem style={{ fontSize: "var(--size-xsm)" }} role="dropdown-item" data-value="dropdown-item" id="more" disabled={false} onClick={() => alert("more selected")}>
+                            More...
+                            <DropdownItemShortcut style={{ color: "var(--gray-900)" }}>
+                                ⌘V
+                            </DropdownItemShortcut>
                         </DropdownItem>
 
-                    </DropdownGroup>
+                    </DropdownContent>
 
-                    <DropdownGroupSeparator />
-
-                    <DropdownItem style={{ fontSize: "var(--size-xsm)" }} role="dropdown-item" data-value="dropdown-item" id="logout" disabled={false} onClick={() => alert("logout selected")}>
-                        logout
-                        <DropdownItemShortcut style={{ color: "var(--gray-900)" }}>
-                            ⌘Q
-                        </DropdownItemShortcut>
-                    </DropdownItem>
-
-                    <DropdownItem style={{ fontSize: "var(--size-xsm)" }} role="dropdown-item" data-value="dropdown-item" id="more" disabled={false} onClick={() => alert("more selected")}>
-                        More...
-                        <DropdownItemShortcut style={{ color: "var(--gray-900)" }}>
-                            ⌘V
-                        </DropdownItemShortcut>
-                    </DropdownItem>
-
-                </DropdownContent>
-
-            </Dropdown>
+                </Dropdown>
+            </div>
         </main >
     )
 };
