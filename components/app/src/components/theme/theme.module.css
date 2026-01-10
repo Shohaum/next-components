@@ -4,13 +4,6 @@
     top: 1rem;
     right: 1rem;
     z-index: 999999;
-    outline: 1px solid var(--gray-200);
+    outline: 1px solid var(--border-color);
     border-radius: 1rem;
-}
-
-.theme>button {
-    padding-block: 0.4rem;
-    padding-inline: 0.4rem;
-    border-radius: 50%;
-    cursor: pointer;
 }

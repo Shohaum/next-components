@@ -1,0 +1,5 @@
+.tableContainer {
+    /* display: inline-block; */
+    border-radius: 0.5em;
+    overflow: hidden;
+}

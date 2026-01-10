@@ -15,8 +15,35 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning={true}>
       <head>
+        <script
+          id="theme-script"
+          dangerouslySetInnerHTML={{
+            __html: `
+      (function() {
+        const savedTheme = localStorage.getItem('theme') ?? 'system';
+        const root = document.documentElement;
+    try {
+        if (savedTheme === "system") {
+            const darkThemeMq = window.matchMedia("(prefers-color-scheme: dark)");
+            if (darkThemeMq.matches) {
+                root.setAttribute("data-theme", "dark");
+            } else {
+                root.setAttribute("data-theme", "light");
+            }
+        }
+        else {
+            root.setAttribute("data-theme", savedTheme);
+        }
+    }
+    catch (error) {
+        console.error("Error setting theme:", error);
+    }
+      })();
+    `,
+          }}
+        />
         <style>
           @import url('https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap');
         </style>
