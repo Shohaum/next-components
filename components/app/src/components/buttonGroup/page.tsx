@@ -59,6 +59,18 @@ const App = () => {
             </path>
         </svg>
 
+    const timeIcon =
+        <svg width="13" height="13" strokeLinejoin="round" viewBox="0 0 16 16">
+            <path fillRule="evenodd" clipRule="evenodd" d="M7.25 1.25V2.03971C5.87928 2.18571 4.62678 2.72736 3.6089 3.54824L3.03033 2.96967L2.5 2.43934L1.43934 3.5L1.96967 4.03033L2.54824 4.6089C1.57979 5.80976 1 7.33717 1 9C1 12.866 4.13401 16 8 16C11.866 16 15 12.866 15 9C15 7.33717 14.4202 5.80976 13.4518 4.6089L14.0303 4.03033L14.5607 3.5L13.5 2.43934L12.9697 2.96967L12.3911 3.54824C11.3732 2.72736 10.1207 2.18571 8.75 2.03971V1.25H9.25H10V-0.25H9.25H8.75H7.25H6.75H6V1.25H6.75H7.25ZM2.5 9C2.5 5.96243 4.96243 3.5 8 3.5C11.0376 3.5 13.5 5.96243 13.5 9C13.5 12.0376 11.0376 14.5 8 14.5C4.96243 14.5 2.5 12.0376 2.5 9ZM8.75 6.75V6H7.25V6.75V9V9.75H8.75V9V6.75Z" fill="currentColor">
+            </path>
+        </svg>
+
+    const archiveIcon =
+        <svg width="13" height="13" strokeLinejoin="round" viewBox="0 0 16 16">
+            <path fillRule="evenodd" clipRule="evenodd" d="M1.5 3.5H14.5V5.5H13.5H2.5H1.5V3.5ZM1 7H0V5.5V3.5V2H1.5H14.5H16V3.5V5.5V7H15V12.5C15 13.8807 13.8807 15 12.5 15H3.5C2.11929 15 1 13.8807 1 12.5V7ZM2.5 7V12.5C2.5 13.0523 2.94772 13.5 3.5 13.5H12.5C13.0523 13.5 13.5 13.0523 13.5 12.5V7H2.5ZM6 9.5H6.75H9.25H10V11H9.25H6.75H6V9.5Z" fill="currentColor">
+            </path>
+        </svg>
+
     return (
         <div style={{
             width: "100%",
@@ -81,7 +93,7 @@ const App = () => {
                 <ButtonGroup style={{ background: "var(--matte-background)" }}>
                     <Button style={{ fontSize: "var(--size-xsm)" }}>Snooze</Button>
                     <Dropdown>
-                        <DropdownTrigger>
+                        <DropdownTrigger asChild>
                             <Button aria-label="More Options">
                                 {moreIcon}
                             </Button>
@@ -93,12 +105,14 @@ const App = () => {
                                     Mark as Read
                                 </DropdownItem>
                                 <DropdownItem style={{ fontSize: "var(--size-xsm)" }}>
+                                    {archiveIcon}
                                     Archive
                                 </DropdownItem>
                             </DropdownGroup>
                             <DropdownGroupSeparator />
                             <DropdownGroup>
                                 <DropdownItem style={{ fontSize: "var(--size-xsm)" }}>
+                                    {timeIcon}
                                     Snooze
                                 </DropdownItem>
                                 <DropdownItem style={{ fontSize: "var(--size-xsm)" }}>

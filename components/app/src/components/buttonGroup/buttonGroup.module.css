@@ -4,8 +4,7 @@
     outline: 1px solid var(--border-color);
 }
 
-.buttonGroup>button,
-.buttonGroup>div {
+.buttonGroup>button {
     border-radius: 0;
     outline: none;
 }
