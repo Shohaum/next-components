@@ -1,14 +1,23 @@
 .buttonGroup {
     display: flex;
     border-radius: 0.5rem;
-    outline: 1px solid var(--border-color);
 }
 
-.buttonGroup>button {
+.buttonGroup>button:not(:only-child) {
+    border-inline-end-width: 0;
+}
+
+.buttonGroup>button:first-of-type:not(:only-child) {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.buttonGroup>button:not(:first-of-type):not(:last-of-type) {
     border-radius: 0;
-    outline: none;
 }
 
-.buttonGroup>button:not(:first-child) {
-    border-left: 1px solid var(--border-color);
+.buttonGroup>button:last-of-type:not(:only-of-type) {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border-inline-end-width: 1px;
 }
