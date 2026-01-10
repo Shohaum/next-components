@@ -16,6 +16,16 @@ import DropdownSub from "@/components/dropdown/dropdownSub";
 import DropdownSubTrigger from "@/components/dropdown/dropdownSubTrigger";
 import DropdownSubContent from "@/components/dropdown/dropdownSubContent";
 
+import AlertDialog from "@/components/alertDialog/alertDialog";
+import AlertDialogTrigger from "@/components/alertDialog/alertDialogTrigger";
+import AlertDialogContent from "@/components/alertDialog/alertDialogContent";
+import AlertDialogHeader from "@/components/alertDialog/alertDialogHeader";
+import AlertDialogFooter from "@/components/alertDialog/alertDialogFooter";
+import AlertDialogTitle from "@/components/alertDialog/alertDialogTitle";
+import AlertDialogDescription from "@/components/alertDialog/alertDialogDescription";
+import AlertDialogAction from "@/components/alertDialog/alertDialogAction";
+import AlertDialogCancel from "@/components/alertDialog/alertDialogCancel";
+
 const App = () => {
 
     const backIcon =
@@ -23,9 +33,16 @@ const App = () => {
             <path fillRule="evenodd" clipRule="evenodd" d="M10.5 14.0607L9.96966 13.5303L5.14644 8.7071C4.75592 8.31658 4.75592 7.68341 5.14644 7.29289L9.96966 2.46966L10.5 1.93933L11.5607 2.99999L11.0303 3.53032L6.56065 7.99999L11.0303 12.4697L11.5607 13L10.5 14.0607Z" fill="currentColor">
             </path>
         </svg>
+
     const moreIcon =
         <svg width="13" height="13" strokeLinejoin="round" viewBox="0 0 16 16">
             <path fillRule="evenodd" clipRule="evenodd" d="M4 8C4 8.82843 3.32843 9.5 2.5 9.5C1.67157 9.5 1 8.82843 1 8C1 7.17157 1.67157 6.5 2.5 6.5C3.32843 6.5 4 7.17157 4 8ZM9.5 8C9.5 8.82843 8.82843 9.5 8 9.5C7.17157 9.5 6.5 8.82843 6.5 8C6.5 7.17157 7.17157 6.5 8 6.5C8.82843 6.5 9.5 7.17157 9.5 8ZM13.5 9.5C14.3284 9.5 15 8.82843 15 8C15 7.17157 14.3284 6.5 13.5 6.5C12.6716 6.5 12 7.17157 12 8C12 8.82843 12.6716 9.5 13.5 9.5Z" fill="currentColor">
+            </path>
+        </svg>
+
+    const agentsIcon =
+        <svg width="16" height="16" strokeLinejoin="round" viewBox="0 0 16 16">
+            <path fillRule="evenodd" clipRule="evenodd" d="M3 10.25C4.51878 10.25 5.75 11.4812 5.75 13C5.75 14.5188 4.51878 15.75 3 15.75C1.48122 15.75 0.25 14.5188 0.25 13C0.25 11.4812 1.48122 10.25 3 10.25ZM13 10.25C14.5188 10.25 15.75 11.4812 15.75 13C15.75 14.5188 14.5188 15.75 13 15.75C11.4812 15.75 10.25 14.5188 10.25 13C10.25 11.4812 11.4812 10.25 13 10.25ZM3 11.75C2.30964 11.75 1.75 12.3096 1.75 13C1.75 13.6904 2.30964 14.25 3 14.25C3.69036 14.25 4.25 13.6904 4.25 13C4.25 12.3096 3.69036 11.75 3 11.75ZM13 11.75C12.3096 11.75 11.75 12.3096 11.75 13C11.75 13.6904 12.3096 14.25 13 14.25C13.6904 14.25 14.25 13.6904 14.25 13C14.25 12.3096 13.6904 11.75 13 11.75ZM8 12C8.55228 12 9 12.4477 9 13C9 13.5523 8.55228 14 8 14C7.44772 14 7 13.5523 7 13C7 12.4477 7.44772 12 8 12ZM2.5 7C3.05228 7 3.5 7.44772 3.5 8C3.5 8.55228 3.05228 9 2.5 9C1.94772 9 1.5 8.55228 1.5 8C1.5 7.44772 1.94772 7 2.5 7ZM8 7C8.55228 7 9 7.44772 9 8C9 8.55228 8.55228 9 8 9C7.44772 9 7 8.55228 7 8C7 7.44772 7.44772 7 8 7ZM13.5 7C14.0523 7 14.5 7.44772 14.5 8C14.5 8.55228 14.0523 9 13.5 9C12.9477 9 12.5 8.55228 12.5 8C12.5 7.44772 12.9477 7 13.5 7ZM8 0.25C9.51878 0.25 10.75 1.48122 10.75 3C10.75 4.51878 9.51878 5.75 8 5.75C6.48122 5.75 5.25 4.51878 5.25 3C5.25 1.48122 6.48122 0.25 8 0.25ZM8 1.75C7.30964 1.75 6.75 2.30964 6.75 3C6.75 3.69036 7.30964 4.25 8 4.25C8.69036 4.25 9.25 3.69036 9.25 3C9.25 2.30964 8.69036 1.75 8 1.75ZM2.5 2C3.05228 2 3.5 2.44772 3.5 3C3.5 3.55228 3.05228 4 2.5 4C1.94772 4 1.5 3.55228 1.5 3C1.5 2.44772 1.94772 2 2.5 2ZM13.5 2C14.0523 2 14.5 2.44772 14.5 3C14.5 3.55228 14.0523 4 13.5 4C12.9477 4 12.5 3.55228 12.5 3C12.5 2.44772 12.9477 2 13.5 2Z" fill="currentColor">
             </path>
         </svg>
 
@@ -133,40 +150,62 @@ const App = () => {
                                         <DropdownLabel style={{ fontSize: "var(--size-xsm)" }} label="Settings" />
 
                                         <DropdownGroup>
-                                            <DropdownItem style={{ fontSize: "var(--size-xsm)" }} role="dropdown-sub-item" data-value="dropdown-sub-item" name="storage" id="storage" onClick={() => alert("storage")}>
-                                                Storage
-                                                <DropdownItemShortcut style={{ color: "var(--gray-900)" }}>
-                                                    ⌘S
-                                                </DropdownItemShortcut>
+                                            <DropdownItem style={{ fontSize: "var(--size-xsm)" }} role="dropdown-sub-item" data-value="dropdown-sub-item" name="storage" id="storage" onClick={() => alert("important")}>
+                                                Important
                                             </DropdownItem>
-                                            <DropdownItem style={{ fontSize: "var(--size-xsm)" }} role="dropdown-sub-item" data-value="dropdown-sub-item" name="module" id="module" onClick={() => alert("module")}>
-                                                Module
-                                                <DropdownItemShortcut style={{ color: "var(--gray-900)" }}>
-                                                    ⌘M
-                                                </DropdownItemShortcut>
+                                            <DropdownItem style={{ fontSize: "var(--size-xsm)" }} role="dropdown-sub-item" data-value="dropdown-sub-item" name="module" id="module" onClick={() => alert("task for later")}>
+                                                Task for later
                                             </DropdownItem>
                                         </DropdownGroup>
 
                                         <DropdownGroupSeparator />
 
-                                        <DropdownItem style={{ fontSize: "var(--size-xsm)" }} role="dropdown-sub-item" data-value="dropdown-sub-item" name="more" id="more" onClick={() => alert("more")}>
-                                            More...
+                                        <DropdownItem style={{ fontSize: "var(--size-xsm)" }} role="dropdown-sub-item" data-value="dropdown-sub-item" name="more" id="more" onClick={() => alert("unlabel")}>
+                                            Unlabel
                                         </DropdownItem>
                                     </DropdownSubContent>
                                 </DropdownSub>
                             </DropdownGroup>
                             <DropdownGroupSeparator />
                             <DropdownGroup>
-                                <DropdownItem style={{ fontSize: "var(--size-xsm)" }} variant="destructive" onClick={() => alert("trash")}>
-                                    {trashIcon}
-                                    Trash
+                                <DropdownItem style={{ fontSize: "var(--size-xsm)" }} onClick={() => alert("summarize")}>
+                                    {agentsIcon}
+                                    Summarize
                                 </DropdownItem>
+
+                                <AlertDialog>
+
+                                    <DropdownItem style={{ fontSize: "var(--size-xsm)" }} variant="destructive" asChild>
+                                        <AlertDialogTrigger>
+                                            {trashIcon}
+                                            Remove
+                                        </AlertDialogTrigger>
+                                    </DropdownItem>
+
+                                    <AlertDialogContent style={{ width: "min(32rem, 90%)", background: "var(--matte-background)" }}>
+                                        <AlertDialogHeader>
+                                            <AlertDialogTitle style={{ fontSize: "var(--size-md)" } as React.CSSProperties}>Are you absolutely sure?</AlertDialogTitle>
+
+                                            <AlertDialogDescription>
+                                                <p>Once removed, you will not be able to recover this file</p>
+                                            </AlertDialogDescription>
+
+                                        </AlertDialogHeader>
+
+                                        <AlertDialogFooter>
+                                            <AlertDialogCancel style={{ backgroundColor: "var(--gray-200)", fontSize: "var(--size-xsm)", color: "var(--themed-unmatched-color)" }}>Cancel</AlertDialogCancel>
+                                            <AlertDialogAction style={{ backgroundColor: "var(--themed-unmatched-color)", fontSize: "var(--size-xsm)", color: "var(--themed-matched-color)" }} onClick={() => alert("Conitue clicked")}>Continue</AlertDialogAction>
+                                        </AlertDialogFooter>
+                                    </AlertDialogContent>
+
+                                </AlertDialog>
+
                             </DropdownGroup>
                         </DropdownContent>
                     </Dropdown>
                 </ButtonGroup>
             </div>
-        </div>
+        </div >
     )
 };
 
