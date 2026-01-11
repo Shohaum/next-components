@@ -1,0 +1,16 @@
+.input {
+    width: 100%;
+    padding-block: 0.25rem;
+    padding-inline: 0.75rem;
+    outline: 1px solid;
+    border-radius: 0.5rem;
+    transition: outline-width 100ms ease-in-out;
+}
+
+.input:focus-visible {
+    outline-width: 3px;
+}
+
+.input:disabled {
+    opacity: 0.5;
+}

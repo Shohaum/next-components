@@ -1,0 +1,4 @@
+.cardDescription {
+    color: var(--gray-900);
+    text-wrap: pretty;
+}

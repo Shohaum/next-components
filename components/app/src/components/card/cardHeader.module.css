@@ -1,0 +1,7 @@
+.cardHeader {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-rows: auto auto;
+    grid-auto-rows: min-content;
+    gap: 0.5rem;
+}
